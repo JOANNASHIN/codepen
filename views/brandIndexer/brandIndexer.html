@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>floating indexer 구현</title>
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+
+        <!-- 내부 js -->
+        <script src="/dist/js/main.js"></script>
+    </head>
+
+    <body id="brandIndexer" class="fb">
+        <main class="fb__searchLayer fb__brandsearch">
+            <h2 class="fb__title--hidden">브랜드로 검색하기</h2>
+        
+            <!-- 상단 헤더 -->
+            <header class="fb__searchLayer__header">
+                <button class="fb__searchLayer__close">
+                    <span class="blind">닫기버튼</span>
+                </button>
+        
+                <a href="/popup/searchKeyword" class="fb__searchLayer__link">
+                    <span>키워드로 검색</span>
+                </a>        
+            </header>
+        
+            <!-- 콘텐츠 -->
+            <div class="fb__searchLayer__cont">
+        
+                <!-- 검색영역 -->
+                <section class="fb__searchLayer__try fb__search__try">
+                    <h3 class="fb__title--hidden">검색영역</h3>
+        
+                    <!-- 검색 -->
+                    <label class="fb__comm__input js__input__wrapper">
+                        <input type="text" class="js__input" placeholder="브랜드를 입력하세요." autocomplete="off" autofocus>
+                        <button class="input__clear js__input__clear">지우기</button>
+                        
+                        <button type="button" class="input__search">
+                            <span class="blind">검색하기</span>
+                        </button>
+                    </label>
+        
+                    <!-- 자동완성 레이어 -->
+                    <div class=" js__search__autocomplete">
+                        
+                    </div>
+                </section>
+        
+                <!-- 인기브랜드 -->
+                <section class="fb__brand__hotbrand">
+                    <h3 class="hotbrand__title">인기브랜드</h3>
+                    <ul class="hotbrand__wrapper">
+                        <li class="hotbrand__list">
+                            <a href="#">
+                                <!-- @todo 개발: wish on 클래스 추가 -->
+                                <button class="hotbrand__wish fb__wish">브랜드 찜 버튼</button>
+                                <figure class="hotbrand__thumb">
+                                    <img src="/src/images/sample/sample2.jpg" alt="">
+                                </figure>
+            
+                                <span class="hotbrand__name">프리메라</span>
+                            </a>
+                        </li>
+        
+                        <li class="hotbrand__list">
+                            <a href="#">
+                                <!-- @todo 개발: wish on 클래스 추가 -->
+                                <button class="hotbrand__wish fb__wish on">브랜드 찜 버튼</button>
+                                <figure class="hotbrand__thumb">
+                                    <img src="/src/images/sample/sample2.jpg" alt="">
+                                </figure>
+            
+                                <span class="hotbrand__name">프리메라프리메라프리메라프리메라프리메라</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+               
+                <!-- 브랜드 리스트 -->
+                <section class="fb__brand__alphabet js__floating__start">
+                    <h3 class="fb__title--hidden">브랜드 리스트 영역</h3>
+        
+                    <div class="alphabet__wrapper">
+                        <!-- 초성 묶음 -->
+                        <!-- @todo 개발: id값 루프 돌릴때 같이 돌려주세요 -->
+                        <dl id="alphabet0" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㄱ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet1" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㄴ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet2" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㄷ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet3" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㄹ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet4" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㅁ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet5" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㅂ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet6" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㅅ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                     <!-- 브랜드 -->
+                                     <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet8" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>ㅈ</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet14" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>#</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+        
+                        <dl id="alphabet15" class="alphabet__section">
+        
+                            <dt class="alphabet__name">
+                                <strong>Aa</strong>
+                            </dt>
+        
+                            <dd class="alphabet__cont">
+                                <ol class="alphabet__list">
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <!-- 브랜드 -->
+                                    <li class="alphabet__brand">
+                                        <a href="#" class="alphabet__brand__link">
+                                            <!-- @todo 개발: wish on 클래스 추가 -->
+                                            <button class="alphabet__brand__wish fb__wish">브랜드 찜 버튼</button>
+                                            <figure class="alphabet__brand__thumb">
+                                                <img src="/src/images/sample/sample2.jpg" alt="">
+                                            </figure>
+                        
+                                            <div class="alphabet__brand__name">
+                                                <strong class="alphabet__brand__name--korean">가란시아</strong>
+                                                <span class="alphabet__brand__name--english">Garancia</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </div>
+        
+                    <!-- 플로팅 -->
+                    <aside class="alphabet__floating js__floating__target">
+                        <h3 class="fb__title--hidden">초성 플로팅 바</h3>
+                        <div class="alphabet__floating__inner js__floating__scroll">
+                            <!-- @todo 개발: 데이터 없는 경우에는 dim 클래스 추가 필요 / 처음 나오는 초성에 active 붙여주세요.-->
+                            <a href="#alphabet0" class="alphabet__floating__menu js__alphabet__menu active">ㄱ</a>
+                            <a href="#alphabet1" class="alphabet__floating__menu js__alphabet__menu">ㄴ</a>
+                            <a href="#alphabet2" class="alphabet__floating__menu js__alphabet__menu">ㄷ</a>
+                            <a href="#alphabet3" class="alphabet__floating__menu js__alphabet__menu">ㄹ</a>
+                            <a href="#alphabet4" class="alphabet__floating__menu js__alphabet__menu">ㅁ</a>
+                            <a href="#alphabet5" class="alphabet__floating__menu js__alphabet__menu">ㅂ</a>
+                            <a href="#alphabet6" class="alphabet__floating__menu js__alphabet__menu">ㅅ</a>
+                            <a href="#alphabet7" class="alphabet__floating__menu js__alphabet__menu dim">ㅇ</a>
+                            <a href="#alphabet8" class="alphabet__floating__menu js__alphabet__menu">ㅈ</a>
+                            <a href="#alphabet9" class="alphabet__floating__menu js__alphabet__menu dim">ㅊ</a>
+                            <a href="#alphabet10" class="alphabet__floating__menu js__alphabet__menu dim">ㅋ</a>
+                            <a href="#alphabet11" class="alphabet__floating__menu js__alphabet__menu dim">ㅌ</a>
+                            <a href="#alphabet12" class="alphabet__floating__menu js__alphabet__menu dim">ㅍ</a>
+                            <a href="#alphabet13" class="alphabet__floating__menu js__alphabet__menu dim">ㅎ</a>
+                            <a href="#alphabet14" class="alphabet__floating__menu js__alphabet__menu">#</a>
+                            <a href="#alphabet15" class="alphabet__floating__menu js__alphabet__menu">Aa</a>
+                        </div>
+                    </aside>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

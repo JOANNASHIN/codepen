@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path d="M0 10L6 10 6 0 0 0z" transform="translate(-537 -1857) translate(123 1501) translate(0 271) translate(357 30) translate(57 55)"/>
+                            <path stroke="#A0A0A0" stroke-linecap="round" d="M1 9L5 5 1 1" transform="translate(-537 -1857) translate(123 1501) translate(0 271) translate(357 30) translate(57 55)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

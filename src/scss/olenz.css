@@ -1,0 +1,307 @@
+.fb__freegift {
+	 display: block;
+	 width: 900px;
+}
+ .fb__freegift__top {
+	 position: relative;
+	 padding-bottom: 10px;
+	 border-bottom: 1px solid #000;
+}
+ .fb__freegift__title {
+	 color: #000;
+	 font-weight: bold;
+	 font-size: 16px;
+	 line-height: 36px;
+}
+ .fb__freegift__select {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 padding: 0 32px;
+	 border: 1px solid #000;
+	 color: #000;
+	 font-size: 12px;
+	 line-height: 34px;
+}
+ .fb__freegift__cont {
+	 padding-top: 20px;
+}
+ .fb__freegift__inner {
+	 display: flex;
+	 flex-wrap: nowrap;
+	 padding: 20px;
+	 background: #fafafa;
+}
+ .fb__freegift__empty {
+	 display: block;
+	 width: 100%;
+	 padding: 60px 0;
+	 background: #fff;
+	 color: #666;
+	 font-size: 14px;
+	 text-align: center;
+}
+ .fb__freegift__box {
+	 position: relative;
+	 width: 100%;
+	 min-height: 120px;
+	 padding: 20px 20px 20px 100px;
+	 background: #fff;
+}
+ .fb__freegift__box:after {
+	 content: "";
+	 display: inline-block;
+	 width: 1px;
+	 height: 100%;
+	 vertical-align: middle;
+}
+ .fb__freegift__box:not(:first-of-type) {
+	 margin-left: 20px;
+}
+ .fb__freegift__img {
+	 overflow: hidden;
+	 position: absolute;
+	 top: 20px;
+	 left: 20px;
+	 width: 80px;
+	 height: 80px;
+}
+ .fb__freegift__img img {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 width: 100%;
+	 height: auto;
+	 margin: auto;
+}
+ .fb__freegift__info {
+	 display: inline-block;
+	 padding-left: 14px;
+	 color: #888;
+	 font-size: 13px;
+	 font-weight: 400;
+	 vertical-align: middle;
+}
+ .fb__freegift__name {
+	 display: block;
+	 margin-bottom: 10px;
+	 color: #666;
+	 font-weight: 500;
+	 height: 36px;
+	 line-height: 18px;
+	 display: -webkit-box;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+	 word-break: break-all;
+	 -webkit-line-clamp: 2;
+	 -webkit-box-orient: vertical;
+}
+ .fb__freegift__option {
+	 display: block;
+	 padding-bottom: 10px;
+}
+ .fb__freegift__qty {
+	 display: block;
+	 color: #888;
+}
+ .fb__freegift__desc {
+	 display: block;
+	 margin-top: 20px;
+	 color: #888;
+	 font-size: 12px;
+	 line-height: 1.2;
+}
+ .fb__freegift__desc > * {
+	 position: relative;
+	 display: block;
+	 margin-bottom: 10px;
+	 padding-left: 12px;
+}
+ .fb__freegift__desc > *:before {
+	 content: "";
+	 position: absolute;
+	 top: 3px;
+	 left: 0;
+	 width: 4px;
+	 height: 4px;
+	 background: #999;
+	 border-radius: 50%;
+}
+ .fb__selectgift {
+	 display: none;
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 z-index: 1;
+	 width: 100%;
+	 height: 100%;
+	 background: rgba(0, 0, 0, 0.8);
+}
+ .fb__selectgift.show {
+	 display: block;
+}
+ .fb__selectgift .selectgift__layer {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 850px;
+	 transform: translate(-50%, -50%);
+	 background: #fff;
+}
+ .fb__selectgift .selectgift__cont {
+	 padding: 18px 25px;
+}
+ .fb__selectgift .selectgift__top {
+	 position: relative;
+	 padding-bottom: 12px;
+	 border-bottom: 1px solid #000;
+}
+ .fb__selectgift .selectgift__desc {
+	 color: #000;
+	 font-size: 0;
+	 line-height: 32px;
+}
+ .fb__selectgift .selectgift__desc em {
+	 font-size: 14px;
+	 font-weight: 600;
+}
+ .fb__selectgift .selectgift__desc span {
+	 font-size: 14px;
+}
+ .fb__selectgift .selectgift__btn {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+}
+ .fb__selectgift .selectgift__btn button {
+	 width: 140px;
+	 font-size: 13px;
+	 text-align: center;
+	 line-height: 32px;
+}
+ .fb__selectgift .selectgift__btn--wt {
+	 background: #fff;
+	 border: 1px solid #ccc;
+	 color: #555;
+}
+ .fb__selectgift .selectgift__btn--bk {
+	 background: #000;
+	 border: 1px solid #000;
+	 color: #fff;
+}
+ .fb__selectgift .selectgift__scroll {
+	 overflow-y: auto;
+	 overflow-x: hidden;
+	 max-height: 408px;
+	 margin: 30px 0;
+}
+ .fb__selectgift .selectgift__scroll__inner {
+	 margin: 0 -25px;
+}
+ .fb__selectgift .selectgift__scroll__inner:after {
+	 display: block;
+	 clear: both;
+	 content: "";
+}
+ .fb__selectgift .selectgift__box {
+	 float: left;
+	 position: relative;
+	 width: calc(50% - 50px);
+	 min-height: 116px;
+	 margin: 0 25px 30px;
+	 padding-left: 120px;
+}
+ .fb__selectgift .selectgift__label {
+	 overflow: hidden;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 102px;
+	 height: 116px;
+	 cursor: pointer;
+}
+ .fb__selectgift .selectgift__label input {
+	 display: none;
+}
+ .fb__selectgift .selectgift__label input:checked + .selectgift__img:before {
+	 display: block;
+}
+ .fb__selectgift .selectgift__img {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+}
+ .fb__selectgift .selectgift__img:before {
+	 display: none;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 1;
+	 width: 100%;
+	 height: 100%;
+	 background: rgba(0, 0, 0, 0.4) url("../images/olenz/icon-gift-select.png") no-repeat center center;
+	 content: "";
+}
+ .fb__selectgift .selectgift__img img {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+	 height: auto;
+	 margin: auto;
+}
+ .fb__selectgift .selectgift__name {
+	 display: block;
+	 font-size: 13px;
+	 height: 36px;
+	 line-height: 18px;
+	 display: -webkit-box;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+	 word-break: break-all;
+	 -webkit-line-clamp: 2;
+	 -webkit-box-orient: vertical;
+}
+ .fb__selectgift .selectgift__eye {
+	 display: block;
+	 width: 100%;
+	 height: 35px;
+	 margin: 14px 0 10px;
+	 padding-left: 10px;
+	 border-color: #ccc;
+	 line-height: 35px;
+	 color: #000;
+	 font-size: 12px;
+}
+ .fb__selectgift .selectgift__spinner {
+	 display: inline-block;
+	 border: 1px solid #ddd;
+	 font-size: 0;
+}
+ .fb__selectgift .selectgift__spinner button {
+	 width: 18px;
+	 height: 18px;
+	 border: none;
+	 font-size: 0;
+}
+ .fb__selectgift .selectgift__spinner__btn--minus {
+	 background: url("../images/olenz/btn-gift-minus.png") no-repeat center center;
+}
+ .fb__selectgift .selectgift__spinner__btn--plus {
+	 background: url("../images/olenz/btn-gift-plus.png") no-repeat center center;
+}
+ .fb__selectgift .selectgift__spinner__count {
+	 display: inline-block;
+	 width: 40px;
+	 border: 1px solid #ddd;
+	 border-width: 0px 1px;
+	 color: #555;
+	 font-size: 12px;
+	 text-align: center;
+	 line-height: 18px;
+}
+ 

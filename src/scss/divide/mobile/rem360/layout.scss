@@ -1,0 +1,1026 @@
+.fb {
+    //버튼 공통 디자인가이드
+    &__button {
+        &.type {
+            &--full {
+                display: flex;
+                flex-wrap: nowrap;
+
+                button, a {
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: rem(14px);
+                    text-align: center;
+                    line-height: rem(56px);
+                }
+            }
+
+            &--bottom {
+                display: flex;
+                flex-wrap: nowrap;
+
+                button, a, input {
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: rem(17px);
+                    text-align: center;
+                    line-height: rem(56px);
+                }
+            }
+
+            &--toast {
+                display: flex;
+                flex-wrap: nowrap;
+
+                button, a {
+                    &:first-child {
+                        flex: rem(0 0 100px);
+                        background: $charcole;
+                        @include fontcss($medium, 600, rem(17px), rem(56px));
+                    }
+
+                    &:nth-child(2) {
+                        width: 100%;
+                        background: $black;
+                        @include fontcss(#fff, 600, rem(17px), rem(56px));
+                    }
+                }
+            }
+        }
+      
+        .size {
+            //작은거 > 큰거 순
+            &--01 {
+                padding: rem(4px 8px);
+                font-weight: 200;
+                font-size: rem(11px);
+                line-height: rem(16px);
+            }
+
+            &--02 {
+                padding: rem(8px 12px);
+                font-weight: 200;
+                font-size: rem(12px);
+                line-height: rem(18px);
+            }
+
+            //floating
+            &--03 {
+                padding: rem(10px 20px);
+                font-weight: 200;
+                font-size: rem(26px);
+                line-height: rem(20px);
+            }
+
+
+            &--04 {
+                padding: rem(12px 20px);
+                font-weight: 600;
+                font-size: rem(14px);
+                line-height: rem(20px);
+            }
+
+            &--05 { 
+                padding: rem(16px 32px);
+                font-weight: 600;
+                font-size: rem(14px);
+                line-height: rem(20px);
+            }
+
+            &--06 { 
+                padding: rem(16px 32px);
+                font-weight: 600;
+                font-size: rem(17px);
+                line-height: rem(24px);
+            }
+        }
+
+        .light {
+            font-weight: 200 !important;
+        }
+
+        .radius {
+            &--full {
+                border-radius: rem(30px);
+            }
+
+            &--medium {
+                border-radius: rem(6px);
+            }
+        }
+        
+        .border {
+            &--blackblack {
+                background: #fff;
+                border: rem(2px) solid $black;   
+                color: $black;
+            }
+
+            &--lightblack {
+                background: #fff;
+                border: rem(2px) solid $light;   
+                color: $black;
+            }
+
+            &--lightmedium {
+                background: #fff;
+                border: rem(2px) solid $light;   
+                color: $medium;
+            }
+        }
+
+        .bg {
+            &--blackwhite {
+                background: $black;
+                color: #fff;
+            }
+
+            &--pointwhite {
+                background: $pcolor;
+                color: #fff;
+            }
+
+            &--charcolemedium {
+                background: $charcole;
+                color: $medium;
+            }
+
+            &--mediumwhite {
+                background: $medium;
+                color: #fff;
+            }
+
+            &--brightblack {
+                background: $bright;
+                color:$black;
+            }
+
+            &--lightwhite {
+                background: $light;
+                color: #fff;
+            }
+        }
+    }
+    
+    //기본 디자인 가이드
+    &__comm {
+        &__checkbox {
+            display: inline-block;
+            min-width: rem(24px);
+            min-height: rem(24px);
+
+            &.defaultGrey {
+                input:checked {
+                    & + span {
+                        color: $black;
+                    }
+                }
+                
+                span {
+                    color: $medium;
+                }
+            }
+
+            input[type=checkbox] {
+                display: none;
+
+                &:checked {
+                    & + span {
+                        &:before {
+                            background: $black url(svgSrc("common", "icon-checkbox-active")) no-repeat center center / rem(14px 10px);
+                            border-color: $black;
+                        }
+                    }
+                }
+
+                &:disabled {
+                    & + span {
+                        color: $silver;
+
+                        &:before {
+                            border-color: $light;
+                            background: $bright url(svgSrc("common", "icon-checkbox-disabled")) no-repeat center center / rem(14px 10px);;
+                        }
+                    }
+                }
+            }
+    
+            span {
+                display: block;
+                position: relative;
+                min-height: rem(24px);
+                padding-left: rem(28px);
+                @include fontcss($black, 200, rem(14px), rem(24px));
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: rem(24px);
+                    height: rem(24px);
+                    background: #fff url(svgSrc("common", "icon-checkbox")) no-repeat center center / rem(14px 10px);;
+                    border: 1px solid $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    box-sizing: border-box;                    
+                }
+            }
+        }
+
+        &__blueCheck {
+            input[type="checkbox"] {
+                width: rem(20px);
+                height: rem(20px);
+                background: transparent;
+                border-radius: 50%;
+                   
+                &:checked {
+                    background: $pcolor url(svgSrc("common", "icon-wish-check")) no-repeat center center / rem(12px 12px);
+                }
+            }
+        }
+
+        &__radio {
+            display: inline-block;
+            min-width: rem(24px);
+            min-height: rem(24px);
+
+            &.defaultGrey {
+                input:checked {
+                    & + span {
+                        color: $black;
+                    }
+                }
+                
+                span {
+                    color: $medium;
+                }
+            }
+
+            input[type=radio] {
+                display: none;
+
+                &:checked {
+                    & + span {
+                        &:before {
+                            background-color: $black;
+                            border-color: $black;
+                        }
+
+                        &:after {
+                            background: #fff;
+                        }
+                    }
+                }
+
+                &:disabled {
+                    & + span {
+                        color: $silver;
+
+                        &:before {
+                            background-color: $bright;
+                        }
+
+                        &:after {
+                            background-color: $light;
+                        }
+                    }
+                }
+            }
+
+            span {
+                display: block;
+                position: relative;
+                min-height: rem(24px);
+                padding-left: rem(28px);
+                @include fontcss($black, 200, rem(14px), rem(24px));
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: rem(24px);
+                    height: rem(24px);
+                    background: #fff;
+                    border: 1px solid $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    box-sizing: border-box;                    
+                }
+
+                //가운데 점
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: rem(8px);
+                    z-index: 1;
+                    width: rem(8px);
+                    height: rem(8px);
+                    background: $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        //아래 한줄 보더 (select, input)
+        &__form {
+            &--oneline {
+                .fb__comm__input,
+                .fb__comm__password {
+                    border-bottom: 1px solid $light;
+                    padding-bottom: rem(16px);
+                }
+
+                .fb__comm__password span {
+                    height: rem(20px);
+                }
+
+                select {
+                    padding: {
+                        left: 0;
+                    }
+
+                    background-position-x: right;
+                }
+
+                input {
+                    height: rem(20px);
+                    padding: {
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    border: none;
+                }
+                
+                select, input {
+                    border-width: 0 0 1px 0;
+                    border-radius: 0;
+
+                    &:disabled {
+                        background: #fff;
+                        color: $silver;
+                    }
+                }
+
+                .input__clear,
+                .status--success:after {
+                    top: 0 !important;
+                    transform: translate(0, 0) !important;
+                }
+            }
+        }
+
+        &__input {
+            position: relative;
+            width: 100%;
+
+            &.status {
+                &--error {
+                    input {
+                        color: $black;
+                        border-color: $red;
+                    }
+
+                    p {
+                        display: block;
+                        margin-top: rem(8px);
+                        color: $red;
+                        font-weight: 200;
+                        font-size: rem(12px);
+                    }
+                }
+
+                &--success {
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: rem(20px);
+                        height: rem(20px);
+                        background: url(svgSrc("guide", "ico-input-success")) no-repeat center center / 100% auto;
+                        font-size: 0;
+                        transform: translate(0, -50%);
+                        content: "";
+                    }
+                }
+            }
+
+            .input {
+                //라벨
+                &__label {
+                    color: $medium;
+                    font-size: rem(12px);
+                }
+
+                //clear버튼
+                &__clear {
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: rem(20px);
+                    height: rem(20px);
+                    background: $light url(svgSrc("guide", "ico-delete-white")) no-repeat center center / rem(8px);
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    font-size: 0;
+
+                    &.show {
+                        opacity: 1;
+                    }
+                }
+
+                //검색버튼
+                &__search {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: rem(20px);
+                    height: 100%;
+                    background: url(svgSrc("guide", "ico-input-search")) no-repeat center center / rem(20px 20px);
+                }
+            }
+        }
+
+        &__password {
+            display: block;
+            position: relative;
+
+            input {
+                &[type=password] {
+                    & + span {
+                        background: url(svgSrc("guide", "ico-password-view-enb")) no-repeat center center / 100% auto;
+                    }
+                }
+
+                &[type=text] {
+                    & + span {
+                        background: url("../src/images/svg/guide/ico-password-view-active.svg") no-repeat center center / 100% auto;
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: rem(16px);
+                width: rem(20px);
+                height: 100%;
+                font-size: 0;
+            }
+        }
+
+        &__select {
+            &.multiselect {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            &--small {
+                select {
+                    border: none;
+                    height: rem(20px);
+                    padding: rem(0 14px 0 0);
+                    background: url("../src/images/guide/ico-dropdown-10-x-6.svg") no-repeat right center / rem(10px 6px);
+                }
+            }
+        }
+
+        &__toggle {
+            input{
+                display: none;
+
+                &:checked { 
+                    & + .toggle__label {
+                        color: $black;
+                    }
+
+                    & ~ .toggle__icon {
+                        
+                        &:before {
+                            background: $black;
+                        }
+                        
+                        &:after {
+                            left: calc(100% - #{rem(22px)}); //실제 기기에서 조금 잘려보여 22px로 수정
+                        }
+                    }
+                }
+            }
+
+            .toggle {
+                &__label {
+                    display: inline-block;
+                    color: $medium;
+                    font-weight: 200;
+                    font-size: rem(14px);
+                    vertical-align: middle;
+                }
+
+                &__icon {
+                    position: relative;
+                    display: inline-block;
+                    width: rem(48px);
+                    height: rem(24px);
+                    margin-left: rem(8px);
+                    font-size: 0;
+                    vertical-align: middle;
+                    
+
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(0, -50%);
+                        width: rem(48px);
+                        height: rem(4px);
+                        background: $silver;
+                        border-radius: rem(4px);
+                        content: "";
+                    }
+
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: rem(24px);
+                        height: rem(24px);
+                        background: #fff;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.14);
+                        transition: left linear 0.06s;
+                        content: "";
+                    }
+                }
+            }
+
+        }
+    }
+
+    //결과 없는 경우
+    &__empty {
+        padding: rem(36px 0);
+        text-align: center;
+
+        &__text {
+            @include fontcss($black, 200, rem(14px), rem(20px));    
+
+            &:before {
+                content: "";
+                display: block;
+                width: rem(48px);
+                height: rem(48px);
+                margin: rem(0 auto 12px);
+                background: url("../src/images/common/icon-empty.svg") no-repeat 0 0 / 100% auto;
+            }
+        }
+
+        //검색단어
+        &__word {
+            display: block;
+            @include fontcss($pcolor, 600, rem(14px), rem(20px));    
+        }
+    }
+
+    //모달
+    &__modal {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+
+        &.show {
+            display: flex;
+        }
+
+        &__mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .6);
+
+            &.show {
+                display: block;
+            }
+        }
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            text-align: left;
+        }
+
+        &__header {
+            overflow: hidden;
+            position: relative;
+            padding: rem(16px 56px 16px 20px);
+            border-bottom: 1px solid $bright;
+        }
+
+        &__title {
+            color: $black;
+            font-weight: 600;
+            font-size: rem(17px);
+            line-height: rem(24px);
+        }
+
+        &__close {
+            position: absolute;
+            top: rem(20px);
+            right: rem(20px);
+            width: rem(16px);
+            height: rem(16px);
+            background: url(svgSrc("guide", "ico-popup-close")) no-repeat center center / 100% auto;
+            font-size: 0;
+        }
+
+        
+        &__scroll {
+            overflow-y: auto;
+            max-height: 100%;
+        }
+
+        &__layer {
+            width: auto;
+            height: auto;
+            box-sizing: border-box;
+    
+            &.show {
+                display: block;
+            }
+    
+            &.layout-none {
+                background: transparent;
+            }
+    
+            &.full-layer {
+                overflow: hidden;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100%;
+                height: 100%;
+                max-height: none;
+                transform: none;
+
+                .fb__modal {
+                    &__header {
+                        flex: 0 0 rem(50px);
+                        padding: rem(16px 20px);
+                        text-align: center;
+                    }
+            
+                    &__title {
+                        font-size: rem(19px);
+                    }
+            
+                    &__close {
+                        position: absolute;
+                        top: rem(12px);
+                        left: rem(16px);
+                        width: rem(26px);
+                        height: rem(26px);
+                        font-size: 0;
+                    }
+
+                    &__content {
+                        overflow-y: auto;
+                        height: 100%;
+                    }
+                }
+            }
+
+            // full 레이어 아닌데 스크롤 생기는 케이스 (ex 맞춤 성분으로 상품 검색)
+            &.scroll-layer {
+                overflow: hidden;
+                width: rem(280px);
+                max-height: calc(100% - #{rem(80px)});
+                height: rem(536px);
+        
+                .fb__modal {
+                    &__inner {
+                        position: relative;
+                        padding: rem(56px 0);
+                        box-sizing: border-box;
+                    }
+        
+                    &__header {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+        
+                    &__content {
+                        height: 100%;
+                        overflow-y: auto;
+                    }
+        
+                    &__button {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            display: flex;
+            flex-wrap: nowrap;
+
+            button {
+                width: 100%;
+                background: $black;
+                color: #fff;
+                font-weight: 600;
+                font-size: rem(17px);
+                line-height: rem(56px);
+            }
+        }
+    }
+
+    //상품 공통타입
+    &__items {
+        font-size: 0;
+
+        //리스트 타입
+        @for $col from 1 through 6 {
+            &.listType#{$col} {
+                margin: rem(0 -2px);
+
+                .item__box {
+                    margin: rem(16px 2px);
+                    width: calc(#{100% / $col} - #{rem(4px)});
+
+                    &:nth-child(-n + #{$col}) {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        //슬라이드형
+        &.slideType {
+            overflow-y: hidden;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-bottom: rem(-10px);
+            padding-bottom: rem(10px);
+
+            .item {
+                &__box {
+                    width: rem(132px);
+                    margin-right: rem(4px);
+                }
+
+                &__info {
+                    padding: rem(8px 0 0 0);
+                    white-space: normal;
+                }
+            }
+        }
+
+        &.cardType {
+            .item {
+                &__link {
+                    display: inline-block;
+                    font-size: 0;
+                }
+                
+                &__box {
+                    width: auto;
+                    padding: rem(20px 0);
+                    border-bottom: 2px solid #ddd;
+                }
+
+                &__thumb {
+                    display: inline-block;
+                    width: rem(180px);
+                    height: rem(180px);
+                    vertical-align: top;
+                }
+
+                &__info {
+                    display: inline-block;
+                    margin-left: rem(20px);
+                    padding-top: 0;
+                    width: rem(300px);
+                    vertical-align: top;
+                }
+
+                &__brand {
+                    max-width: rem(240px);
+                    @include line();
+                }
+
+                &__name {
+                    max-width: rem(240px);
+                    @include line(2);
+                }
+
+                &__price {
+                    margin-top: rem(30px);
+
+                    &--strike {
+                        margin-left: rem(12px);
+                    }
+
+                    &--current {
+                        display: inline-block;
+                        margin-left: rem(12px);
+                        line-height: rem(19px);
+                    }
+                }
+
+                &__wishBox { 
+                    position: relative;
+                    display: inline-block;
+                    //width, height 커스텀 
+                    width: rem(120px);;
+                    height: rem(180px);
+                    border-left: 2px solid #ddd;
+                    box-sizing: border-box;
+                    vertical-align: top;
+                }
+
+                &__wish {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: rem(30px);
+                    height: rem(28px);
+                    transform: translate(-50%, -50%);
+    
+                    &.on {
+                    }
+                }
+            }
+        }
+
+        //기본
+        .item {
+            &__box {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            &__link {
+                display: block;
+            }
+            
+            &__thumb {
+                position: relative;
+                width: 100%;
+                font-size: 0;
+                line-height: 0;
+                @include imageResize("width");
+
+                img[src*="loading"]{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                &:after {
+                    display: block;
+                    padding-bottom: 100%;
+                    content: "";
+                }
+            }
+
+            &__wish {
+                position: absolute;
+                top: rem(12px);
+                right: rem(12px);
+                width: rem(18px);
+                height: rem(18px);
+                background: url(svgSrc("guide", "ico-lp-heart-enb")) no-repeat 0 0 / 100% auto;
+
+                &.on {
+                    background-image: url(svgSrc("guide", "ico-heart-sel"));
+                }
+            }
+
+            &__info {
+                padding: rem(8px 12px 0);
+                font-size: 0;
+            }
+
+            &__brand {
+                display: block;
+                color: $medium;
+                font-weight: 600;
+                font-size: rem(12px);
+                line-height: rem(18px);
+            }
+             
+            &__name {
+                display: block;
+                height: rem(38px);
+                color: $black;
+                font-weight: 200;
+                font-size: rem(13px);
+                line-height: rem(19px);
+                @include line(2);
+            }
+
+            &__price {
+                display: block;
+                position: relative;
+                margin-top: rem(4px);
+                color: $black;
+                font-size: 0;
+
+                &--soldout {
+                    @include fontcss($medium, 200, rem(14px), rem(20px));
+                }
+
+                &--perc {
+                    display: inline-block;
+                    margin-right: rem(6px);
+                    color: $pcolor;
+                    font-family: $font_n;
+                    font-size: rem(24px);
+                    line-height: rem(40px);
+                }
+
+                &--strike {
+                    display: inline-block;
+                    color: #999;
+                    font-size: rem(22px);
+                    line-height: rem(40px);
+                    text-decoration: line-through;
+
+                    em {
+                        font-size: rem(24px);
+                    }
+                }
+
+                &--current {
+                    display: block;
+                    color: $black;
+                    font-weight: 600;
+                    font-size: rem(14px);
+                    line-height: rem(20px);
+
+                    em {
+                        font-family: $font_n;
+                        font-weight: 600;
+                        font-size: rem(14px);
+                    }
+                }
+            }
+
+            &__badge {
+                margin-top: rem(20px);
+                font-size: 0;
+
+                //이미지 뱃지
+                img {
+                    display: inline-block;
+                    width: auto;
+                    height: rem(40px);
+                    margin-right: rem(4px);
+                }
+
+                //텍스트 뱃지
+                span {
+                    display: inline-block;
+                    height: rem(40px);
+                    margin-right: rem(4px);
+                    padding: rem(0 6px);
+                    border: rem(2px) solid #ddd;
+                    color: #666;
+                    font-weight: normal;
+                    font-size: rem(20px);
+                    text-align: center;
+                    line-height: rem(40px);
+                }
+            }
+        }
+    }
+}

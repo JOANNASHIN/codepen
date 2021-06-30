@@ -1,0 +1,270 @@
+.fb {
+    &__filter {
+        &__title {
+            @include fontcss($black, 600, rem(17px), rem(24px));
+        }
+
+        &__cont {
+            padding: rem(24px 20px 0);
+        }
+
+        &__box {
+            padding-top: rem(12px);
+        }
+
+        &__flex {
+            display: flex;
+            flex-wrap: wrap;
+            
+            label {
+                flex: 0 0 50%;
+                margin-bottom: rem(12px);
+                text-align: left;
+            }
+        }
+
+        &__list {
+            padding: rem(0 0 36px);
+        }
+
+        // 가격필터
+        &__price {
+            padding-bottom: rem(24px);
+
+            .price {
+                &__self {
+                    display: none;
+                    flex-wrap: nowrap;
+                    padding: rem(12px 0);
+                    border-top: 1px solid $bright;
+
+                    &.show {
+                        display: flex;
+                    }
+
+                    &__write {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        input {
+                            flex: rem(0 0 120px);
+                            padding: rem(12px 16px);
+                            border-radius: 0;
+                        }
+
+                        span {
+                            @include fontcss($black, 200, rem(14px)); 
+                        }
+                    }
+
+                    &__apply {
+                        flex: 0 0 rem(52px);
+                        margin-left: rem(4px);
+                        background: $medium;
+                        @include fontcss(#fff, 200, rem(14px), rem(44px)); 
+                    }
+                }
+            } 
+        }
+
+        // 카테고리필터
+        &__category {
+            .fb__filter__box {
+                padding-top: 0;
+            }
+
+            .category {
+                &__depth {
+
+                    &[open] {
+                        .category__depth {
+                            &__fold {
+                                border-color: $black;
+    
+                                &:after {
+                                    transform: rotate(180deg);
+                                }
+                            }
+
+                            &__cont {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    &.disabled {
+                        .category__depth {
+                            &__fold {
+                                border-color: $bright;
+    
+                                &:after {
+                                    display: none;
+                                }
+                            }
+
+                            &__cont {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &__fold {
+                        position: relative;
+                        padding: rem(12px 0);
+                        border-bottom: 1px solid $bright;
+
+                        &:after {
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            width: rem(14px);
+                            height: rem(8px);
+                            margin-top: rem(-4px);
+                            background: url(svgSrc("guide", "ico-dropdown-14-x-8-grey")) no-repeat 0 0 / 100% auto;
+                            content: "";
+                        }
+                    }
+
+                    &__cont {
+                        display: none;
+                        padding: rem(0 16px 12px);
+                        background: $bright;
+
+                        label {
+                            margin: rem(12px 0 0);
+                        }
+                    }
+                }
+
+                &__more {
+                    display: block;
+                    width: rem(90px);
+                    margin: rem(12px auto 0);
+                    border: 1px solid $light;
+                    border-radius: rem(25px);
+                    @include fontcss($black, 200, rem(14px), rem(44px));
+                    text-align: center;
+                }
+            }
+        }
+
+        // 브랜드필터
+        &__brand {
+            .brand {
+                &__tab {
+                    &__scroll {
+                        @extend %scroll;
+                    }
+
+                    &__menu {
+                        display: inline-block;
+                        width: rem(34px);
+                        height: rem(34px);
+                        margin-right: rem(4px);
+                        border: 1px solid $light;
+                        border-radius: 50%;
+                        @include fontcss($medium, 200, rem(12px), rem(34px));
+                        text-align: center;
+
+                        &--all {
+                            width: auto;
+                            padding: rem(0 16px);
+                            border-radius: rem(18px);
+                        }
+
+                        &.active {
+                            border-color: $black;
+                            color: $black;
+                        }
+                    }
+
+                    &__wrapper {
+                        margin-top: rem(12px);
+                    }
+
+                    &__cont {
+                        display: none;
+
+                        &.show {
+                            display: block;
+                        }
+
+                        .fb__swiper__bullets {
+                            margin-top: rem(12px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__selected {
+            padding: rem(12px 0 12px 20px);
+            background: $bright;
+
+            
+        }
+
+        &__bottom {
+            overflow: hidden;
+            height: rem(56px);
+
+            .bottom {
+                &__wrapper {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 5;
+                    width: 100%;
+                    height: rem(56px);
+                }
+
+                &__reset {
+                    flex: 0 0 rem(120px);
+                }
+            }
+        }
+    }
+
+    &__search {
+        &__selected {
+            padding: rem(12px 0 12px 20px);
+
+            .selected {
+                &__scroll {
+                    @extend %scroll;
+                }
+
+                &__div {
+                    display: inline-block;
+                    white-space: nowrap;
+                }
+
+                &__tag {
+                    display: inline-block;
+                    margin-right: rem(2px);
+                    padding: rem(4px 8px);
+                    background: $black;
+
+                    &__name {
+                        display: inline-block;
+                        @include fontcss(#fff, 200, rem(11px), rem(16px));
+                        vertical-align: middle;
+                    }
+
+                    &__delete {
+                        display: inline-block;
+                        width: rem(8px);
+                        height: rem(8px);
+                        margin-left: rem(4px);
+                        background: url("../images/svg/guide/ico-delete-grey.svg") no-repeat 0 0 / 100% auto;
+                        vertical-align: middle;
+                        font-size: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}

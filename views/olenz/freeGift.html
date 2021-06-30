@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>오렌즈 추가개발 - 사은품 </title>
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+        <!-- 내부 js -->
+        <script src="/dist/js/main.js"></script>
+    </head>
+
+    <body id="olenzFreegift" class="fb">
+        <!-- 사은품 영역 -->
+        <section class="fb__freegift">
+            <header class="fb__freegift__top">
+                <h2 class="fb__freegift__title">FREE GIFTS</h2>
+                <a rel="facebox" href="#" class="fb__freegift__select js__layer__open" data-layer="js__selectgift">Select</a>
+            </header>
+
+            <div class="fb__freegift__cont">
+                <ul class="fb__freegift__inner">
+                    <!-- 아직 선택 안한경우 -->
+                    <li class="fb__freegift__empty show js__selectgift__yet">
+                        Please select the free gifts.
+                    </li>
+
+                    <!-- 선택완료: 사은품X (사은품선택안함) -->
+                    <li class="fb__freegift__empty js__selectgift__nothing">
+                        You did not select any free gifts.
+                    </li>
+
+                    <!-- 선택완료: 사은품O (최대 2개) -->
+                    <li class="fb__freegift__box">
+                        <figure class="fb__freegift__img">
+                            <img src="/src/images/weather/cloudy1.jpg" alt="">
+                        </figure>
+
+                        <div class="fb__freegift__info">
+                            <em class="fb__freegift__name">Scandi 1Day Gray (20p)</em>
+                            <span class="fb__freegift__option">Power: -1.00</span>
+                            <span class="fb__freegift__qty">Qty : 1</span>
+                        </div>
+                    </li>
+
+                    <li class="fb__freegift__box">
+                        <figure class="fb__freegift__img">
+                            <img src="/src/images/weather/cloudy1.jpg" alt="">
+                        </figure>
+
+                        <div class="fb__freegift__info">
+                            <em class="fb__freegift__name">Scandi 1Day Gray (20p)</em>
+                            <span class="fb__freegift__option">Power: -1.00</span>
+                            <span class="fb__freegift__qty">Qty : 1</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- 안내문구 -->
+                <div class="fb__freegift__desc">
+                    <p>
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </p>
+                    <p>
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="js__selectgift" class="fb__selectgift js__layer">
+            <div class="selectgift__layer">
+                <header>
+                    <h2>select gift</h2>
+                    <button class="js__layer__close">close</button>
+                </header>
+                <div class="selectgift__cont">
+                    <div class="selectgift__top">
+                        <span class="selectgift__desc">
+                            <em class="js__selectgift__selected">0</em>
+                            <span>/2 Free gifts available</span>
+                        </span>
+                        <nav class="selectgift__btn">
+                            <button class="selectgift__btn--wt js__selectgift__noselect">Not for this time</button>
+                            <button class="selectgift__btn--bk js__selectgift__complete">Complete</button>
+                        </nav>
+                    </div>
+
+                    <div class="selectgift__scroll">
+                        <ul class="selectgift__scroll__inner">
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="/src/images/weather/cloudy1.jpg" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">select</option>
+                                        <option value="1">-1.00</option>
+                                    </select>
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="/src/images/weather/cloudy1.jpg" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">select</option>
+                                        <option value="1">-1.00</option>
+                                    </select>
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

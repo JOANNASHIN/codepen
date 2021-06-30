@@ -1,0 +1,327 @@
+.fb {
+    &__searchLayer {
+        &__header {
+            // display: flex;
+            display: none;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            height: rem(50px);
+            padding: rem(0 20px 0 16px);
+        }
+
+        &__close {
+            display: inline;
+            width: rem(26px);
+            height: rem(26px);
+            background: url("../images/svg/guide/ico-header-close.svg") no-repeat 0 0 / 100% auto;
+        }
+
+        &__link {
+            span {
+                display: inline-block;
+                @include fontcss($black, 200, rem(12px));
+                vertical-align: middle;
+            }
+
+            &:after {
+                display: inline-block;
+                width: rem(6px);
+                height: rem(10px);
+                margin-left: rem(4px);
+                background: url(svgSrc("guide", "ico-landing-6-x-10")) no-repeat 0 0 / 100% auto;
+                vertical-align: middle;
+                content: "";
+            }
+        }
+
+        &__cont {
+            position: relative;
+        }
+
+        &__try {
+            padding: rem(0 20px);
+        }
+    }
+
+    //키워드로 검색
+    &__keyword {
+        &__title {
+            @include fontcss($black, 600, rem(13px), rem(19px));
+        }
+
+        &__section {
+            padding: rem(16px 20px);
+            border-bottom: 1px solid $bright;
+        }
+
+        &__autocomplete {
+            display: none;
+            position: absolute;
+            top: rem(54px);
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+
+            &.show {
+                display: block;
+            }
+
+            .autocomplete {
+                &__box {
+                    padding: rem(0 20px);
+                }
+
+                &__list {
+                    padding: rem(12px 0);
+                    border-bottom: 1px solid $bright;
+                }
+
+                &__link {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                &__info {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &__thumb {
+                    flex: rem(0 0 32px);
+                    width: rem(32px);
+                    height: rem(32px);
+                    margin-right: rem(4px);
+                    border-radius: 50%;
+                    @include imageResize("width");
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+
+                &__keyword {
+                    @include fontcss($black, 600, rem(17px), rem(24px));
+
+                    em {
+                        color: $pcolor;
+                    }
+                }
+
+                &__category {
+                    flex: rem(0 0 45px);
+                    @include fontcss($medium, 200, rem(12px), rem(18px));
+                    text-align: right;
+                }
+            }
+        }
+
+        // 인기검색어
+        &__hot {
+            padding-bottom: 0;
+
+            .hot {
+                &__wrapper {
+                    &[open] {
+                        summary {
+                            &:after {
+                                transform: rotate(180deg);
+                            }
+                        }
+    
+                        .hot__rolling {
+                            display: none;
+                        }
+    
+                        .hot__update {
+                            display: inline-block;
+                        }
+                    }
+                }
+    
+                &__title {
+                    padding-right: rem(8px);
+                }
+    
+                &__summary {
+                    position: relative;
+                    padding-bottom: rem(16px);
+                    font-size: 0;
+    
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: rem(12px);
+                        height: rem(19px);
+                        background: url(svgSrc("guide", "ico-dropdown-12-x-7")) no-repeat 0 center / rem(12px 7px);
+                        vertical-align: top;
+                    }
+                }
+    
+                &__rolling {
+                    display: inline-block;
+                    overflow: hidden;
+                    width: rem(234px);
+                    height: rem(19px);
+                    vertical-align: top;
+                }
+    
+                &__update {
+                    display: none;
+                    @include fontcss($medium, 200, rem(13px), rem(19px));
+                    vertical-align: top;
+                }
+                
+                &__list {
+                    width: 100%;
+                }
+    
+                &__count {
+                    display: inline-block;
+                    width: rem(16px);
+                    margin-right: rem(8px);
+                    @include fontcss($black, 600, rem(13px), rem(19px));
+                    text-align: right;
+                }
+    
+                &__name {
+                    display: inline-block;
+                    @include fontcss($black, 200, rem(13px), rem(19px));
+                }
+    
+                &__slider {
+                    &__wrapper {
+                        white-space: nowrap;
+                    }
+                    
+                    &__list {
+                        margin-bottom: rem(12px);
+
+                        .hot__count {
+                            text-align: left;
+                        }
+                    }
+    
+                    &__item {
+                        display: inline-block;
+                        width: 100%;
+                    }
+    
+                    &__link {
+                        display: block;
+                    }
+    
+                    &__page {
+                        margin-bottom: rem(12px);
+                    }
+                }
+            }
+        }
+
+        // 추천검색어
+        &__recommend {
+            .recommend {
+                &__top {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    margin-bottom: rem(16px);
+                }
+    
+                &__gender {
+                    margin: rem(0 -8px);
+                    font-size: 0;
+    
+                    &__label {
+                        display: inline-block;
+                        margin: rem(0 8px);
+
+                        input {
+                            display: none;
+
+                            &:checked + span {
+                                color: $black;
+                                font-weight: 600;
+                            }
+                        }
+
+                        span {
+                            @include fontcss($medium, 200, rem(13px),rem(19px));
+                        }
+
+                    }
+                }
+    
+                &__age {
+                    margin: rem(0 -8px 16px);
+    
+                    &__label {
+                        display: inline-block;
+                        margin: rem(0 8px);
+
+                        input {
+                            display: none;
+
+                            &:checked + span {
+                                color: $black;
+                                font-weight: 600;
+                                border-bottom: 1px solid $black;
+                            }
+                        }
+
+                        span {
+                            padding-bottom: rem(2px);
+                            @include fontcss($medium, 200, rem(13px),rem(19px));
+                        }
+                    }
+                }
+            }
+        }
+
+        // 태그
+        &__tag {
+            margin: rem(0 -2px);
+
+            .tag {
+                &__list {
+                    display: inline-block;
+                    margin: rem(0 2px 4px 2px);
+                    padding: rem(8px 12px);
+                    border-radius: rem(18px);
+                    background: $bright;
+                    @include fontcss($pcolor, 200, rem(12px),rem(18px));                                
+                }
+
+                &__link {
+                    display: block;
+                }
+            }
+        }
+
+        // 최근검색어
+        &__recent {
+            .recent {
+                &__top {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    margin-bottom: rem(16px);
+                }
+    
+                &__remove {
+                    @include fontcss($medium, 200, rem(13px),rem(19px));
+                }
+            }
+
+            .tag__list {
+                color: $black;
+            }
+        }
+    }
+}

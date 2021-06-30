@@ -1,0 +1,631 @@
+.fb {
+    &__wish {
+        display: inline-block;
+        width: rem(18px);
+        height: rem(18px);
+        background: url(svgSrc("guide", "ico-heart-enb")) no-repeat 0 0 / 100% auto;
+        font-size: 0;
+        
+        &.on {
+            background-image: url(svgSrc("guide", "ico-heart-sel"));
+        }
+    }
+
+     //기본 디자인 가이드
+    &__comm {
+        &__checkbox {
+            display: inline-block;
+            min-width: rem(24px);
+            min-height: rem(24px);
+
+            input[type=checkbox] {
+                display: none;
+
+                &:checked {
+                    & + span {
+                        &:before {
+                            background: $black url("../images/svg/common/icon-checkbox-active.svg") no-repeat center center / rem(14px 10px);
+                            border-color: $black;
+                        }
+                    }
+                }
+
+                &:disabled {
+                    & + span {
+                        color: $silver;
+
+                        &:before {
+                            border-color: $light;
+                            background: $bright url("../images/svg/common/icon-checkbox-disabled.svg") no-repeat center center / rem(14px 10px);;
+                        }
+                    }
+                }
+            }
+    
+            span {
+                display: block;
+                position: relative;
+                min-height: rem(24px);
+                padding-left: rem(28px);
+                color: $black;
+                font-size: rem(14px);
+                line-height: rem(24px);
+
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: rem(24px);
+                    height: rem(24px);
+                    background: #fff url("../images/svg/common/icon-checkbox.svg") no-repeat center center / rem(14px 10px);;
+                    border: rem(2px) solid $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    box-sizing: border-box;                    
+                }
+            }
+        }
+
+        &__blueCheck {
+            input[type="checkbox"] {
+                width: rem(20px);
+                height: rem(20px);
+                background: transparent;
+                border-radius: 50%;
+                   
+                &:checked {
+                    background: $pcolor url("../images/svg/common/icon-wish-check.svg") no-repeat center center / rem(12px 12px);
+                }
+            }
+        }
+
+        &__radio {
+            display: inline-block;
+            min-width: rem(24px);
+            min-height: rem(24px);
+
+            input[type=radio] {
+                display: none;
+
+                &:checked {
+                    & + span {
+                        &:before {
+                            background-color: $black;
+                            border-color: $black;
+                        }
+
+                        &:after {
+                            background: #fff;
+                        }
+                    }
+                }
+
+                &:disabled {
+                    & + span {
+                        color: $silver;
+
+                        &:before {
+                            background-color: $bright;
+                        }
+
+                        &:after {
+                            background-color: $light;
+                        }
+                    }
+                }
+            }
+
+            span {
+                display: block;
+                position: relative;
+                min-height: rem(24px);
+                padding-left: rem(28px);
+                color: $black;
+                font-size: rem(14px);
+                line-height: rem(24px);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: rem(24px);
+                    height: rem(24px);
+                    background: #fff;
+                    border: rem(2px) solid $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    box-sizing: border-box;                    
+                }
+
+                //가운데 점
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: rem(8px);
+                    z-index: 1;
+                    width: rem(8px);
+                    height: rem(8px);
+                    background: $light;
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        //아래 한줄 보더 (select, input)
+        &__form {
+            &--oneline {
+                .fb__comm__input,
+                .fb__comm__password {
+                    border-bottom: 1px solid $light;
+                    padding-bottom: rem(16px);
+                }
+
+                .fb__comm__password span {
+                    height: rem(20px);
+                }
+
+                select {
+                    padding: {
+                        left: 0;
+                    }
+
+                    background-position-x: right;
+                }
+
+                input {
+                    height: rem(20px);
+                    padding: {
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    border: none;
+                }
+                
+                select, input {
+                    border-width: 0 0 1px 0;
+                    border-radius: 0;
+
+                    &:disabled {
+                        background: #fff;
+                        color: $silver;
+                    }
+                }
+
+                .input__clear,
+                .status--success:after {
+                    top: 0 !important;
+                    transform: translate(0, 0) !important;
+                }
+            }
+        }
+
+        &__input {
+            position: relative;
+            width: 100%;
+
+            &.status {
+                &--error {
+                    input {
+                        color: $black;
+                        border-color: $red;
+                    }
+
+                    p {
+                        display: block;
+                        margin-top: rem(8px);
+                        color: $red;
+                        font-weight: 200;
+                        font-size: rem(12px);
+                    }
+                }
+
+                &--success {
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: rem(20px);
+                        height: rem(20px);
+                        background: url("../images/svg/guide/ico-input-success.svg") no-repeat center center / 100% auto;
+                        font-size: 0;
+                        transform: translate(0, -50%);
+                        content: "";
+                    }
+                }
+            }
+
+            .input {
+                //라벨
+                &__label {
+                    color: $medium;
+                    font-size: rem(12px);
+                }
+
+                //clear버튼
+                &__clear {
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: rem(20px);
+                    height: rem(20px);
+                    background: $light url("../images/svg/guide/ico-delete-white.svg") no-repeat center center / rem(8px);
+                    border-radius: 50%;
+                    transform: translate(0, -50%);
+                    font-size: 0;
+
+                    &.show {
+                        opacity: 1;
+                    }
+                }
+
+                //검색버튼
+                &__search {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: rem(20px);
+                    height: 100%;
+                    background: url("../images/svg/guide/ico-input-search.svg") no-repeat center center / rem(20px 20px);
+                }
+            }
+        }
+
+        &__password {
+            display: block;
+            position: relative;
+
+            input {
+                &[type=password] {
+                    & + span {
+                        background: url("../images/svg/guide/ico-password-view-enb.svg") no-repeat center center / 100% auto;
+                    }
+                }
+
+                &[type=text] {
+                    & + span {
+                        background: url("../images/svg/guide/ico-password-view-active.svg") no-repeat center center / 100% auto;
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: rem(16px);
+                width: rem(20px);
+                height: 100%;
+                font-size: 0;
+            }
+        }
+
+        &__select {
+            &.multiselect {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            &--small {
+                select {
+                    border: none;
+                    height: rem(20px);
+                    padding: rem(0 14px 0 0);
+                    background: url("../images/svg/guide/ico-dropdown-10-x-6.svg") no-repeat right center / rem(10px 6px);
+                }
+            }
+        }
+
+        &__toggle {
+            input{
+                display: none;
+
+                &:checked { 
+                    & + .toggle__label {
+                        color: $black;
+                    }
+
+                    & ~ .toggle__icon {
+                        
+                        &:before {
+                            background: $black;
+                        }
+                        
+                        &:after {
+                            left: calc(100% - #{rem(22px)}); //실제 기기에서 조금 잘려보여 22px로 수정
+                        }
+                    }
+                }
+            }
+
+            .toggle {
+                &__label {
+                    display: inline-block;
+                    color: $medium;
+                    font-weight: 200;
+                    font-size: rem(14px);
+                    vertical-align: middle;
+                }
+
+                &__icon {
+                    position: relative;
+                    display: inline-block;
+                    width: rem(48px);
+                    height: rem(24px);
+                    margin-left: rem(8px);
+                    font-size: 0;
+                    vertical-align: middle;
+                    
+
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(0, -50%);
+                        width: rem(48px);
+                        height: rem(4px);
+                        background: $silver;
+                        border-radius: rem(4px);
+                        content: "";
+                    }
+
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: rem(24px);
+                        height: rem(24px);
+                        background: #fff;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.14);
+                        transition: left linear 0.06s;
+                        content: "";
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__searchLayer {
+        &__header {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            height: rem(50px);
+            padding: rem(0 20px 0 16px);
+        }
+
+        &__close {
+            display: inline;
+            width: rem(26px);
+            height: rem(26px);
+            background: url("../images/svg/guide/ico-header-close.svg") no-repeat 0 0 / 100% auto;
+        }
+
+        &__link {
+            span {
+                display: inline-block;
+                @include fontcss($black, 200, rem(12px));
+                vertical-align: middle;
+            }
+
+            &:after {
+                display: inline-block;
+                width: rem(6px);
+                height: rem(10px);
+                margin-left: rem(4px);
+                background: url(svgSrc("guide", "ico-landing-6-x-10")) no-repeat 0 0 / 100% auto;
+                vertical-align: middle;
+                content: "";
+            }
+        }
+
+        &__cont {
+            position: relative;
+        }
+
+        &__try {
+            padding: rem(0 20px);
+
+            .fb__comm__input {
+                border-bottom: 2px solid #000;
+            }
+
+            input {
+                height: rem(52px);
+                padding: {
+                    right: rem(72px);
+                    left: 0;
+                }
+                border: none;
+            }
+
+            .input__clear {
+                right: rem(36px);
+            }
+        }
+    }
+    
+    &__brand {
+        //인기브랜드
+        &__hotbrand {
+            margin: rem(0 20px);
+            padding: rem(24px 0);
+            border-bottom: 1px solid $bright;
+
+            .hotbrand {
+                &__title {
+                    padding-bottom: rem(12px);
+                    @include fontcss($black, 600, rem(17px), rem(24px));
+                }
+
+                &__wrapper {
+                    margin-right: rem(-20px);
+                    @extend %scroll;
+                }
+
+                &__list {
+                    display: inline-block; 
+                    width: rem(84px);
+                    margin-right: rem(12px);
+                    text-align: center;
+                }
+                
+                &__thumb {
+                    width: 100%;
+                    border-radius: 50%;
+                    margin: rem(6px 0);
+                    @include imageResize("width");
+
+                    &:after {
+                        display: block;
+                        padding-bottom: 100%;
+                        content: "";
+                    }
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+
+                &__name {
+                    height: rem(40px);
+                    @include line(2);
+                    @include fontcss($black, 200, rem(14px), rem(20px));
+                    white-space: normal;
+                }
+                
+            }
+        }
+
+        //
+        &__alphabet {
+            position: relative;
+            padding: rem(0 40px 24px 20px);
+            
+
+            .alphabet {
+                &__section {
+                    padding-top: rem(24px);
+                }
+                
+                &__name {
+                    @include fontcss($black, 600, rem(17px), rem(24px));
+                }
+
+                &__cont {
+                    padding: 0;
+                }
+
+                &__brand {
+                    padding-top: rem(12px);
+
+                    &__link {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    &__wish {
+                        margin-right: rem(16px);
+                    }
+                    
+                    &__thumb {
+                        display: inline-block;
+                        width: rem(40px);
+                        height: rem(40px);
+                        margin-right: rem(8px);
+                        border-radius: 50%;
+                        @include imageResize("width");
+
+                        img {
+                            border-radius: 50%;
+                        }
+                    }
+                    
+                    &__name {
+                        &--korean {
+                            display: block;
+                            @include fontcss($black, 200, rem(14px), rem(20px));
+                        }
+
+                        &--english {
+                            display: block;
+                            margin-top: rem(2px);
+                            @include fontcss($medium, 200, rem(12px), rem(18px));
+                        }
+                    }
+                }
+
+                &__floating {
+                    position: absolute;
+                    top: rem(24px);
+                    right: rem(12px);
+
+                    &.fixed {
+                        position: fixed;
+                    }
+
+                    &__inner {
+                        overflow-y: auto;
+                        width: rem(28px);
+                        max-height: calc(100vh - 24px - 52px);
+                        font-size: 0;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                    
+                            &-thumb {
+                                display: none;
+                            }
+                    
+                            &-button {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &__menu {
+                        display: inline-block;
+                        // position: relative;
+                        width: 100%;
+                        height: rem(28px);
+                        margin-bottom: rem(8px);
+                        border-radius: 50%;
+                        @include fontcss($black, 600, rem(12px), rem(28px));
+                        text-align: center;
+                        // box-sizing: initial;
+
+                        &.active {
+                            background: $black;
+                            color: #fff;
+
+                            // &:after {
+                            //     position: absolute;
+                            //     top: 0;
+                            //     left: 0;
+                            //     z-index: -1;
+                            //     width: 100%;
+                            //     background: $black;
+                            //     border-radius: 50%;
+                            //     padding-bottom: 100%;
+                            //     content :"";
+                            // }
+                        }
+
+                        &.dim {
+                            color: $medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
