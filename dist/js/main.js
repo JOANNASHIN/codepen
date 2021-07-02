@@ -50312,6 +50312,32 @@ const common = () => {
         window.localStorage.removeItem("filterData")
     }
 
+    const requestHtmlData = (_url) => {
+        if (!_url) return ;
+        return new Promise((resolve, reject) => {
+            try {
+                $.ajax({
+                    type: "GET",
+                    url: _url,
+                    
+                    success(data) {
+                        resolve(data);
+                    },
+
+                    error (error) {
+                        reject(error)
+                    }
+                });
+            }
+
+            catch (error){
+                console.error("getHtmlData has exception...", error);
+                reject(error)
+            }
+        })
+
+    }
+
     const init = () => {
         window.localCookie = localCookie;
         window.canMakeSlider = canMakeSlider;
@@ -50320,6 +50346,7 @@ const common = () => {
         window.countTextLength = countTextLength;
         window.showPassword = showPassword;
         window.removeFilterData = removeFilterData;
+        window.requestHtmlData = requestHtmlData;
 
         fn_layer();
         allSelectCheckbox();
@@ -51135,6 +51162,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+// import findAddress from "./findAddress";
+// import text from "../../../views/filter/filter.html";
+// console.log(text)
+
 const main = () => {
     const $document = $(document);
 
@@ -51153,13 +51184,9 @@ const main = () => {
                 penList.forEach(pen => {
                     const $pen = $(`[data-pen=${pen}]`);
                     const _penname = $(`[data-pen=${pen}]`).find(".js__pen__name").text();
-                    
-                    const reg = new RegExp([_penname], "ig");
-                    // if (_penname.indexOf(_value) != -1) {
+                    const reg = new RegExp(`[${_penname}]`, "ig");
 
-                    console.log(reg, _value, _value.match(reg))
                     if (_value.match(reg)) {
-                        console.log("매치!!", _penname)
                         $pen.addClass("show");
                     }
                 });
@@ -51167,8 +51194,32 @@ const main = () => {
         })
     }
 
+    const requestSource = async (url) => {
+        const $sourceLayer = $(".js__source__layer");
+        const $sourceCont = $(".js__source__cont");
+        let _html = await requestHtmlData(url);
+
+        if (_html) {
+            const _start = _html.indexOf("<body");
+            const _end = _html.indexOf("</body>") + 7;
+            _html = _html.slice(_start, _end);
+            console.log(_start, _end, _html);
+            $sourceCont.text(_html);
+
+            $sourceLayer.addClass("show");
+        }
+    }
+
+    const showSource = () => {
+        $document.on("click", ".js__source__show", function () {
+            const _url = $(this).closest("li").find("a").attr("href");
+            requestSource(_url);
+        })
+    }
+    
     const init = () => {
         autoFindPen();
+        showSource();
     }
 
     init();

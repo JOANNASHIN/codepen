@@ -514,6 +514,32 @@ const common = () => {
         window.localStorage.removeItem("filterData")
     }
 
+    const requestHtmlData = (_url) => {
+        if (!_url) return ;
+        return new Promise((resolve, reject) => {
+            try {
+                $.ajax({
+                    type: "GET",
+                    url: _url,
+                    
+                    success(data) {
+                        resolve(data);
+                    },
+
+                    error (error) {
+                        reject(error)
+                    }
+                });
+            }
+
+            catch (error){
+                console.error("getHtmlData has exception...", error);
+                reject(error)
+            }
+        })
+
+    }
+
     const init = () => {
         window.localCookie = localCookie;
         window.canMakeSlider = canMakeSlider;
@@ -522,6 +548,7 @@ const common = () => {
         window.countTextLength = countTextLength;
         window.showPassword = showPassword;
         window.removeFilterData = removeFilterData;
+        window.requestHtmlData = requestHtmlData;
 
         fn_layer();
         allSelectCheckbox();

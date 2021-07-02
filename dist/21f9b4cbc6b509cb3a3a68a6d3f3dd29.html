@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>상세필터</title>
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+
+        <!-- 내부 js -->
+        <script src="/dist/js/main.js"></script>
+    </head>
+
+    <body id="filter" class="fb">
+        <article class="fb__filter js__searchFilter">
+            <h2 class="fb__title--hidden">상세필터</h2>
+        
+            <!-- @todo 개발: 기존에 선택한 필터 정보 유지된 상태여야합니다. -->
+            <form action="" class="fb__filter__form js__filter__form">
+                <div class="fb__filter__cont">
+                    <!-- 가격 필터 -->
+                    <section class="fb__filter__list fb__filter__price js__filter__price">
+                        <h3 class="fb__filter__title">가격</h3>
+        
+                        <div class="fb__filter__box">
+                            <div class="price__select fb__filter__flex">
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="all" checked>
+                                    <span>전체</span>
+                                </label>
+                        
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="a">
+                                    <span>~ 1만원</span>
+                                </label>
+                        
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="b">
+                                    <span>1만원 ~ 3만원</span>
+                                </label>
+                        
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="c">
+                                    <span>3만원 ~ 6만원</span>
+                                </label>
+                        
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="d">
+                                    <span>6만원 ~ 9만원</span>
+                                </label>
+                        
+                                <label class="fb__comm__radio defaultGrey">
+                                    <input type="radio" name="filterPrice" value="self">
+                                    <span>직접입력</span>
+                                </label>
+                            </div>
+                        
+                            <div class="price__self js__filter__self">
+                                <label class="price__self__write">
+                                    <input type="text" name="filterPriceFrom" placeholder="0" class="js__input__price">
+                                    <span>~</span>
+                                    <input type="text" name="filterPriceTo" placeholder="0" class="js__input__price">
+                                </label>
+                                <button type="button"class="price__self__apply js__self__apply">적용</button>
+                            </div>
+                        </div>
+                    </section>
+            
+                    <!-- 카테고리 필터 -->
+                    <section class="fb__filter__list fb__filter__category js__filter__category">
+                        <h3 class="fb__filter__title">
+                            <span>카테고리</span>
+                        </h3>
+                        
+                        <div class="fb__filter__box">
+                            {@ headerMenu.categoryList}
+                            <dl class="category__depth js__category__box js__check__wrapper js__custom__details {? !.subCateList}disabled{/}">
+                                <dt class="category__depth__fold js__custom__summary">
+                                    <label class="fb__comm__checkbox defaultGrey">
+                                        <input type="checkbox" name="filterCategory" class="js__check__all" value="{.cid}" data-name="{.cname}" data-depth="01">
+                                        <span>{.cname}</span>
+                                    </label>
+                                </dt>
+        
+                                {? .subCateList}
+                                <dd class="category__depth__cont fb__filter__flex">
+                                    {@ .subCateList}
+                                    <label class="fb__comm__checkbox defaultGrey">
+                                        <input type="checkbox" name="filterCategory" class="js__check__each" value="{..cid}" data-name="{..cname}" data-depth="02" data-parent-cid="{.cid}">
+                                        <span>{..cname}</span>
+                                    </label>
+                                    {/}
+                                </dt>
+                                {/}
+                            </dl>
+                            {/}
+        
+                            <!-- @todo: 개발: 카테고리는 기본 5개 노출, 더보기 버튼(#01-3) Tap 시 5개씩 추가 노출 -->
+                            <button type="button" class="category__more">+ 더보기</button>
+                        </div>
+                    </section>
+                   
+                    <!-- 브랜드 필터 -->
+                    <section class="fb__filter__list fb__filter__brand js__filter__brand">
+                        <h3 class="fb__filter__title">
+                            <span>브랜드</span>
+                        </h3>
+            
+                        <div class="fb__filter__box brand__tab js__tab__wrapper">
+                            <div class="brand__tab__scroll">
+                                <!-- @todo 개발: 
+                                    1. 첫번째 꺼만 active 붙여주세요.(전체에)
+                                    2. 리스트가 없으면 메뉴도 나오지 않게 해주세요.
+                                -->
+                                <span class="brand__tab__menu brand__tab__menu--all js__brand__menu active">전체</span>
+                                <span class="brand__tab__menu js__brand__menu">ㄱ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㄴ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㄷ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㄹ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅁ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅂ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅅ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅇ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅈ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅊ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅋ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅌ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅍ</span>
+                                <span class="brand__tab__menu js__brand__menu">ㅎ</span>
+                                <span class="brand__tab__menu js__brand__menu">#</span>
+                                <span class="brand__tab__menu js__brand__menu">Aa</span>
+                            </div>
+        
+                            <ul class="brand__tab__wrapper">
+                                <!-- @todo 개발: 첫번째 꺼만 show 붙여주세요. -->
+                                <li class="brand__tab__cont js__brand__cont show">
+                                    <div class="brand__tab__slider swiper-container">
+                                        <ul class="slider__wrapper swiper-wrapper">
+                                            <!-- @todo 개발 : 10개씩 끊어주세요. -->
+                                            <li class="slider__item fb__filter__flex swiper-slide">
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="b_ix">
+                                                    <span>brand_name</span>
+                                                </label>
+                    
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+        
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0001">
+                                                    <span>브랜드</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+            
+                                    <nav class="fb__swiper__bullets js__slider__nav">페이지 네이션</nav>
+                                </li>
+        
+                                <!-- 하나 콘텐츠 -->
+                                <li class="brand__tab__cont js__brand__cont">
+                                    <div class="brand__tab__slider swiper-container">
+                                        <ul class="slider__wrapper swiper-wrapper">
+                                            <!-- @todo 개발 : 10개씩 끊어주세요. -->
+                                            <li class="slider__item fb__filter__flex swiper-slide">
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                                
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                            </li>
+                
+                                            <li class="slider__item fb__filter__flex swiper-slide">
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                    
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+        
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand" value="0000">
+                                                    <span>브랜드</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+            
+                                    <nav class="fb__swiper__bullets js__slider__nav">페이지 네이션</nav>
+                                </li>
+        
+                                <!-- 하나 콘텐츠 -->
+                                <li class="brand__tab__cont js__brand__cont">
+                                    <div class="brand__tab__slider swiper-container">
+                                        <ul class="slider__wrapper swiper-wrapper">
+                                            
+                                            <li class="slider__item fb__filter__flex swiper-slide">
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand">
+                                                    <span>브랜드</span>
+                                                </label>
+                    
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand">
+                                                    <span>브랜드</span>
+                                                </label>
+                        
+                                                <label class="fb__comm__checkbox">
+                                                    <input type="checkbox" name="filterBrand">
+                                                    <span>브랜드</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                    <nav class="fb__swiper__bullets js__slider__nav">페이지 네이션</nav>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- 선택한 옵션 -->
+                <div class="fb__filter__selected fb__search__selected">
+                    <ul class="selected__scroll">
+                        <!-- 가격 선택옵션 -->
+                        <li class="selected__div js__chip__filterPrice"></li>
+                        <!-- 카테고리 선택옵션 -->
+                        <li class="selected__div js__chip__filterCategory"></li>
+                        <!-- 브랜드 선택옵션 -->
+                        <li class="selected__div js__chip__filterBrand"></li>
+                    </ul>
+                </div>
+                
+                <footer class="fb__filter__bottom">
+                    <div class="bottom__wrapper fb__button type--toast">
+                        <button type="button" class="bottom__reset js__filter__reset">초기화</button>
+                        <button type="button" class="js__filter__apply">적용 (<em class="devSearchTotal">0</em>개)</button>
+                    </div>
+                </footer>
+            </form>
+        </article>
+        
+    </body>
+</html>

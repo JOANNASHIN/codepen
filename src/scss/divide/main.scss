@@ -114,7 +114,7 @@
                     &:after {
                         display: block;
                         padding-bottom: 80%;
-                        background: rgba(255, 255, 255, 0.1);
+                        background: rgba(255, 255, 255, 0.05);
                         content: "";
                     }
 
@@ -123,10 +123,50 @@
                             transform: translate(0, -30%);
                             transition: transform 1s ease-in-out;
                         }
+                        
+                        .pens__layer {
+                            display: block;
+                        }
 
                         & + .pens__name {
                             color: #fff;
                             transition: all 0.5s ease-in-out;
+                        }
+
+                    }
+                }
+
+                &__layer {
+                    display: none;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    // width: 100%;
+                    // height: 100%;
+
+                    &__inner {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &__button {
+                        display: inline-block;
+                        // padding: 12px 20px 11px;
+                        padding: 8px 14px;
+                        @include fontcss($black, 500, 14px, 1);
+                        background: $black;
+                        color: #fff;
+                        border-radius: 20px;
+                        // background: $pcolor;
+                        // border: 2px solid $black;
+
+                        &.point {
+                            background: $pcolor;
+                            color: #000;
+                            font-weight: bold;
                         }
                     }
                 }
@@ -145,4 +185,40 @@
             }
         }
     }   
+
+    &__sourceLayer {
+        display: none;
+        overflow: hidden;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        max-height: 80%;
+        padding: 30px;
+        background: #000;
+        transform: translate(-50%, -50%);
+
+        &.show {
+            display: block; 
+        }
+
+        &__title {
+
+        }
+
+        &__tab {
+            .tab {
+                &__wrapper {
+                    font-size: 0;
+                }
+
+                &__menu {
+                    display: inline-block;
+                    margin: 0 20px;
+                    @include fontcss($black, 600, 20px);
+                }
+
+            }
+        }
+    }
 }

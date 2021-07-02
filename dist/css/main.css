@@ -882,16 +882,48 @@ legend {
 .fb__main__pens .pens__thumb:after {
   display: block;
   padding-bottom: 80%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   content: "";
 }
 .fb__main__pens .pens__thumb:hover img {
   transform: translate(0, -30%);
   transition: transform 1s ease-in-out;
 }
+.fb__main__pens .pens__thumb:hover .pens__layer {
+  display: block;
+}
 .fb__main__pens .pens__thumb:hover + .pens__name {
   color: #fff;
   transition: all 0.5s ease-in-out;
+}
+.fb__main__pens .pens__layer {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.fb__main__pens .pens__layer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.fb__main__pens .pens__layer__button {
+  display: inline-block;
+  padding: 8px 14px;
+  color: #1e1e1e;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 20px;
+}
+.fb__main__pens .pens__layer__button.point {
+  background: #fbc967;
+  color: #000;
+  font-weight: bold;
 }
 .fb__main__pens .pens__name {
   display: block;
@@ -905,6 +937,32 @@ legend {
 .fb__main__pens .pens__name:hover {
   color: #fff;
   transition: all 0.5s ease-in-out;
+}
+.fb__sourceLayer {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  max-height: 80%;
+  padding: 30px;
+  background: #000;
+  transform: translate(-50%, -50%);
+}
+.fb__sourceLayer.show {
+  display: block;
+}
+.fb__sourceLayer__tab .tab__wrapper {
+  font-size: 0;
+}
+.fb__sourceLayer__tab .tab__menu {
+  display: inline-block;
+  margin: 0 20px;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 /* 모바일 */
@@ -1293,7 +1351,7 @@ legend {
   border-radius: 50%;
 }
 .fb__comm__blueCheck input[type=checkbox]:checked {
-  background: #0489ff url(../../src/images/svg/common/icon-wish-check.svg) no-repeat center center/0.75rem 0.75rem;
+  background: #fbc967 url(../../src/images/svg/common/icon-wish-check.svg) no-repeat center center/0.75rem 0.75rem;
 }
 .fb__comm__radio {
   display: inline-block;
@@ -1843,7 +1901,7 @@ legend {
   line-height: 1.5rem;
 }
 .fb__keyword__autocomplete .autocomplete__keyword em {
-  color: #0489ff;
+  color: #fbc967;
 }
 .fb__keyword__autocomplete .autocomplete__category {
   flex: 0 0 2.8125rem;
@@ -1995,7 +2053,7 @@ legend {
   padding: 0.5rem 0.75rem;
   border-radius: 1.125rem;
   background: #f6f6f6;
-  color: #0489ff;
+  color: #fbc967;
   font-weight: 200;
   font-size: 0.75rem;
   line-height: 1.125rem;
