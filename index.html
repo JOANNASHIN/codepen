@@ -116,7 +116,7 @@
 
                             <div class="pens__layer">
                                 <a href="/views/filter/filter.html" class="pens__layer__button">화면보기</a>
-                                <button class="pens__layer__button point js__source__show">소스보기</button>
+                                <button class="pens__layer__button point js__layer__open" data-layer="sourceLayer">소스보기</button>
                             </div>
                         </figure>
 
@@ -129,8 +129,11 @@
                 </ul>
             </div>
 
-            <article class="fb__sourceLayer js__source__layer">
-                <h3 class="fb__sourceLayer__title">소스보기</h3>
+            <article id="sourceLayer" class="fb__sourceLayer js__layer">
+                <header class="fb__sourceLayer__top">
+                    <h3 class="fb__sourceLayer__title">소스보기</h3>
+                    <button class="fb__sourceLayer__close js__layer__close">닫기</button>
+                </header>
                 <ul class="fb__sourceLayer__cont">
                     <li id="HTML" class="fb__sourceLayer__box ">
                         <iframe height="681" style="width: 100%;" scrolling="no" title="" src="https://codepen.io/joannashin3/embed/xxdGjvP?defaultTab=js&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">

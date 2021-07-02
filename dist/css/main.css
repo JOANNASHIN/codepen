@@ -944,14 +944,38 @@ legend {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 70%;
+  width: 1000px;
+  height: 800px;
+  max-width: 70%;
   max-height: 80%;
+  margin-top: -400px;
+  margin-left: -500px;
   padding: 30px;
   background: #000;
-  transform: translate(-50%, -50%);
 }
 .fb__sourceLayer.show {
   display: block;
+}
+.fb__sourceLayer__top {
+  position: relative;
+  margin-bottom: 10px;
+}
+.fb__sourceLayer__title {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: left;
+}
+.fb__sourceLayer__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../../src/images/svg/guide/ico-header-close-white.svg) no-repeat 0 0/100% auto;
+  font-size: 0;
 }
 .fb__sourceLayer__tab .tab__wrapper {
   font-size: 0;
