@@ -53,6 +53,17 @@
             }
         }
 
+        &__nav {
+            padding-top: 30px;
+            color: $dark;
+
+            span {
+                &:hover {
+                    color: $bright;
+                }
+            }
+        }
+
         &__pens {
             display: block;
             width: 1200px;

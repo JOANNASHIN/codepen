@@ -832,6 +832,13 @@ legend {
   background: url(../../src/images/svg/guide/ico-input-search.svg) no-repeat center center/30px 30px;
   vertical-align: middle;
 }
+.fb__main__nav {
+  padding-top: 30px;
+  color: #646464;
+}
+.fb__main__nav span:hover {
+  color: #f6f6f6;
+}
 .fb__main__pens {
   display: block;
   width: 1200px;
