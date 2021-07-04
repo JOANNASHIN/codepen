@@ -47,9 +47,10 @@ const main = () => {
                 $(".js__pen").addClass("show");    
             }
             else {
-                history.pushState(null, null, `?keyword=${_value}`);
                 showSearchTargetPen(_value);
             }
+            
+            history.pushState(null, null, `?keyword=${_value}`);
         })
     }
 
