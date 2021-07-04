@@ -540,6 +540,13 @@ const common = () => {
 
     }
 
+    const getParameter = (name) => {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
     const init = () => {
         window.localCookie = localCookie;
         window.canMakeSlider = canMakeSlider;
@@ -549,6 +556,7 @@ const common = () => {
         window.showPassword = showPassword;
         window.removeFilterData = removeFilterData;
         window.requestHtmlData = requestHtmlData;
+        window.getParameter = getParameter;
 
         fn_layer();
         allSelectCheckbox();

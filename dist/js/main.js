@@ -50338,6 +50338,13 @@ const common = () => {
 
     }
 
+    const getParameter = (name) => {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
     const init = () => {
         window.localCookie = localCookie;
         window.canMakeSlider = canMakeSlider;
@@ -50347,6 +50354,7 @@ const common = () => {
         window.showPassword = showPassword;
         window.removeFilterData = removeFilterData;
         window.requestHtmlData = requestHtmlData;
+        window.getParameter = getParameter;
 
         fn_layer();
         allSelectCheckbox();
@@ -51162,62 +51170,77 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-// import findAddress from "./findAddress";
-// import text from "../../../views/filter/filter.html";
-// console.log(text)
-
 const main = () => {
     const $document = $(document);
 
+    const showSearchTargetPen = (_value) => {
+        $(".js__pen").removeClass("show");
+
+        $("[data-pen]").each((idx, obj) => {
+            const $this = $(obj);
+            const _penname = $this.find(".js__pen__name").text();
+            
+            if (_penname.indexOf(_value) != -1) {
+                $this.addClass("show");
+            }
+
+            // const reg = new RegExp(`[${_penname}]`, "ig");
+
+            // if (_value.match(reg)) {
+            //     $this.addClass("show");
+            // }
+        })
+    }
+    
+    const hasBeforeData = () => {
+        const _getParameter = getParameter("keyword");
+
+        if (_getParameter) {
+            $(".js__pen__autoComplete").val(_getParameter).trigger("keyup");
+            showSearchTargetPen(_getParameter);
+        }
+    }
+ 
+    const pushStateSearch = () => {
+        $document.on("click", ".js__pen__submit", function () {
+            const _value = $(this).prev().val();
+            history.pushState(null, null, `?keyword=${_value}`);
+
+            return false;
+        });
+    }
+
     const autoFindPen = () => {
-        $document.on("keyup", ".js__pen__search", function () {
+        $document.on("keyup", ".js__pen__autoComplete", function () {
             const $this = $(this);
             const _value = $this.val();
-            const penList = ["brandIndexer", "searchKeyword", "filter"];
 
             if (!_value) {
                 $(".js__pen").addClass("show");    
             }
             else {
-                $(".js__pen").removeClass("show");
-    
-                penList.forEach(pen => {
-                    const $pen = $(`[data-pen=${pen}]`);
-                    const _penname = $(`[data-pen=${pen}]`).find(".js__pen__name").text();
-                    const reg = new RegExp(`[${_penname}]`, "ig");
-
-                    if (_value.match(reg)) {
-                        $pen.addClass("show");
-                    }
-                });
+                history.pushState(null, null, `?keyword=${_value}`);
+                showSearchTargetPen(_value);
             }
         })
     }
 
-    const requestSource = async (url) => {
-        const $sourceLayer = $(".js__source__layer");
-        const $sourceCont = $(".js__source__cont");
-        let _html = await requestHtmlData(url);
-
-        if (_html) {
-            const _start = _html.indexOf("<body");
-            const _end = _html.indexOf("</body>") + 7;
-            _html = _html.slice(_start, _end);
-            console.log(_start, _end, _html);
-            $sourceCont.text(_html);
-
-            $sourceLayer.addClass("show");
-        }
-    }
-
     const showSource = () => {
-        $document.on("click", ".js__source__show", function () {
-            const _url = $(this).closest("li").find("a").attr("href");
-            requestSource(_url);
+        $document.on("click", ".js__layer__open", function () {
+            const $pen = $(this).closest(".js__pen");
+            const _pen = $pen.data("pen");
+            const $sourceCont = $(".js__source__cont");
+
+            $("#sourceLayer").addClass("show");
+            $sourceCont.removeClass("show");
+            $(`#${_pen}`).addClass("show");
+
         })
     }
     
     const init = () => {
+        hasBeforeData();
+        pushStateSearch();
         autoFindPen();
         showSource();
     }
