@@ -7,6 +7,7 @@ window.moment = moment;
 
 //공통
 import common from "./divide/common";
+import layout from "./divide/layout";
 import main from "./divide/main";
 
 //페이지별
@@ -39,6 +40,7 @@ import filter from "./divide/filter";
 
 const appMethods = {
     common,
+    layout,
     main,
     findAddress,
     weather,

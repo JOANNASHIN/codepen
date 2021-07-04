@@ -49,7 +49,7 @@ const main = () => {
             else {
                 showSearchTargetPen(_value);
             }
-            
+
             history.pushState(null, null, `?keyword=${_value}`);
         })
     }
@@ -64,6 +64,19 @@ const main = () => {
             $sourceCont.removeClass("show");
             $(`#${_pen}`).addClass("show");
 
+            return false;
+        })
+    }
+
+    const moveToLink = () => {
+        $document.on("click", ".pens__link", function () {
+            const $this = $(this);
+            console.log($(window).width(), $document.width())
+            if ( $(window).width() > 750 
+                 && $this.find(".js__pen__name").text().indexOf("모바일") != -1
+            ) {
+                alert("개발자 도구(F12)를 누르고 'Ctrl + Shift + M'을 눌러 모바일 모드로 확인해주세요.");
+            }
         })
     }
     
@@ -72,6 +85,7 @@ const main = () => {
         pushStateSearch();
         autoFindPen();
         showSource();
+        moveToLink();
     }
 
     init();

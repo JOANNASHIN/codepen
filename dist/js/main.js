@@ -49510,12 +49510,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _divide_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./divide/common */ "./src/js/divide/common.js");
-/* harmony import */ var _divide_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./divide/main */ "./src/js/divide/main.js");
-/* harmony import */ var _divide_findAddress__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./divide/findAddress */ "./src/js/divide/findAddress.js");
-/* harmony import */ var _divide_weather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divide/weather */ "./src/js/divide/weather.js");
-/* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
-/* harmony import */ var _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/brandIndexer */ "./src/js/divide/brandIndexer.js");
-/* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
+/* harmony import */ var _divide_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./divide/layout */ "./src/js/divide/layout.js");
+/* harmony import */ var _divide_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./divide/main */ "./src/js/divide/main.js");
+/* harmony import */ var _divide_findAddress__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divide/findAddress */ "./src/js/divide/findAddress.js");
+/* harmony import */ var _divide_weather__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/weather */ "./src/js/divide/weather.js");
+/* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
+/* harmony import */ var _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/brandIndexer */ "./src/js/divide/brandIndexer.js");
+/* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -49525,6 +49526,7 @@ __webpack_provided_window_dot_$ = window.jquery = window.jQuery = (jquery__WEBPA
 window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 //공통
+
 
 
 
@@ -49558,12 +49560,13 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_3__.default,
-    main: _divide_main__WEBPACK_IMPORTED_MODULE_4__.default,
-    findAddress: _divide_findAddress__WEBPACK_IMPORTED_MODULE_5__.default,
-    weather: _divide_weather__WEBPACK_IMPORTED_MODULE_6__.default,
-    olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__.default,
-    brandIndexer: _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_8__.default,
-    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_9__.default
+    layout: _divide_layout__WEBPACK_IMPORTED_MODULE_4__.default,
+    main: _divide_main__WEBPACK_IMPORTED_MODULE_5__.default,
+    findAddress: _divide_findAddress__WEBPACK_IMPORTED_MODULE_6__.default,
+    weather: _divide_weather__WEBPACK_IMPORTED_MODULE_7__.default,
+    olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__.default,
+    brandIndexer: _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_9__.default,
+    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_10__.default
 }
 
 //페이지별 공통
@@ -51158,6 +51161,37 @@ const findAddress = () => {
 
 /***/ }),
 
+/***/ "./src/js/divide/layout.js":
+/*!*********************************!*\
+  !*** ./src/js/divide/layout.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const layout = () => {
+    const $document = $(document);
+    const $window = $(window);
+
+    const checkWindowSize = () => {
+        // console.log($window.width())
+    }
+
+    const init = () => {
+        checkWindowSize();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (layout);
+
+/***/ }),
+
 /***/ "./src/js/divide/main.js":
 /*!*******************************!*\
   !*** ./src/js/divide/main.js ***!
@@ -51221,7 +51255,7 @@ const main = () => {
             else {
                 showSearchTargetPen(_value);
             }
-            
+
             history.pushState(null, null, `?keyword=${_value}`);
         })
     }
@@ -51236,6 +51270,19 @@ const main = () => {
             $sourceCont.removeClass("show");
             $(`#${_pen}`).addClass("show");
 
+            return false;
+        })
+    }
+
+    const moveToLink = () => {
+        $document.on("click", ".pens__link", function () {
+            const $this = $(this);
+            console.log($(window).width(), $document.width())
+            if ( $(window).width() > 750 
+                 && $this.find(".js__pen__name").text().indexOf("모바일") != -1
+            ) {
+                alert("개발자 도구(F12)를 누르고 'Ctrl + Shift + M'을 눌러 모바일 모드로 확인해주세요.");
+            }
         })
     }
     
@@ -51244,6 +51291,7 @@ const main = () => {
         pushStateSearch();
         autoFindPen();
         showSource();
+        moveToLink();
     }
 
     init();
