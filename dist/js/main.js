@@ -51177,12 +51177,16 @@ const layout = () => {
     const $document = $(document);
     const $window = $(window);
 
-    const checkWindowSize = () => {
-        // console.log($window.width())
+    const navigationOpenClose = () => {
+        $document
+            .on("click", ".js__navigation__open", function () {
+                const $nav = $(".js__navigation");
+                $nav.addClass("show");
+            });
     }
 
     const init = () => {
-        checkWindowSize();
+        // navigationOpenClose();
     }
 
     init();
@@ -51261,7 +51265,7 @@ const main = () => {
     }
 
     const showSource = () => {
-        $document.on("click", ".js__layer__open", function () {
+        $document.on("click", ".js__pen .js__layer__open", function () {
             const $pen = $(this).closest(".js__pen");
             const _pen = $pen.data("pen");
             const $sourceCont = $(".js__source__cont");

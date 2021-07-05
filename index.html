@@ -13,132 +13,222 @@
 
     <body id="main" class="fb">
         <section class="fb__main">
-            <h2 class="fb__main__title">Works</h2>
+            <header class="fb__main__top">
+                <h2 class="fb__main__title">Works</h2>
+                <button class="fb__main__menu js__layer__open" data-layer="js__navigation">메뉴</button>
+            </header>
 
-            <form class="fb__main__search">
-                <label class="search__wrapper">
-                    <input type="text" class="search__input js__pen__autoComplete" autofocus placeholder="검색할 PEN의 이름을 입력해주세요.">
-                    <button type="submit" class="search__button js__pen__submit">검색</button>
-                </label>
-            </form>
-
-            <nav class="fb__main__nav">
-                <label>
-                    <input type="radio">
-                    <span>PC</span>
-                </label>
-
-                <label>
-                    <input type="radio">
-                    <span>MOBILE</span>
-                </label>
-            </nav>
-
-            <div class="fb__main__pens listType">
-                <ul class="pens__wrapper">
-                    <li class="pens__box js__pen show" data-pen="findAddress">
-                        <a href="/views/loqate/findAddress.html" class="pens__link" target="_blank">
-                            <figure class="pens__thumb">
-                                <img src="/src/images/pens/findAddress.jpg" alt="">
-                                
-                                <div class="pens__layer">
-                                    <button class="pens__layer__button">경력기술</button>
-                                    <button class="pens__layer__button point js__layer__open">소스보기</button>
-                                </div>
-                            </figure>
-                            
-                            <strong class="pens__name js__pen__name">
-                                전세계주소자동완성
-                            </strong>
-                        </a>
-                    </li>
-                    
-                    <li class="pens__box js__pen show" data-pen="weather">
-                        <a href="https://weatherapp-145c6.web.app/" class="pens__link" target="_blank">
-                            <figure class="pens__thumb">
-                                <img src="/src/images/pens/weather.jpg" alt="">
-                                
-                                <div class="pens__layer">
-                                    <button class="pens__layer__button">경력기술</button>
-                                    <button class="pens__layer__button point js__layer__open">소스보기</button>
-                                </div>
-                            </figure>
-                            
-                            <strong class="pens__name js__pen__name">
-                                모바일 날씨확인
-                            </strong>
-                        </a>
-                    </li>
+            <main>
+                <form class="fb__main__search">
+                    <label class="search__wrapper">
+                        <input type="text" class="search__input js__pen__autoComplete" autofocus placeholder="검색할 PEN의 이름을 입력해주세요.">
+                        <button type="submit" class="search__button js__pen__submit">검색</button>
+                    </label>
+                </form>
     
-                    <!-- <li class="pens__box js__pen show" data-pen="freeGift">
-                        <figure class="pens__thumb">
-                            <img src="/src/images/pens/freeGift.jpg" alt="">
-                            
-                            <div class="pens__layer">
-                                <a href="/views/olenz/freeGift.html" class="pens__layer__button" target="_blank">화면보기</a>
-                                <button class="pens__layer__button point js__layer__open">소스보기</button>
-                            </div>
-                        </figure>
-                        
-                        <strong class="pens__name js__pen__name">
-                            <a href="/views/olenz/freeGift.html" class="pens__link">
-                                사은품
+                <nav class="fb__main__nav">
+                    <label>
+                        <input type="radio">
+                        <span>PC</span>
+                    </label>
+    
+                    <label>
+                        <input type="radio">
+                        <span>MOBILE</span>
+                    </label>
+                </nav>
+    
+                <div class="fb__main__pens listType">
+                    <ul class="pens__wrapper">
+                        <li class="pens__box js__pen show" data-pen="findAddress">
+                            <a href="/views/loqate/findAddress.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/findAddress.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    전세계주소자동완성
+                                </strong>
                             </a>
-                        </strong>
-                    </li> -->
+                        </li>
     
-                    <li class="pens__box js__pen show" data-pen="brandIndexer">
-                        <a href="/views/brandIndexer/brandIndexer.html" class="pens__link" target="_blank">
+                        <li class="pens__box js__pen show" data-pen="subway">
+                            <a href="/views/subway/subway.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/subway.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    지하철자동완성
+                                </strong>
+                            </a>
+                        </li>
+                       
+                        <li class="pens__box js__pen show" data-pen="ktChart">
+                            <a href="/views/subway/ktChart.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/ktChart.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    kt Chart
+                                </strong>
+                            </a>
+                        </li>
+                        
+                        <li class="pens__box js__pen show" data-pen="searchWordActive">
+                            <a href="/views/subway/searchWordActive.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/searchWordActive.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    공지사항 (검색단어 효과주기)
+                                </strong>
+                            </a>
+                        </li>
+                        
+                        <li class="pens__box js__pen show" data-pen="calendar">
+                            <a href="/views/subway/calendar.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/calendar.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    달력
+                                </strong>
+                            </a>
+                        </li>
+                        
+                        <li class="pens__box js__pen show" data-pen="weather">
+                            <a href="https://weatherapp-145c6.web.app/" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/weather.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    모바일 날씨확인
+                                </strong>
+                            </a>
+                        </li>
+    
+                        <li class="pens__box js__pen show" data-pen="todoApp">
+                            <a href="https://todoApp-145c6.web.app/" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/todoApp.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    일정관리
+                                </strong>
+                            </a>
+                        </li>
+        
+                        <!-- <li class="pens__box js__pen show" data-pen="freeGift">
                             <figure class="pens__thumb">
-                                <img src="/src/images/pens/brandIndexer.jpg" alt="">
+                                <img src="/src/images/pens/freeGift.jpg" alt="">
                                 
                                 <div class="pens__layer">
-                                    <button class="pens__layer__button">경력기술</button>
-                                    <button class="pens__layer__button point js__layer__open">소스보기</button>
-                                </div>
-                            </figure>
-
-                            <strong class="pens__name js__pen__name">
-                                    모바일 브랜드 인덱서
-                            </strong>
-                        </a>
-                    </li>
-                    
-                    <li class="pens__box js__pen show" data-pen="searchKeyword">
-                        <a href="/views/searchKeyword/searchKeyword.html" class="pens__link" target="_blank">
-                            <figure class="pens__thumb">
-                                <img src="/src/images/pens/searchKeyword.jpg" alt="">
-                                
-                                <div class="pens__layer">
-                                    <button class="pens__layer__button">경력기술</button>
+                                    <a href="/views/olenz/freeGift.html" class="pens__layer__button" target="_blank">화면보기</a>
                                     <button class="pens__layer__button point js__layer__open">소스보기</button>
                                 </div>
                             </figure>
                             
                             <strong class="pens__name js__pen__name">
-                                모바일 키워드로 검색하기
+                                <a href="/views/olenz/freeGift.html" class="pens__link">
+                                    사은품
+                                </a>
                             </strong>
-                        </a>
-                    </li>
+                        </li> -->
+        
+                        <li class="pens__box js__pen show" data-pen="brandIndexer">
+                            <a href="/views/brandIndexer/brandIndexer.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/brandIndexer.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
     
-                    <li class="pens__box js__pen show" data-pen="filter">
-                        <a href="/views/filter/filter.html" class="pens__link" target="_blank">
-                            <figure class="pens__thumb">
-                                <img src="/src/images/pens/filter.jpg" alt="">
-
-                                <div class="pens__layer">
-                                    <button class="pens__layer__button">경력기술</button>
-                                    <button class="pens__layer__button point js__layer__open">소스보기</button>
-                                </div>
-                            </figure>
-
-                            <strong class="pens__name js__pen__name">
-                                모바일 상세필터
-                            </strong>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                                <strong class="pens__name js__pen__name">
+                                        모바일 브랜드 인덱서
+                                </strong>
+                            </a>
+                        </li>
+                        
+                        <li class="pens__box js__pen show" data-pen="searchKeyword">
+                            <a href="/views/searchKeyword/searchKeyword.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/searchKeyword.jpg" alt="">
+                                    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+                                
+                                <strong class="pens__name js__pen__name">
+                                    모바일 키워드로 검색하기
+                                </strong>
+                            </a>
+                        </li>
+        
+                        <li class="pens__box js__pen show" data-pen="filter">
+                            <a href="/views/filter/filter.html" class="pens__link" target="_blank">
+                                <figure class="pens__thumb">
+                                    <img src="/src/images/pens/filter.jpg" alt="">
+    
+                                    <div class="pens__layer">
+                                        <button class="pens__layer__button">경력기술</button>
+                                        <button class="pens__layer__button point js__layer__open">소스보기</button>
+                                    </div>
+                                </figure>
+    
+                                <strong class="pens__name js__pen__name">
+                                    모바일 상세필터
+                                </strong>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </main>
 
             <!-- 소스레이어 -->
             <article id="sourceLayer" class="fb__sourceLayer js__layer">
@@ -149,6 +239,13 @@
                     </header>
     
                     <ul class="fb__sourceLayer__cont">
+                        <li id="findAddress" class="fb__sourceLayer__box js__source__cont">
+                            <iframe height="300" style="width: 100%;" scrolling="no" title="전세계 주소 자동완성(loqate)" src="https://codepen.io/joannashin3/embed/preview/QWvyGPN?defaultTab=html" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                See the Pen <a href="https://codepen.io/joannashin3/pen/QWvyGPN">
+                                전세계 주소 자동완성(loqate)</a> by JieunShin (<a href="https://codepen.io/joannashin3">@joannashin3</a>)
+                                on <a href="https://codepen.io">CodePen</a>.
+                            </iframe>
+                        </li>
                         <li id="brandIndexer" class="fb__sourceLayer__box js__source__cont">
                             <iframe scrolling="no" title="" src="https://codepen.io/joannashin3/embed/xxdGjvP?defaultTab=js&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                                 See the Pen <a href="https://codepen.io/joannashin3/pen/xxdGjvP">
@@ -156,9 +253,42 @@
                                 on <a href="https://codepen.io">CodePen</a>.
                             </iframe>
                         </li>
+                        <li id="filter" class="fb__sourceLayer__box js__source__cont">
+                            <iframe height="600" style="width: 100%;" scrolling="no" title="filter 상세필터" src="https://codepen.io/joannashin3/embed/preview/MWmKbZJ?defaultTab=html" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                See the Pen <a href="https://codepen.io/joannashin3/pen/MWmKbZJ">
+                                filter 상세필터</a> by JieunShin (<a href="https://codepen.io/joannashin3">@joannashin3</a>)
+                                on <a href="https://codepen.io">CodePen</a>.
+                              </iframe>
+                        </li>
                     </ul>
                 </div>
             </article>
+
+            <aside id="js__navigation" class="fb__navigation js__layer">
+                <header class="fb__navigation__top">
+                    <h3 class="fb__navigation__title">Menus</h3>
+                    <button class="fb__navigation__close js__layer__close">close</button>
+                </header>
+                <ul class="fb__navigation__cont">
+                    <li class="fb__navigation__menu">
+                        <a href="/" class="fb__navigation__link">
+                            <span class="fb__navigation__name">Projects</span>
+                        </a>
+                    </li>
+
+                    <li class="fb__navigation__menu">
+                        <a href="/" class="fb__navigation__link">
+                            <span class="fb__navigation__name">Codepen</span>
+                        </a>
+                    </li>
+
+                    <li class="fb__navigation__menu">
+                        <a href="#" class="fb__navigation__link">
+                            <span class="fb__navigation__name">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
         </section>
     </body>
 </html> 

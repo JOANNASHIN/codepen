@@ -55,7 +55,7 @@ const main = () => {
     }
 
     const showSource = () => {
-        $document.on("click", ".js__layer__open", function () {
+        $document.on("click", ".js__pen .js__layer__open", function () {
             const $pen = $(this).closest(".js__pen");
             const _pen = $pen.data("pen");
             const $sourceCont = $(".js__source__cont");

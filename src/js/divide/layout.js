@@ -2,12 +2,16 @@ const layout = () => {
     const $document = $(document);
     const $window = $(window);
 
-    const checkWindowSize = () => {
-        // console.log($window.width())
+    const navigationOpenClose = () => {
+        $document
+            .on("click", ".js__navigation__open", function () {
+                const $nav = $(".js__navigation");
+                $nav.addClass("show");
+            });
     }
 
     const init = () => {
-        checkWindowSize();
+        // navigationOpenClose();
     }
 
     init();
