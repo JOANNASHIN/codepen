@@ -172,7 +172,10 @@ input {
     }
 }
 
-%defaultInputStyle {
+
+input[type='text'],
+input[type='password'],
+input[type='number'] {
     width: 100%;
     padding: rem(16px 52px 16px 16px);
     border: 1px solid $light;
@@ -195,18 +198,6 @@ input {
         background: $bright;
         color: $silver;
     }
-}
-
-input[type='text'] {
-    @extend %defaultInputStyle;
-}
-
-input[type='password'] {
-    @extend %defaultInputStyle;
-}
-
-input[type='number'] {
-    @extend %defaultInputStyle;
 }
 
 input[type="file"] {

@@ -2,40 +2,40 @@
     font-family: "SpoqaHanSansNeo";
     font-style: normal;
     font-weight: 200;
-    src:local('SpoqaHanSansNeoLight'), local('SpoqaHanSansNeoLight'), url(../../font/SpoqaHanSansNeo-Light.eot);
-    src:url(../../font/SpoqaHanSansNeo-Light.eot?#iefix) format('embedded-opentype'),
-    url(../../font/SpoqaHanSansNeo-Light.woff2) format('woff2'),
-    url(../../font/SpoqaHanSansNeo-Light.woff) format('woff');
+    src:local('SpoqaHanSansNeoLight'), local('SpoqaHanSansNeoLight'), url(~/src/font/SpoqaHanSansNeo-Light.eot);
+    src:url(~/src/font/SpoqaHanSansNeo-Light.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/SpoqaHanSansNeo-Light.woff2) format('woff2'),
+    url(~/src/font/SpoqaHanSansNeo-Light.woff) format('woff');
 }
 
 @font-face {
     font-family: "SpoqaHanSansNeo";
     font-style: normal;
     font-weight: 400;
-    src:local('SpoqaHanSansNeoRegular'), local('SpoqaHanSansNeoRegular'), url(../../font/SpoqaHanSansNeo-Regular.eot);
-    src:url(../../font/SpoqaHanSansNeo-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../font/SpoqaHanSansNeo-Regular.woff2) format('woff2'),
-    url(../../font/SpoqaHanSansNeo-Regular.woff) format('woff');
+    src:local('SpoqaHanSansNeoRegular'), local('SpoqaHanSansNeoRegular'), url(~/src/font/SpoqaHanSansNeo-Regular.eot);
+    src:url(~/src/font/SpoqaHanSansNeo-Regular.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/SpoqaHanSansNeo-Regular.woff2) format('woff2'),
+    url(~/src/font/SpoqaHanSansNeo-Regular.woff) format('woff');
 }
 
 @font-face {
     font-family: "SpoqaHanSansNeo";
     font-style: normal;
     font-weight: 600;
-    src:local('SpoqaHanSansNeoMedium'), local('SpoqaHanSansNeoMedium'), url(../../font/SpoqaHanSansNeo-Medium.eot);
-    src:url(../../font/SpoqaHanSansNeo-Medium.eot?#iefix) format('embedded-opentype'),
-    url(../../font/SpoqaHanSansNeo-Medium.woff2) format('woff2'),
-    url(../../font/SpoqaHanSansNeo-Medium.woff) format('woff');
+    src:local('SpoqaHanSansNeoMedium'), local('SpoqaHanSansNeoMedium'), url(~/src/font/SpoqaHanSansNeo-Medium.eot);
+    src:url(~/src/font/SpoqaHanSansNeo-Medium.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/SpoqaHanSansNeo-Medium.woff2) format('woff2'),
+    url(~/src/font/SpoqaHanSansNeo-Medium.woff) format('woff');
 }
 
 @font-face {
     font-family: "SpoqaHanSansNeo";
     font-style: normal;
     font-weight: 800;
-    src:local('SpoqaHanSansNeoBold'), local('SpoqaHanSansNeoBold'), url(../../font/SpoqaHanSansNeo-Bold.eot);
-    src:url(../../font/SpoqaHanSansNeo-Bold.eot?#iefix) format('embedded-opentype'),
-    url(../../font/SpoqaHanSansNeo-Bold.woff2) format('woff2'),
-    url(../../font/SpoqaHanSansNeo-Bold.woff) format('woff');
+    src:local('SpoqaHanSansNeoBold'), local('SpoqaHanSansNeoBold'), url(~/src/font/SpoqaHanSansNeo-Bold.eot);
+    src:url(~/src/font/SpoqaHanSansNeo-Bold.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/SpoqaHanSansNeo-Bold.woff2) format('woff2'),
+    url(~/src/font/SpoqaHanSansNeo-Bold.woff) format('woff');
 }
 
 
@@ -43,62 +43,62 @@
     font-family:'Notosans';
     font-style:normal;
     font-weight:200;
-    src:local('NotoSansLight'), local('NotoSansLight'), url(../../font/NotoSansKR-Light.eot);
-    src:url(../../font/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
-    url(../../font/NotoSansKR-Light.woff2) format('woff2'),
-    url(../../font/NotoSansKR-Light.woff) format('woff');
+    src:local('NotoSansLight'), local('NotoSansLight'), url(~/src/font/NotoSansKR-Light.eot);
+    src:url(~/src/font/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/NotoSansKR-Light.woff2) format('woff2'),
+    url(~/src/font/NotoSansKR-Light.woff) format('woff');
 }
 
 @font-face {
     font-family:'Notosans';
     font-style:normal;
     font-weight:400;
-    src:local('NotoSansRegular'), local('NotoSansRegular'), url(../../font/NotoSansKR-Regular.eot);
-    src:url(../../font/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../font/NotoSansKR-Regular.woff2) format('woff2'),
-    url(../../font/NotoSansKR-Regular.woff) format('woff');
+    src:local('NotoSansRegular'), local('NotoSansRegular'), url(~/src/font/NotoSansKR-Regular.eot);
+    src:url(~/src/font/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/NotoSansKR-Regular.woff2) format('woff2'),
+    url(~/src/font/NotoSansKR-Regular.woff) format('woff');
 }
 
 @font-face {
     font-family:'Notosans';
     font-style:normal;
     font-weight:600;
-    src:local('NotoSansMedium'), local('NotoSansMedium'), url(../../font/NotoSansKR-Medium.eot);
-    src:url(../../font/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
-    url(../../font/NotoSansKR-Medium.woff2) format('woff2'),
-    url(../../font/NotoSansKR-Medium.woff) format('woff');
+    src:local('NotoSansMedium'), local('NotoSansMedium'), url(~/src/font/NotoSansKR-Medium.eot);
+    src:url(~/src/font/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/NotoSansKR-Medium.woff2) format('woff2'),
+    url(~/src/font/NotoSansKR-Medium.woff) format('woff');
 }
 
 @font-face {
     font-family:'Notosans';
     font-style:normal;
     font-weight:800;
-    src:local('NotoSansBold'), local('NotoSansBold'), url(../../font/NotoSansKR-Bold.eot);
-    src:url(../../font/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
-    url(../../font/NotoSansKR-Bold.woff2) format('woff2'),
-    url(../../font/NotoSansKR-Bold.woff) format('woff');
+    src:local('NotoSansBold'), local('NotoSansBold'), url(~/src/font/NotoSansKR-Bold.eot);
+    src:url(~/src/font/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+    url(~/src/font/NotoSansKR-Bold.woff2) format('woff2'),
+    url(~/src/font/NotoSansKR-Bold.woff) format('woff');
 }
 
 @font-face {
     font-family:'Rb';
     font-style:normal;
     font-weight:200;
-    src:url(../../font/Roboto-Light.eot) format('eot');
-    src:url(../../font/Roboto-Light.woff) format('woff');
+    src:url(~/src/font/Roboto-Light.eot) format('eot');
+    src:url(~/src/font/Roboto-Light.woff) format('woff');
 }
 
 @font-face {
     font-family:'Rb';
     font-style:normal;
     font-weight:400;
-    src:url(../../font/Roboto-Regular.eot) format('eot');
-    src:url(../../font/Roboto-Regular.woff) format('woff');
+    src:url(~/src/font/Roboto-Regular.eot) format('eot');
+    src:url(~/src/font/Roboto-Regular.woff) format('woff');
 }
 
 @font-face {
     font-family: 'Rb';
     font-style: normal;
     font-weight: 800;
-    src:url(../../font/Roboto-bold.eot) format('eot');
-    src:url(../../font/Roboto-bold.woff) format('woff');
+    src:url(~/src/font/Roboto-bold.eot) format('eot');
+    src:url(~/src/font/Roboto-bold.woff) format('woff');
 }

@@ -49517,6 +49517,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
 /* harmony import */ var _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/brandIndexer */ "./src/js/divide/brandIndexer.js");
 /* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
+/* harmony import */ var _divide_fileReader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/fileReader */ "./src/js/divide/fileReader.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -49537,12 +49538,13 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 
+
  /* resize */
  const htmlDoc = document.documentElement;
  let enSizing = false;
  
  function setFontSize() {
-     if (window.innerWidth > window.innerHeight) return ;
+     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) return ;
      htmlDoc.style.fontSize =  parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
  }
  
@@ -49566,7 +49568,8 @@ const appMethods = {
     weather: _divide_weather__WEBPACK_IMPORTED_MODULE_7__.default,
     olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__.default,
     brandIndexer: _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_9__.default,
-    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_10__.default
+    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_10__.default,
+    fileReader: _divide_fileReader__WEBPACK_IMPORTED_MODULE_11__.default
 }
 
 //페이지별 공통
@@ -50373,6 +50376,40 @@ const common = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (common);
+
+/***/ }),
+
+/***/ "./src/js/divide/fileReader.js":
+/*!*************************************!*\
+  !*** ./src/js/divide/fileReader.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const fileReader = () => {
+    const $document = $(document);
+
+    const fileUpload = () => {
+        
+    }
+    
+    const fileReader = () => {
+
+    }
+
+    const init = () => {
+
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fileReader);
 
 /***/ }),
 

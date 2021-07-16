@@ -1,0 +1,26 @@
+.fb {
+    &__fileReader {
+        &__top {
+            display: block;
+            text-align: center;
+        }
+
+        &__title {
+            @include fontcss($black, 600, rem(19px), rem(50px));
+        }
+
+        &__wrapper {
+            padding: rem(24px 20px);
+        }
+
+        &__form {
+            .form {
+                &__title {
+                    display: block;
+                    margin-bottom: rem(8px);
+                    @include fontcss($black, 600, rem(14px), rem(20px));
+                }
+            }
+        }
+    }
+}

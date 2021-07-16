@@ -16,13 +16,14 @@ import weather from "./divide/weather";
 import olenzFreegift from "./divide/olenzFreegift";
 import brandIndexer from "./divide/brandIndexer";
 import filter from "./divide/filter";
+import fileReader from "./divide/fileReader";
 
  /* resize */
  const htmlDoc = document.documentElement;
  let enSizing = false;
  
  function setFontSize() {
-     if (window.innerWidth > window.innerHeight) return ;
+     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) return ;
      htmlDoc.style.fontSize =  parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
  }
  
@@ -46,7 +47,8 @@ const appMethods = {
     weather,
     olenzFreegift,
     brandIndexer,
-    filter
+    filter,
+    fileReader
 }
 
 //페이지별 공통

@@ -175,23 +175,36 @@ $font_n: $font_noto;
 }
 
 
-//공통
-@import "./divide/common.scss";
 
-// @media screen and (min-width: 1200px) {
-@import "./divide/reset.scss";
 
-//페이지별
+
+
+
+
+
+/* 공통 */
+@import "./divide/font.scss";
+
+// 모바일
+@media screen and (max-width: 750px) {
+    @import "./divide/mobile/rem360/reset.scss";
+    @import "./divide/mobile/rem360/common.scss";
+}
+// PC
+@media screen and (min-width: 750px) {
+    @import "./divide/pc/common.scss";
+    @import "./divide/pc/reset.scss";
+}
+
+
+/* 페이지 */
+// PC
 @import "./divide/findAddress.scss";
 @import "./divide/weather.scss";
 @import "./divide/main.scss";
-    // @import "./divide/olenz.scss";
-// }
 
 
-/* 모바일 */
-
-// REM 적용
+// REM 적용 (360px 기준)
 @import "~/node_modules/sass-rem/_rem.scss";
 
 $rem-baseline: 16px;
@@ -206,21 +219,20 @@ $rem-baseline: 16px;
 html {
     @include rem-baseline;
     -webkit-text-size-adjust: none;
-
+    font-size: 100%;
     //app.js에서 처리
-    $sizes: 320, 360, 400, 500, 600, 640, 720, 750, 1080;
-
-    @each $size in $sizes {
-        @media screen and (min-device-width: #{$size}px) {
-            @include rem-baseline(getPercentage($size) * 1%);
-        }
-    }
 }
 
 $width: rem(360px);
 
-@import "./divide/mobile/rem360/reset.scss";
 @import "./divide/mobile/rem360/brandIndexer.scss";
 @import "./divide/mobile/rem360/searchKeyword.scss";
 @import "./divide/mobile/rem360/filter.scss";
+@import "./divide/mobile/rem360/fileReader.scss";
+
+
+
+
+
 // @import "./divide/mobile/rem360/layout.scss";
+// @import "./divide/olenz.scss";
