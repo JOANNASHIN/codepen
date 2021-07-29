@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>kt 기가사운드</title>
+        <link rel="stylesheet" href="/dist/css/main.css">
+        <script src="/dist/js/main.js"></script>
+    </head>
+    <body id="ktGigaSoundChart" class="kt">
+        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+        <section class="kt__machine">
+            <section class="kt__machine__lnb">
+                <div class="lnb">
+                    <h2 class="fb__title--hidden">왼쪽메뉴</h2>
+                    <dl class="lnb__box">
+                        <p class="lnb__status">
+                            <span class="lnb__status--gray">※상태&nbsp;:&nbsp;</span>
+                            <span class="lnb__status--green">정상</span>
+                            <span class="lnb__status--yellow">주의</span>
+                            <span class="lnb__status--red">경고</span>
+                        </p>
+                        <dt class="lnb__title">머신상태정보</dt>
+                        <dd class="lnb__detail lnb__detail__scroll">
+                            <table>
+                                <thead>
+                                    <tr class="lnb__detail__th--row">
+                                        <th>위치</th>
+                                        <th>센서종류</th>
+                                        <th>머신명</th>
+                                        <th>연결</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--
+                                        연결
+                                        연결이면 lnb__status--wifion
+                                        연결이 아니면 lnb__status--wifioff
+                                        상태값
+                                        정상이면 lnb__status--green
+                                        주의면   lnb__status--yellow
+                                        경고면   lnb__status--red
+                                        클래스 추가
+                                    -->
+
+                                    {@ machineList }
+
+                                    <tr>
+                                        <td>{.location}</td>
+                                        <td>{.cencer}</td>
+                                        <td>{.name}</td>
+                                        <td class="lnb__status--{.wifi}"></td>
+                                        <td class="lnb__status--{.status} {? .status == 'red'}js__open__alarm-device{/}"><div class="device" data-id="{.id}" data-tem="{.altTemColor}" data-temtxt="{.altTemText}" data-vib="{.altVibColor}" data-vibtxt="{.altVibText}" 
+                                            data-sound="{.altSoundColor}" data-soundtxt="{.altSoundText}" data-censer="{.cencer}" data-machinename="{.name}" data-location="{.location}">{.status_text}</div></td>
+                                    </tr>
+                                    {/}
+
+                                </tbody>
+                            </table>
+
+                        </dd>
+                    </dl>
+                    <dl class="lnb__box">
+                        <dt class="lnb__title">장비별 현황</dt>
+                        <dd class="lnb__detail ">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>머신명</th>
+                                        <th class="lnb__status--green">정상</th>
+                                        <th class="lnb__status--yellow">주의</th>
+                                        <th class="lnb__status--red">경고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {@ deviceList }
+                                    <tr>
+                                        <th>{.key_ }</th>
+                                        <td>{.green}</td>
+                                        <td>{.orange}</td>
+                                        <td>{.red}</td>
+                                    </tr>
+                                    {/}                                         
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                    <dl class="lnb__box">
+                        <dt class="lnb__title">층별 현황</dt>
+                        <dd class="lnb__detail ">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>머신위치</th>
+                                        <th class="lnb__status--green">정상</th>
+                                        <th class="lnb__status--yellow">주의</th>
+                                        <th class="lnb__status--red">경고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {@ floorList }
+                                    <tr>
+                                        <th class="lnb__detail--fixWidth">{.key_ }</th>
+                                        <td>{.green}</td>
+                                        <td>{.orange}</td>
+                                        <td>{.red}</td>
+                                    </tr>
+                                    {/}         
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                    <dl class="lnb__box">
+                        <dt class="lnb__title">가동율</dt>
+                        <dd class="lnb__detail ">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>머신명</th>
+                                        <th class="lnb__status--green">정상</th>
+                                        <th class="lnb__status--yellow">주의</th>
+                                        <th class="lnb__status--red">경고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {@ enginList }
+                                    <tr>
+                                        <th>{.key_ }</th>
+                                        <td>{.green}</td>
+                                        <td>{.orange}</td>
+                                        <td>{.red}</td>
+                                    </tr>
+                                    {/}          
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+            <section class="kt__machine__board">
+                <div class="board">
+                    <header class="board__top">
+                        <div class="board__top__date">
+                            <button class="board__top__date&#45;&#45;prev">prev</button>
+                            <span>2019년 08월 04일</span>
+                            <button class="board__top__date&#45;&#45;next">next</button>
+                        </div>
+
+                        <label class="board__top__calendar">
+                            <input type="text" class="js__calendar">
+                            <span>달력</span>
+                        </label>
+                        <button class="board__top__today">오늘</button>
+                        <span class="board__top__update">업데이트 일자: <em>2019년 08월 04일</em></span>
+                    </header>
+                    <div class="board__main">
+                        <div class="board__sort">
+                            <span class="board__sort__title">머신위치</span>
+                            <select class="board__sort__select" name="deviceFloor" id="">
+                                {@ machineFloor}
+                                <option value="{.value_}">{.value_}</option>
+                                {/}
+                            </select>
+                            <span class="board__update board__top__update">업데이트 일자: <em>{=reg_date}</em></span>
+                        </div>
+                        <ul class="board__list">
+                            <li class="board__each">
+                                <h4 class="board__each__title" id="devFloorTitle">아진PNP</h4>
+                                <!--
+                                경고는 red
+                                주의는 yellow
+                                정상 green 클래스 붙이면 됩니다.
+                                -->
+                                {@ machineList}
+                                <div class="device {.device_warring_color} devInfo js__layer__open" data-layer="deviceInfoPop" data-id="{.id}" data-tem="{.altTemColor}" data-temtxt="{.altTemText}" data-vib="{.altVibColor}" data-vibtxt="{.altVibText}" 
+                                    data-sound="{.altSoundColor}" data-soundtxt="{.altSoundText}" data-censer="{.cencer}" data-machinename="{.name}" data-location="{.location}" >
+                                    <span class="device__perc">{.device_warring_per}</span>
+                                    <figure class="device__icon">                                
+                                        <span class="device__icon--tem {.tem_icon}">온도아이콘</span>
+                                        <span class="device__icon--vib {.vib_icon}">진동아이콘</span>
+                                        <span class="device__icon--sound {=.sound_icon}">사운드아이콘</span>
+                                    </figure>
+                                    <p class="device__name">{.name}</p>
+                                </div>
+                                {/}                       
+                            </li>                    
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <form id="devAjaxGrape">
+            <input type="hidden" name="short" > <!--devSoundShort-->
+            <input type="hidden" name="long" ><!--devSoundLong-->
+            <input type="hidden" name="window_size" ><!--devSoundLong-->
+            <input type="hidden" name="device_id" id="devMachineId" ><!--devSoundLong-->
+        </form>
+        
+        <form id="devAjaxGsd">
+            <input type="hidden" name="gsd_device_id" id="" >
+        </form>
+
+        <section id="deviceInfoPop" class="kt__device-info js__layer">
+            <div class="devinfo">
+                  <h2 class="kt__title--hidden">머신별 현황 보기</h2>
+                  <div class="devinfo__top">
+                        <div class="devinfo__box devinfo__box--basic">
+                              <h3 class="devinfo__box__title">머신정보</h3>
+                              <div class="devinfo__box__cont">
+                                    <ul class="devinfo__box__info">
+                                          <li class="devinfo__box__info-list">
+                                                <span class="devinfo__box__info-name">머신ID</span>
+                                                <span class="devinfo__box__info-detail" id="devMachineInfoId"></span>
+                                          </li>
+                                          <li class="devinfo__box__info-list">
+                                                <span class="devinfo__box__info-name">센서종류</span>
+                                                <span class="devinfo__box__info-detail" id="devMachineInfoCenser"></span>
+                                          </li>
+                                          <li class="devinfo__box__info-list">
+                                                <span class="devinfo__box__info-name">기계상태</span>
+                                                <span class="devinfo__box__info-detail" id="devMachineInfoStatus"></span>
+                                          </li>
+                                          <li class="devinfo__box__info-list">
+                                                <span class="devinfo__box__info-name">머신명</span>
+                                                <span class="devinfo__box__info-detail" id="devMachineInfoName"></span>
+                                          </li>
+                                          <li class="devinfo__box__info-list">
+                                                <span class="devinfo__box__info-name">설치위치</span>
+                                                <span class="devinfo__box__info-detail" id="devMachineInfoLocation"></span>
+                                          </li>
+                                    </ul>
+                              </div>
+                        </div>
+                        <div class="devinfo__box devinfo__box--status">
+                              <h3 class="devinfo__box__title">머신상태</h3>
+                              <div class="devinfo__box__cont">
+                                    <div class="lightGraph">
+                                          <h4 class="kt__title--hidden">가동률 신호등 그래프</h4>
+                                          <!--lightGraph__box에 green yellow red 클래스를 넣어주세요-->
+                                          <dl class="lightGraph__box " id="devPopVib">
+                                                <dt class="lightGraph__box__title">
+                                                      <span>
+                                                            진동상태&nbsp;:&nbsp;<em>정상</em>
+                                                      </span>
+                                                      <button class="lightGraph__box__control">느낌표아이콘</button>
+                                                </dt>
+                                                <dd class="lightGraph__box__graph">
+                                                      <span>신호등-경고</span>
+                                                      <span>신호등-주의</span>
+                                                      <span>신호등-정상</span>
+                                                </dd>
+                                          </dl>
+                                          <dl class="lightGraph__box " id="devPopSound">
+                                                <dt class="lightGraph__box__title">
+                                                      <span>
+                                                            사운드 상태&nbsp;:&nbsp;<em>주의</em>
+                                                      </span>
+                                                      <button class="lightGraph__box__control">느낌표아이콘</button>
+                                                </dt>
+                                                <dd class="lightGraph__box__graph">
+                                                      <span>신호등-경고</span>
+                                                      <span>신호등-주의</span>
+                                                      <span>신호등-정상</span>
+                                                </dd>
+                                          </dl>
+                                          <dl class="lightGraph__box " id="devPopTem">
+                                                <dt class="lightGraph__box__title">
+                                                      <span>
+                                                            온도 상태&nbsp;:&nbsp;<em>경고</em>
+                                                      </span>
+                                                      <button class="lightGraph__box__control">느낌표아이콘</button>
+                                                </dt>
+                                                <dd class="lightGraph__box__graph">
+                                                      <span>신호등-경고</span>
+                                                      <span>신호등-주의</span>
+                                                      <span>신호등-정상</span>
+                                                </dd>
+                                          </dl>
+                                    </div>
+                                    <div class="lineGraph">
+                                          <h4 class="lineGraph__title">가동율그래프</h4>
+                                          <nav class="lineGraph__sort--button js__sort__button">
+                                                <button class="on" data-value="24">일</button>
+                                                <button data-value="168">주</button>
+                                                <button data-value="720">월</button>
+                                          </nav>
+                                          <div class="lineGraph__wrap">
+                                                <div id="runHigh" class="lineGraph__graph week">
+                                                     <span class="kt__title--hidden">
+                                                           가동율막대그래프영역
+                                                     </span>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="lineGraph">
+                                          <h4 class="lineGraph__title">사운드 추이분석</h4>
+                                          <div class="lineGraph__sort--select">
+                                                <label>
+                                                      <span>단기평균</span>
+                                                      <select name="" id="devSoundShort">
+                                                            <option value="24">1일</option>
+                                                            <option value="168">1주</option>
+                                                            <option value="720">1개월</option>
+                                                      </select>
+                                                </label>
+                                                <label>
+                                                      <span>장기평균</span>
+                                                      <select name="" id="devSoundLong">
+                                                            <option value="168">1주</option>
+                                                            <option value="720">1개월</option>
+                                                            <option value="2160">3개월</option>
+                                                      </select>
+                                                </label>
+                                          </div>
+                                          <div class="lineGraph__wrap">
+                                                <div id="soundTrendHigh" class="lineGraph__graph week" style="width: 100%;">
+                                                     <span class="kt__title--hidden">
+                                                           사운드추이분석그래프영역
+                                                     </span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="devinfo__box devinfo__box--graph">
+                        <h3 class="devinfo__box__title">머신그래프</h3>
+                        <div class="lineGraph__sort--select">
+                              <label>
+                                    <span>분석기간</span>
+                                    <select class="js__sort__day-select" name="day_type">
+                                          <option value="24">오늘</option>
+                                          <option value="168" selected>일주일</option>
+                                          <option value="720">한달</option>
+                                    </select>
+                              </label>
+                        </div>
+                        <dl class="devinfo__box__cont">
+                              <dt class="lineGraph__title">진동 그래프</dt>
+                              <dd class="lineGraph__wrap">
+                                    <!--진동그래프 45개 임시데이터 고정-->
+                                    <div id="vibHigh" class="lineGraph__graph" style="width: 187%;">
+                                           <span class="kt__title--hidden">
+                                                 진동그래프영역
+                                          </span>
+                                    </div>
+                              </dd>
+                        </dl>
+                        <dl class="devinfo__box__cont">
+                              <dt class="lineGraph__title">온도 그래프</dt>
+                              <dd class="lineGraph__wrap">
+                                    <div id="tempHigh" class="lineGraph__graph week">
+                                          <span class="kt__title--hidden">
+                                                온도그래프영역
+                                          </span>
+                                    </div>
+                              </dd>
+                        </dl>
+                        <dl class="devinfo__box__cont">
+                              <!--진동그래프 162개 임시데이터 고정-->
+                              <dt class="lineGraph__title">사운드그래프(바운더리)</dt>
+                              <dd class="lineGraph__wrap">
+                                    <div id="soundHigh1" class="lineGraph__graph" style="width: 700%;">
+                                          <span class="kt__title--hidden">
+                                                사운드그래프영역1
+                                          </span>
+                                    </div>
+                              </dd>
+                        </dl>
+                        <dl class="devinfo__box__cont">
+                              <dt class="lineGraph__title">사운드그래프(냉각팬)</dt>
+                              <dd class="lineGraph__wrap">
+                                    <div id="soundHigh2" class="lineGraph__graph week">
+                                          <span class="kt__title--hidden">
+                                                사운드그래프영역2
+                                          </span>
+                                    </div>
+                              </dd>
+                        </dl>
+                  </div>
+            </div>
+        </section>
+    </body>
+</html>

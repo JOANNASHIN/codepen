@@ -1,0 +1,801 @@
+%scrollBar {
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #cccccc;
+      border-radius: 5px;
+    }
+  }
+  
+.kt {
+    &__machine {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding-left: 360px;
+      background: #f8f8f8;
+  
+      &__lnb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 360px;
+        height: 100%;
+        overflow-y: auto;
+        padding: 0 20px 30px;
+        background: #f0f0f0;
+        @extend %scrollBar;
+  
+        .lnb {
+  
+          &__box {
+            position: relative;
+            margin-top: 40px;
+          }
+  
+          &__title {
+            padding-bottom: 10px;
+            color: #000;
+            font-size: 20px;
+            line-height: 24px;
+          }
+  
+          &__status {
+            position: absolute;
+            top: 0;
+            right: 0;
+  
+            %statusText {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 24px;
+            }
+  
+            span {
+              padding-right: 8px;
+            }
+  
+            &--gray {
+              @extend %statusText;
+              color: #999;
+            }
+            &--green {
+              @extend %statusText;
+              color: $green !important;
+            }
+            &--yellow {
+              @extend %statusText;
+              color: $yellow !important;
+            }
+            &--red {
+              @extend %statusText;
+              color: $red !important;
+            }
+            &--wifion {
+              font-size: 0 !important;
+              &:after {
+                display: block;
+                width: 14px;
+                height: 12px;
+                background: url("../images/gigasound/kt-machine-wifi.png") no-repeat -14px 0;
+                margin: 0 auto;
+                content: "";
+              }
+            }
+            &--wifioff {
+              font-size: 0 !important;
+              &:after {
+                display: block;
+                width: 14px;
+                height: 12px;
+                background: url("../images/gigasound/kt-machine-wifi.png") no-repeat 0 0;
+                margin: 0 auto;
+                content: "";
+              }
+            }
+          }
+  
+          &__detail {
+            padding: 15px 0 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(10, 10, 10, 0.1);
+  
+            &__scroll {
+  
+              table {
+                width: calc(100% - 25px);
+                margin-left: 25px;
+                height: 215px;
+                @extend %clear;
+              }
+              thead {
+                float: left;
+                width: calc(100% - 4px);
+              }
+  
+              tbody {
+                float: left;
+                overflow-y: auto;
+                overflow-x: hidden;
+                width: 100%;
+                max-height: 187px;
+                padding: 10px 0;
+                box-sizing: initial;
+  
+                @extend %scrollBar;
+              }
+  
+              tr {
+                display: table;
+                width: 100%;
+  
+                th:nth-of-type(1),
+                td:nth-of-type(1) {
+                  width: 46px;
+                }
+                th:nth-of-type(2),
+                td:nth-of-type(2) {
+                  width: 60px;
+                }
+                th:nth-of-type(3),
+                td:nth-of-type(3) {
+                  width: 66px;
+                }
+                th:nth-of-type(4),
+                td:nth-of-type(4) {
+                  width: 64px;
+                }
+                th:nth-of-type(5),
+                td:nth-of-type(5) {
+                  width: 50px;
+                }
+              }
+  
+            }
+  
+            &--fixWidth {
+              padding: 0 15px;
+            }
+  
+            th {
+              padding-bottom: 15px;
+              color: #000;
+              font-weight: 600;
+              font-size: 13px;
+            }
+            td {
+              padding-bottom: 15px;
+              color: #000;
+              font-weight: 600;
+              font-size: 12px;
+              text-align: center;
+            }
+  
+          }
+  
+        }
+      }
+  
+      &__board {
+        min-width: 1360px;
+        height: 100%;
+  
+        .board {
+          &__top {
+            padding: 30px 0;
+  
+            &__date {
+              display: inline-block;
+              padding-left: 50px;
+              button {
+                width: 8px;
+                height: 15px;
+                background: url("../images/gigasound/kt-layout-arrow.png") no-repeat 0 0;
+                font-size: 0;
+                vertical-align: middle;
+              }
+              span {
+                padding: 0 35px;
+                color: #666;
+                font-size: 18px;
+                vertical-align: middle;
+              }
+              &--next {
+                background-position-x: -10px !important;
+              }
+            }
+  
+            &__calendar {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              margin-left: 30px;
+              input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+                -webkit-appearance: none;
+                appearance: none;
+                opacity: 0;
+                cursor: pointer;
+              }
+              span {
+                font-size: 0;
+                &:after {
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  background: url("../images/gigasound/kt-calendar.png") no-repeat 0 0;
+                  vertical-align: middle;
+                  content: "";
+                }
+              }
+            }
+  
+            &__today {
+              padding: 10px 25px;
+              margin-left: 10px;
+              background: $pcolor;
+              border-radius: 20px;
+              color: #fff;
+              font-weight: 600;
+              font-size: 16px;
+              vertical-align: middle;
+            }
+  
+            &__update {
+              padding-left: 20px;
+              color: #666;
+              font-size: 13px;
+              vertical-align: middle;
+            }
+          }
+  
+          &__main {
+            //padding: 40px 50px;
+            padding: 20px 50px 40px;
+          }
+  
+          &__sort {
+            position: relative;
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+  
+            &__title {
+              padding-right: 18px;
+              color: #666;
+              font-weight: 600;
+              font-size: 18px;
+            }
+  
+            &__select {
+              width: 150px;
+              height: 30px;
+              padding: 0 0 10px 0;
+              background: transparent;
+              border: 1px solid transparent;
+              border-bottom-color: #666;
+              -webkit-appearance: none;
+              appearance: none;
+              color: #666;
+              font-size: 13px;
+              background: url("../images/gigasound/kt-select-arrow.png") no-repeat right 6px;
+            }
+          }
+  
+          &__update {
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 70px;
+          }
+  
+          &__list {
+            //padding: 90px 30px 0 30px;
+            //text-align: center;
+            padding: 40px 30px 0 30px;
+          }
+  
+          &__each {
+            display: inline-block;
+            position: relative;
+            width: 660px;
+            height: 440px;
+            margin-top: 45px;
+            margin-right: 10%;
+            background: url("../images/gigasound/kt-machine-background.png") no-repeat 0 0;
+  
+  
+            &:nth-of-type(even) {
+              margin-right: 0;
+            }
+  
+            &__title {
+              position: absolute;
+              top: -45px;
+              left: 0;
+              color: #000;
+              width: 100%;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ddd;
+              font-size: 24px;
+            }
+          }
+        }
+  
+        .device {
+          position: absolute;
+          width: 65px;
+          height: 90px;
+          background: #adadad;
+          border-radius: 6px;
+          color: #fff;
+          font-size: 10px;
+          text-align: center;
+          cursor: pointer;
+  
+          &.red {
+            background: #fa707a;
+            .device__perc,
+            .device__icon {
+              background: #f94c59;
+            }
+          }
+  
+          &.green {
+            background: #33c073;
+            .device__perc,
+            .device__icon {
+              background: #00b050;
+            }
+          }
+  
+          &.yellow {
+            background: #f6b833;
+            .device__perc,
+            .device__icon {
+              background: #f4a600;
+            }
+          }
+  
+          &:nth-of-type(1) {
+            top: 50px;
+            left: 295px;
+          }
+          &:nth-of-type(2) {
+            top: 110px;
+            left: 205px;
+          }
+          &:nth-of-type(3) {
+            top: 110px;
+            left: 385px;
+          }
+          &:nth-of-type(4) {
+            top: 170px;
+            left: 115px;
+          }
+          &:nth-of-type(5) {
+            top: 170px;
+            left: 295px;
+          }
+          &:nth-of-type(6) {
+            top: 170px;
+            left: 475px;
+          }
+          &:nth-of-type(7) {
+            top: 230px;
+            left: 205px;
+          }
+          &:nth-of-type(8) {
+            top: 230px;
+            left: 385px;
+          }
+          &:nth-of-type(9) {
+            top: 290px;
+            left: 295px;
+          }
+  
+          &__perc {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 44px;
+            padding: 5px 0;
+            margin-left: -22px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            background: #999999;
+            text-align: center;
+          }
+  
+          &__icon {
+            height: 30px;
+            padding-top: 6px;
+            background: #999999;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+  
+            span {
+              display: inline-block;
+              width: 10px;
+              height: 11px;
+              margin-right: 6px;
+              background: url("../images/gigasound/kt-device-icon.png") no-repeat;
+              font-size: 0;
+              &:last-of-type {
+                margin-right: 0;
+              }
+            }
+            &--tem {
+              background-position: 0 0!important;
+  
+              &.on {
+                background-position: 0 -20px!important;
+              }
+            }
+            &--vib {
+              background-position: -16px 0!important;
+              &.on {
+                background-position: -16px -20px!important;
+              }
+            }
+            &--sound {
+              background-position: -34px 0!important;
+              &.on {
+                background-position: -34px -20px!important;
+              }
+            }
+          }
+  
+          &__name {
+            height: 60px;
+            padding-top: 9px;
+  
+            &:before {
+              display: block;
+              width: 23px;
+              height: 30px;
+              padding: 0 0 3px;
+              margin: 0 auto;
+              background: url("../images/gigasound/kt-device-nameicon.png") no-repeat 0 0;
+              content: "";
+            }
+          }
+        }
+      }
+    }
+
+    &__device-info {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 80%;
+        background: #fff;
+        transform: translate(-50%, -50%);
+        .canvasjs-chart-credit {
+          display: none!important;
+        }
+    
+        .devinfo {
+          overflow-x: auto;
+          min-width: 1360px;
+          @extend %scrollBar;
+    
+          &__top {
+            position: relative;
+            padding-left: 293px;
+          }
+    
+          &__box {
+    
+            &--basic {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 273px;
+              margin-right: 20px;
+            }
+    
+            &--status {
+              width: 100%;
+              .devinfo__box__cont {
+                position: relative;
+                padding: 20px 40px 20px 160px;
+              }
+            }
+    
+            &--graph {
+              position: relative;
+              width: 100%;
+              margin: 30px 0;
+              @extend %clear;
+    
+              .devinfo__box__cont {
+                display: inline-block;
+                float: left;
+                width: calc(50% - 20px);
+                margin: 0 20px 20px 0;
+    
+                &:nth-of-type(even) {
+                  margin-right: 0;
+                }
+    
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                  margin-bottom: 0;
+                }
+              }
+            }
+    
+            &__title {
+              position: relative;
+              padding-left: 10px;
+              margin-bottom: 10px;
+              color: #000;
+              font-weight: 600;
+              font-size: 15px;
+              line-height: 24px;
+    
+              &:before {
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 12px;
+                background: #ff4444;
+                content: "";
+              }
+            }
+    
+            &__cont {
+              position: relative;
+              height: 308px;
+              //padding: 20px;
+              padding: 15px 20px;
+              background: #fff;
+              border-radius: 10px;
+              box-shadow: 1px 4px 8px rgba(0,0,0,0.1);
+              @extend %clear;
+            }
+    
+            &__info {
+    
+              &-list {
+                position: relative;
+                height: 38px;
+                padding: 12px 15px 12px 80px;
+                border-bottom: 1px solid #e8e8e8;
+                font-size: 13px;
+              }
+              &-name {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 80px;
+                height: 38px;
+                color: #666;
+                line-height: 38px;
+              }
+              &-detail {
+                color: #999;
+              }
+            }
+    
+          }
+        }
+    
+        /*신호등그래프*/
+        .lightGraph {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          width: 140px;
+          height: 100%;
+    
+          &__box {
+            margin-bottom: 26px;
+    
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+    
+            &.green {
+              .lightGraph__box__title {
+                em {
+                  color: $green;
+                }
+              }
+              .lightGraph__box__graph {
+                span {
+                  &:nth-of-type(3) {
+                    background: $green;
+                  }
+                }
+              }
+            }
+            &.yellow {
+              .lightGraph__box__title {
+                em {
+                  color: $yellow;
+                }
+              }
+              .lightGraph__box__graph {
+                span {
+                  &:nth-of-type(2) {
+                    background: $yellow;
+                  }
+                }
+              }
+            }
+            &.red {
+              .lightGraph__box__title {
+                em {
+                  color: $red;
+                }
+              }
+              .lightGraph__box__graph {
+                span {
+                  &:nth-of-type(1) {
+                    background: $red;
+                  }
+                }
+              }
+            }
+            &__title {
+              position: relative;
+              color: #999;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 24px;
+            }
+    
+            &__control {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 13px;
+              height: 100%;
+              background: url("../images/gigasound/icon-kt-caution.png") no-repeat 0 center;
+              font-size: 0;
+            }
+            &__graph {
+              padding: 9px 25px;
+              margin-top: 6px;
+              background: #fcfcfc;
+              border-radius: 20px;
+              @extend %clear;
+    
+              span {
+                display: inline-block;
+                float: left;
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+                background: #ebebeb;
+                border-radius: 50%;
+                font-size: 0;
+    
+                &:last-of-type {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+    
+        .lineGraph {
+          display: inline-block;
+          float: left;
+          position: relative;
+          width: 50%;
+          padding: 0 40px;
+          border-right: 1px solid #e8e8e8;
+    
+          &:last-of-type {
+            border-right: 0;
+            padding-right: 0;
+          }
+    
+          &__title {
+            color: #999;
+            font-size: 13px;
+            line-height: 30px;
+          }
+    
+          &__sort {
+            &--button {
+              position: absolute;
+              top: 3px;
+              right: 40px;
+    
+              button {
+                width: 50px;
+                height: 24px;
+                margin-right: 4px;
+                background: #ddd;
+                border-radius: 20px;
+                color: #666;
+                font-weight: 600;
+                font-size: 13px;
+                text-align: center;
+                line-height: 22px;
+                &.on {
+                  background: #666;
+                  color: #fff;
+                }
+              }
+            }
+            &--select {
+              position: absolute;
+              top: 0;
+              right: 0;
+              color: #666;
+              font-weight: 600;
+              font-size: 13px;
+              text-align: center;
+              line-height: 22px;
+    
+              select {
+                height: 100%;
+                padding: 6px 30px 6px 12px;
+                margin-right: 13px;
+                background-color: transparent;
+                border-radius: 20px;
+                color: #666;
+                font-size: 12px;
+                vertical-align: middle;
+              }
+    
+              span {
+                padding-right: 4px;
+                color: #999;
+                font-size: 13px;
+                vertical-align: middle;
+              }
+            }
+          }
+    
+          &__wrap {
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+              height: 14px;
+              border-radius: 3px;
+            }
+            &::-webkit-scrollbar-track {
+              border-radius: 10px;
+              background: #fff;
+              border: 2px solid #e2e2e2;
+            }
+            &::-webkit-scrollbar-thumb {
+              border-radius: 10px;
+              -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            }
+          }
+    
+          &__graph {
+            width: 250%;
+            height: 230px;
+            background: #fff;
+    
+            &.day {
+              width: 100%;
+            }
+            &.week {
+              width: 700%;
+            }
+            &.month {
+              width: 800%;
+            }
+            &.threeMonth {
+              width: 800%;
+            }
+          }
+        }
+      }
+  }
