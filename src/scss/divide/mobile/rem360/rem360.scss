@@ -1,0 +1,20 @@
+// REM 적용 (360px 기준)
+@import "~/node_modules/sass-rem/_rem.scss";
+
+$rem-baseline: 16px;
+
+@function getPercentage($width) {
+    $result: 1;
+        
+    $result: $width / 360 * 100;
+    @return $result;
+}
+
+html {
+    @include rem-baseline;
+    -webkit-text-size-adjust: none;
+    font-size: 100%;
+    //app.js에서 처리
+}
+
+$width: rem(360px);
