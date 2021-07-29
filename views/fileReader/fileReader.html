@@ -17,73 +17,102 @@
         </header>
 
         <div class="fb__fileReader__wrapper">
-            <form class="fb__fileReader__form">
+            <form class="fb__fileReader__form js__fileReader__form">
                 <fieldset>
                     <legend>문의작성</legend>
 
-                    <dl>
-                        <dt class="form__title">문의유형</dt>
-                        <dd>
-                            <select name="" id="">
+                    <dl class="form__list">
+                        <dt class="form__name">문의유형</dt>
+                        <dd class="form__write">
+                            <select name="js__inquiry" id="">
                                 <option value="">유형을 선택하세요.</option>
+                                <option value="1">상품문의</option>
+                                <option value="2">서비스 이용 문의</option>
+                                <option value="3">회원정보 문의</option>
+                                <option value="4">이벤트 당첨 문의</option>
+                                <option value="5">입점 문의</option>
+                                <option value="6">기타 문의</option>
                             </select>
                         </dd>
                     </dl>
 
-                    <dl>
-                        <dt class="form__title">이메일</dt>
-                        <dd>
+                    <dl class="form__list">
+                        <dt class="form__name">이메일</dt>
+                        <dd class="form__write">
                             <input type="text" placeholder="이메일을 입력하세요.">
                         </dd>
                     </dl>
 
-                    <dl>
-                        <dt class="form__title">문의 작성</dt>
-                        <dd>
-                            <label>
-                                <input type="text" placeholder="제목을 입력하세요.">
-                            </label>
-                            <label>
-                                <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요. (주민번호, 휴대폰 번호 등 개인정보를 입력하지 마세요.)">
-                                </textarea>
-                            </label>
+                    <dl class="form__list">
+                        <dt class="form__name">문의 작성</dt>
+                        <dd class="form__write">
+                            <input type="text" placeholder="제목을 입력하세요.">
+                            <textarea class="form__write__textarea" name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요. (주민번호, 휴대폰 번호 등 개인정보를 입력하지 마세요.)"></textarea>
                         </dd>
                     </dl>
 
-                    <dl>
-                        <dt class="form__title">
-                            <button type="button">사진첨부</button>
-                        </dt>
-                        <dd>
-                            <figure>
-                                <img src="" alt="">
-                                <button>삭제하기</button>
-                            </figure>
+                    <dl class="form__list">
+                        <dt class="form__name">사진첨부</dt>
+                        <dd class="form__write">
+                            <ul class="form__file">
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+                            </ul>
                         </dd>
 
-                        <dd>
+                        <dd class="fb__fileReader__desc">
                             <p>
-                                사진 확장자는 JPG, PNG, GIF, HEIC만 등록 가능합니다.
+                                - 사진 확장자는 JPG, PNG, GIF, HEIC만 등록 가능합니다.
                             </p>
                             <p>
-                                첨부파일 용량은 파일당 최대 5Mbyte까지만 가능합니다.
+                                - 첨부파일 용량은 파일당 최대 5Mbyte까지만 가능합니다.
                             </p>
                             <p>
-                                첨부파일은 최대 3개까지 등록 가능합니다.
+                                - 첨부파일은 최대 3개까지 등록 가능합니다.
                             </p>
                         </dd>
                     </dl>
 
-                    <button type="submit" class="">등록</button>
+                    <button class="form__submit" type="submit" class="">등록</button>
                 </fieldset>
             </form>
 
-            <div>
+            <div class="fb__fileReader__desc">
                 <p>
-                    답변은 마이페이지 1:1문의 또는 문의 시 등록한 이메일을 통해 확인하실 수 있습니다.
+                    - 답변은 마이페이지 1:1문의 또는 문의 시 등록한 이메일을 통해 확인하실 수 있습니다.
                 </p>
                 <p>
-                    한번 등록한 문의글은 수정, 삭제가 불가능 합니다.
+                    - 한번 등록한 문의글은 수정, 삭제가 불가능 합니다.
                 </p>
             </div>
         </div>

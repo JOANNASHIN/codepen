@@ -15,12 +15,146 @@
 
         &__form {
             .form {
-                &__title {
+                &__list {
+                    display: block;
+                    margin-bottom: rem(24px);
+                }
+
+                &__name {
                     display: block;
                     margin-bottom: rem(8px);
                     @include fontcss($black, 600, rem(14px), rem(20px));
                 }
+
+                &__write {
+                    input[type=text],
+                    select {
+                        width: 100%;
+                        height: rem(52px);
+                        padding: rem(16px 46px 16px 16px);
+                        border: 1px solid $light;
+                        border-radius: rem(6px);
+                        @include fontcss($black, 200, rem(14px), rem(20px));
+                    }
+
+                    &__textarea {
+                        display: block;
+                        margin-top: rem(8px);
+                        padding: rem(16px);
+                        border: 1px solid $light;
+                        border-radius: rem(6px);
+                        @include fontcss($black, 200, rem(14px), rem(20px));
+                        
+                        &::placeholder {
+                            @include fontcss($medium, 200, rem(14px), rem(20px));
+                        }
+                    }
+                }
+
+                &__file {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    overflow: hidden;
+
+                    &__box {
+                        overflow: hidden;
+                        position: relative;
+                        width: rem(104px);
+                        height: rem(104px);
+                        margin-right: rem(4px);
+                        border: 1px solid $light;
+                        border-radius: rem(6px);
+                    } 
+
+                    &__label {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        background: #fff;
+
+                        input {
+                            display: none;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: rem(40px);
+                            height: rem(2px);
+                            background: $light;
+                            transform: translate(-50%, -50%);
+                            content: "";
+                        }
+
+                        &:after {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: rem(2px);
+                            height: rem(40px);
+                            background: $light;
+                            transform: translate(-50%, -50%);
+                            content: "";
+                        }
+                    }
+
+                    &__image {
+                        display: none;
+                        @include imageResize("width");
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        &.show {
+                            display: block;
+                        }
+
+                        img {
+                            margin: 0;
+                        }
+                    }
+
+                    &__rotate {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: rem(20px);
+                        height: rem(20px);
+                        background: url(src("common", "icon-rotate.png")) no-repeat center center / 100% auto;
+                        font-size: 0;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &__remove {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: rem(20px);
+                        height: rem(20px);
+                        background: $black url(svgSrc("guide", "ico-delete-white")) no-repeat center center / rem(8px);
+                        font-size: 0;
+                    }
+                }
+
+                &__submit {
+                    display: block;
+                    width: 100%;
+                    margin: rem(24px 0);
+                    background: $black;
+                    border-radius: rem(6px);
+                    @include fontcss(#fff, 600, rem(17px), rem(56px));
+                    text-align: center;
+                }
             }
+        }
+
+        &__desc {
+            display: block;
+            margin-top: rem(8px);
+            @include fontcss($medium, 200, rem(12px), rem(18px));
         }
     }
 }
