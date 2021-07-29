@@ -22,4 +22,21 @@
         height: 1px !important;
         clip: rect(1px, 1px, 1px, 1px);
     }
+
+    &__loading {
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        z-index: 99;
+        width: 32px;
+        height: 32px;
+        background: url(src("common", "loading.gif")) no-repeat 0 0;
+        font-size: 0;
+        transform: translate(-50%, -50%);
+
+        &.show {
+            display: block;
+        }
+    }
 }

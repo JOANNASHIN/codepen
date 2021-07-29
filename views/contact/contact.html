@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Contact 메뉴</title>
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+
+        <!-- 내부 js -->
+        <script src="/dist/js/main.js"></script>
+    </head>
+
+    <body id="contact" class="fb">
+        <section class="fb__contact">
+            <form class="fb__contact__form js__contact__form">
+                <fieldset>
+                    <legend>연락하기</legend>
+                    <span class="fb__contact__tip">이메일로 문의 / 제안을 보내주세요 !</span>
+    
+                    <label>
+                        <span class="fb__contact__label">연락 받으실 이메일 <em>*</em></span>
+                        <input type="text" placeholder="연락을 받으실 이메일을 입력하세요." maxlength="30" name="reply_to">
+                    </label> 
+        
+                    <label>
+                        <span class="fb__contact__label">이름 <em>*</em></span>
+                        <input type="text" placeholder="이름을 입력하세요." maxlength="30" name="name">
+                    </label> 
+        
+                    <label>
+                        <span class="fb__contact__label">제목 <em>*</em></span>
+                        <input type="text" placeholder="제목을 입력하세요." maxlength="30" name="title">
+                    </label> 
+        
+                    <label>
+                        <span class="fb__contact__label">내용 <em>*</em></span>
+                        <textarea type="text" placeholder="내용을 입력하세요." maxlength="100" name="message"></textarea>
+                    </label> 
+        
+                    <div class="fb__contact__bottom">
+                        <button type="submit" class="fb__contact__send js__contact__send">이메일 보내기</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <span class="fb__loading js__loading">로딩중 아이콘</span>
+    </section>
+    </body>
+</html>
