@@ -128,6 +128,10 @@ $font_n: $font_noto;
     @return  "../images/svg/#{$folder}/#{$filename}.svg";
 }
 
+@function src($folder: 'guide', $filename: "") {
+    @return  "../images/#{$folder}/#{$filename}";
+}
+
 //구분선
 @mixin division($color: #ccc, $space: rem(32px), $height: rem(18px)) {
     position: relative;
@@ -187,6 +191,7 @@ $font_n: $font_noto;
 
 // 모바일
 @media screen and (max-width: 750px) {
+    @import "./divide/mobile/rem360/rem360.scss";
     @import "./divide/mobile/rem360/reset.scss";
     @import "./divide/mobile/rem360/common.scss";
 }
@@ -197,34 +202,19 @@ $font_n: $font_noto;
 }
 
 
+
+
 /* 페이지 */
 // PC
 @import "./divide/findAddress.scss";
 @import "./divide/weather.scss";
 @import "./divide/main.scss";
+@import "./divide/pc/ktGigaSoundChart.scss";
 
 
-// REM 적용 (360px 기준)
-@import "~/node_modules/sass-rem/_rem.scss";
 
-$rem-baseline: 16px;
-
-@function getPercentage($width) {
-    $result: 1;
-        
-    $result: $width / 360 * 100;
-    @return $result;
-}
-
-html {
-    @include rem-baseline;
-    -webkit-text-size-adjust: none;
-    font-size: 100%;
-    //app.js에서 처리
-}
-
-$width: rem(360px);
-
+//모바일
+@import "./divide/mobile/rem360/rem360.scss";
 @import "./divide/mobile/rem360/brandIndexer.scss";
 @import "./divide/mobile/rem360/searchKeyword.scss";
 @import "./divide/mobile/rem360/filter.scss";
@@ -233,6 +223,6 @@ $width: rem(360px);
 
 
 
-
+//수정필요
 // @import "./divide/mobile/rem360/layout.scss";
 // @import "./divide/olenz.scss";

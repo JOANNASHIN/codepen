@@ -114,6 +114,7 @@
                         width: calc(25% - 20px);
                         margin: 0 10px 40px;
                         font-size: 14px;
+                        vertical-align: top;
 
                         &.show {
                             display: inline-block;
@@ -160,12 +161,14 @@
                         content: "";
                     }
 
-                    &:hover {
+                    &:not(.noAnimation):hover {
                         img {
                             transform: translate(0, -30%);
                             transition: transform 1s ease-in-out;
                         }
-                        
+                    }
+
+                    &:hover {
                         .pens__layer {
                             display: block;
                         }

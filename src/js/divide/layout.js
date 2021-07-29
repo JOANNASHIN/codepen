@@ -10,8 +10,18 @@ const layout = () => {
             });
     }
 
+    const showLoading = (_show) => {
+        if (_show) {
+            $(".js__loading").addClass("show");
+        }
+        else {
+            $(".js__loading").removeClass("show");
+        }
+    }
+
     const init = () => {
         // navigationOpenClose();
+        window.showLoading = showLoading;
     }
 
     init();

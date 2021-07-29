@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.fb__weather__cont:after, .fb__findAddress__write:after {
+.kt__device-info .lightGraph__box__graph:after, .kt__device-info .devinfo__box__cont:after, .kt__device-info .devinfo__box--graph:after, .kt__machine__lnb .lnb__detail__scroll table:after, .fb__weather__cont:after, .fb__findAddress__write:after {
   display: block;
   clear: both;
   content: "";
@@ -102,6 +102,12 @@
   src: url(../../src/font/Roboto-bold.woff) format("woff");
 }
 @media screen and (max-width: 750px) {
+  html {
+    font-size: 100%;
+    -webkit-text-size-adjust: none;
+    font-size: 100%;
+  }
+
   * {
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
@@ -217,7 +223,7 @@ h2,
 h3,
 h4 {
     margin: 0;
-    font-size: rem(14px);
+    font-size: 0.875rem;
   }
 
   figure {
@@ -256,9 +262,8 @@ h4 {
   }
 
   label {
-    display: inline-block;
+    display: block;
     border: 0;
-    vertical-align: middle;
     cursor: pointer;
   }
 
@@ -277,12 +282,12 @@ h4 {
 input[type=password],
 input[type=number] {
     width: 100%;
-    padding: rem(16px 52px 16px 16px);
+    padding: 1rem 3.25rem 1rem 1rem;
     border: 1px solid #eaeaea;
-    border-radius: rem(6px);
+    border-radius: 0.375rem;
     color: #1e1e1e;
     font-weight: 200;
-    font-size: rem(14px);
+    font-size: 0.875rem;
     box-sizing: border-box;
   }
   input[type=text]::placeholder,
@@ -305,8 +310,8 @@ input[type=number]:disabled {
 
   input[type=file].file-upload {
     float: left;
-    width: rem(140px);
-    height: rem(140px);
+    width: 8.75rem;
+    height: 8.75rem;
     opacity: 0;
   }
 
@@ -314,12 +319,12 @@ input[type=number]:disabled {
     outline: none;
     appearance: none;
     width: 100%;
-    padding: rem(16px 46px 16px 16px);
-    background: #fff url(../../src/images/svg/guide/ico-dropdown-14-x-8.svg) no-repeat calc(100% - rem(16px)) center/rem(14px 8px);
+    padding: 1rem 2.875rem 1rem 1rem;
+    background: #fff url(../../src/images/svg/guide/ico-dropdown-14-x-8.svg) no-repeat calc(100% - 1rem) center/0.875rem 0.5rem;
     border: 1px solid #eaeaea;
-    border-radius: rem(6px);
+    border-radius: 0.375rem;
     color: #1e1e1e;
-    font-size: rem(14px);
+    font-size: 0.875rem;
     vertical-align: middle;
     box-sizing: border-box;
   }
@@ -342,11 +347,11 @@ input[type=number]:disabled {
 
   textarea {
     width: 100%;
-    padding: rem(16px);
+    padding: 1rem;
     border: 1px solid #eaeaea;
     color: #1e1e1e;
     font-weight: 200;
-    font-size: rem(14px);
+    font-size: 0.875rem;
     text-indent: 0;
     border-radius: 0;
     resize: none;
@@ -427,6 +432,21 @@ input[type=number]:disabled {
     height: 1px !important;
     clip: rect(1px, 1px, 1px, 1px);
   }
+  .fb__loading {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: 99;
+    width: 32px;
+    height: 32px;
+    background: url(../../src/images/common/loading.gif) no-repeat 0 0;
+    font-size: 0;
+    transform: translate(-50%, -50%);
+  }
+  .fb__loading.show {
+    display: block;
+  }
 
   /* http://meyerweb.com/eric/tools/css/reset/
      v2.0-modified | 20110126
@@ -481,6 +501,14 @@ footer, header, hgroup, menu, nav, section {
 
   ol, ul {
     list-style: none;
+  }
+
+  button {
+    padding: 0;
+    border: 0;
+    background: none;
+    outline: 0;
+    user-select: none;
   }
 
   blockquote, q {
@@ -1277,6 +1305,7 @@ input[type=number]:disabled {
   width: calc(25% - 20px);
   margin: 0 10px 40px;
   font-size: 14px;
+  vertical-align: top;
 }
 .fb__main__pens.listType .pens__box.show {
   display: inline-block;
@@ -1313,7 +1342,7 @@ input[type=number]:disabled {
   background: rgba(255, 255, 255, 0.05);
   content: "";
 }
-.fb__main__pens .pens__thumb:hover img {
+.fb__main__pens .pens__thumb:not(.noAnimation):hover img {
   transform: translate(0, -30%);
   transition: transform 1s ease-in-out;
 }
@@ -1499,6 +1528,672 @@ input[type=number]:disabled {
   font-weight: 600;
   font-size: 30px;
   line-height: 1.2;
+}
+
+.kt__device-info .devinfo::-webkit-scrollbar, .kt__machine__lnb .lnb__detail__scroll tbody::-webkit-scrollbar, .kt__machine__lnb::-webkit-scrollbar {
+  width: 4px;
+}
+.kt__device-info .devinfo::-webkit-scrollbar-thumb, .kt__machine__lnb .lnb__detail__scroll tbody::-webkit-scrollbar-thumb, .kt__machine__lnb::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 5px;
+}
+
+.kt__machine {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 360px;
+  background: #f8f8f8;
+}
+.kt__machine__lnb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 20px 30px;
+  background: #f0f0f0;
+}
+.kt__machine__lnb .lnb__box {
+  position: relative;
+  margin-top: 40px;
+}
+.kt__machine__lnb .lnb__title {
+  padding-bottom: 10px;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+}
+.kt__machine__lnb .lnb__status {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.kt__machine__lnb .lnb__status .lnb__status--red, .kt__machine__lnb .lnb__status .lnb__status--yellow, .kt__machine__lnb .lnb__status .lnb__status--green, .kt__machine__lnb .lnb__status .lnb__status--gray {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+}
+.kt__machine__lnb .lnb__status span {
+  padding-right: 8px;
+}
+.kt__machine__lnb .lnb__status--gray {
+  color: #999;
+}
+.kt__machine__lnb .lnb__status--green {
+  color: #3ab505 !important;
+}
+.kt__machine__lnb .lnb__status--yellow {
+  color: #fab200 !important;
+}
+.kt__machine__lnb .lnb__status--red {
+  color: #ff2600 !important;
+}
+.kt__machine__lnb .lnb__status--wifion {
+  font-size: 0 !important;
+}
+.kt__machine__lnb .lnb__status--wifion:after {
+  display: block;
+  width: 14px;
+  height: 12px;
+  background: url(../../src/images/gigasound/kt-machine-wifi.png) no-repeat -14px 0;
+  margin: 0 auto;
+  content: "";
+}
+.kt__machine__lnb .lnb__status--wifioff {
+  font-size: 0 !important;
+}
+.kt__machine__lnb .lnb__status--wifioff:after {
+  display: block;
+  width: 14px;
+  height: 12px;
+  background: url(../../src/images/gigasound/kt-machine-wifi.png) no-repeat 0 0;
+  margin: 0 auto;
+  content: "";
+}
+.kt__machine__lnb .lnb__detail {
+  padding: 15px 0 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(10, 10, 10, 0.1);
+}
+.kt__machine__lnb .lnb__detail__scroll table {
+  width: calc(100% - 25px);
+  margin-left: 25px;
+  height: 215px;
+}
+.kt__machine__lnb .lnb__detail__scroll thead {
+  float: left;
+  width: calc(100% - 4px);
+}
+.kt__machine__lnb .lnb__detail__scroll tbody {
+  float: left;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-height: 187px;
+  padding: 10px 0;
+  box-sizing: initial;
+}
+.kt__machine__lnb .lnb__detail__scroll tr {
+  display: table;
+  width: 100%;
+}
+.kt__machine__lnb .lnb__detail__scroll tr th:nth-of-type(1),
+.kt__machine__lnb .lnb__detail__scroll tr td:nth-of-type(1) {
+  width: 46px;
+}
+.kt__machine__lnb .lnb__detail__scroll tr th:nth-of-type(2),
+.kt__machine__lnb .lnb__detail__scroll tr td:nth-of-type(2) {
+  width: 60px;
+}
+.kt__machine__lnb .lnb__detail__scroll tr th:nth-of-type(3),
+.kt__machine__lnb .lnb__detail__scroll tr td:nth-of-type(3) {
+  width: 66px;
+}
+.kt__machine__lnb .lnb__detail__scroll tr th:nth-of-type(4),
+.kt__machine__lnb .lnb__detail__scroll tr td:nth-of-type(4) {
+  width: 64px;
+}
+.kt__machine__lnb .lnb__detail__scroll tr th:nth-of-type(5),
+.kt__machine__lnb .lnb__detail__scroll tr td:nth-of-type(5) {
+  width: 50px;
+}
+.kt__machine__lnb .lnb__detail--fixWidth {
+  padding: 0 15px;
+}
+.kt__machine__lnb .lnb__detail th {
+  padding-bottom: 15px;
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+}
+.kt__machine__lnb .lnb__detail td {
+  padding-bottom: 15px;
+  color: #000;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+}
+.kt__machine__board {
+  min-width: 1360px;
+  height: 100%;
+}
+.kt__machine__board .board__top {
+  padding: 30px 0;
+}
+.kt__machine__board .board__top__date {
+  display: inline-block;
+  padding-left: 50px;
+}
+.kt__machine__board .board__top__date button {
+  width: 8px;
+  height: 15px;
+  background: url(../../src/images/gigasound/kt-layout-arrow.png) no-repeat 0 0;
+  font-size: 0;
+  vertical-align: middle;
+}
+.kt__machine__board .board__top__date span {
+  padding: 0 35px;
+  color: #666;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.kt__machine__board .board__top__date--next {
+  background-position-x: -10px !important;
+}
+.kt__machine__board .board__top__calendar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+}
+.kt__machine__board .board__top__calendar input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.kt__machine__board .board__top__calendar span {
+  font-size: 0;
+}
+.kt__machine__board .board__top__calendar span:after {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url(../../src/images/gigasound/kt-calendar.png) no-repeat 0 0;
+  vertical-align: middle;
+  content: "";
+}
+.kt__machine__board .board__top__today {
+  padding: 10px 25px;
+  margin-left: 10px;
+  background: #fbc967;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.kt__machine__board .board__top__update {
+  padding-left: 20px;
+  color: #666;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.kt__machine__board .board__main {
+  padding: 20px 50px 40px;
+}
+.kt__machine__board .board__sort {
+  position: relative;
+  display: block;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.kt__machine__board .board__sort__title {
+  padding-right: 18px;
+  color: #666;
+  font-weight: 600;
+  font-size: 18px;
+}
+.kt__machine__board .board__sort__select {
+  width: 150px;
+  height: 30px;
+  padding: 0 0 10px 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: #666;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #666;
+  font-size: 13px;
+  background: url(../../src/images/gigasound/kt-select-arrow.png) no-repeat right 6px;
+}
+.kt__machine__board .board__update {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 70px;
+}
+.kt__machine__board .board__list {
+  padding: 40px 30px 0 30px;
+}
+.kt__machine__board .board__each {
+  display: inline-block;
+  position: relative;
+  width: 660px;
+  height: 440px;
+  margin-top: 45px;
+  margin-right: 10%;
+  background: url(../../src/images/gigasound/kt-machine-background.png) no-repeat 0 0;
+}
+.kt__machine__board .board__each:nth-of-type(even) {
+  margin-right: 0;
+}
+.kt__machine__board .board__each__title {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  color: #000;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 24px;
+}
+.kt__machine__board .device {
+  position: absolute;
+  width: 65px;
+  height: 90px;
+  background: #adadad;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.kt__machine__board .device.red {
+  background: #fa707a;
+}
+.kt__machine__board .device.red .device__perc,
+.kt__machine__board .device.red .device__icon {
+  background: #f94c59;
+}
+.kt__machine__board .device.green {
+  background: #33c073;
+}
+.kt__machine__board .device.green .device__perc,
+.kt__machine__board .device.green .device__icon {
+  background: #00b050;
+}
+.kt__machine__board .device.yellow {
+  background: #f6b833;
+}
+.kt__machine__board .device.yellow .device__perc,
+.kt__machine__board .device.yellow .device__icon {
+  background: #f4a600;
+}
+.kt__machine__board .device:nth-of-type(1) {
+  top: 50px;
+  left: 295px;
+}
+.kt__machine__board .device:nth-of-type(2) {
+  top: 110px;
+  left: 205px;
+}
+.kt__machine__board .device:nth-of-type(3) {
+  top: 110px;
+  left: 385px;
+}
+.kt__machine__board .device:nth-of-type(4) {
+  top: 170px;
+  left: 115px;
+}
+.kt__machine__board .device:nth-of-type(5) {
+  top: 170px;
+  left: 295px;
+}
+.kt__machine__board .device:nth-of-type(6) {
+  top: 170px;
+  left: 475px;
+}
+.kt__machine__board .device:nth-of-type(7) {
+  top: 230px;
+  left: 205px;
+}
+.kt__machine__board .device:nth-of-type(8) {
+  top: 230px;
+  left: 385px;
+}
+.kt__machine__board .device:nth-of-type(9) {
+  top: 290px;
+  left: 295px;
+}
+.kt__machine__board .device__perc {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 44px;
+  padding: 5px 0;
+  margin-left: -22px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background: #999999;
+  text-align: center;
+}
+.kt__machine__board .device__icon {
+  height: 30px;
+  padding-top: 6px;
+  background: #999999;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.kt__machine__board .device__icon span {
+  display: inline-block;
+  width: 10px;
+  height: 11px;
+  margin-right: 6px;
+  background: url(../../src/images/gigasound/kt-device-icon.png) no-repeat;
+  font-size: 0;
+}
+.kt__machine__board .device__icon span:last-of-type {
+  margin-right: 0;
+}
+.kt__machine__board .device__icon--tem {
+  background-position: 0 0 !important;
+}
+.kt__machine__board .device__icon--tem.on {
+  background-position: 0 -20px !important;
+}
+.kt__machine__board .device__icon--vib {
+  background-position: -16px 0 !important;
+}
+.kt__machine__board .device__icon--vib.on {
+  background-position: -16px -20px !important;
+}
+.kt__machine__board .device__icon--sound {
+  background-position: -34px 0 !important;
+}
+.kt__machine__board .device__icon--sound.on {
+  background-position: -34px -20px !important;
+}
+.kt__machine__board .device__name {
+  height: 60px;
+  padding-top: 9px;
+}
+.kt__machine__board .device__name:before {
+  display: block;
+  width: 23px;
+  height: 30px;
+  padding: 0 0 3px;
+  margin: 0 auto;
+  background: url(../../src/images/gigasound/kt-device-nameicon.png) no-repeat 0 0;
+  content: "";
+}
+.kt__device-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  /*신호등그래프*/
+}
+.kt__device-info .canvasjs-chart-credit {
+  display: none !important;
+}
+.kt__device-info .devinfo {
+  overflow-x: auto;
+  min-width: 1360px;
+}
+.kt__device-info .devinfo__top {
+  position: relative;
+  padding-left: 293px;
+}
+.kt__device-info .devinfo__box--basic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 273px;
+  margin-right: 20px;
+}
+.kt__device-info .devinfo__box--status {
+  width: 100%;
+}
+.kt__device-info .devinfo__box--status .devinfo__box__cont {
+  position: relative;
+  padding: 20px 40px 20px 160px;
+}
+.kt__device-info .devinfo__box--graph {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+}
+.kt__device-info .devinfo__box--graph .devinfo__box__cont {
+  display: inline-block;
+  float: left;
+  width: calc(50% - 20px);
+  margin: 0 20px 20px 0;
+}
+.kt__device-info .devinfo__box--graph .devinfo__box__cont:nth-of-type(even) {
+  margin-right: 0;
+}
+.kt__device-info .devinfo__box--graph .devinfo__box__cont:nth-of-type(3), .kt__device-info .devinfo__box--graph .devinfo__box__cont:nth-of-type(4) {
+  margin-bottom: 0;
+}
+.kt__device-info .devinfo__box__title {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+}
+.kt__device-info .devinfo__box__title:before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 2px;
+  height: 12px;
+  background: #ff4444;
+  content: "";
+}
+.kt__device-info .devinfo__box__cont {
+  position: relative;
+  height: 308px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.kt__device-info .devinfo__box__info-list {
+  position: relative;
+  height: 38px;
+  padding: 12px 15px 12px 80px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 13px;
+}
+.kt__device-info .devinfo__box__info-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 38px;
+  color: #666;
+  line-height: 38px;
+}
+.kt__device-info .devinfo__box__info-detail {
+  color: #999;
+}
+.kt__device-info .lightGraph {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 140px;
+  height: 100%;
+}
+.kt__device-info .lightGraph__box {
+  margin-bottom: 26px;
+}
+.kt__device-info .lightGraph__box:last-of-type {
+  margin-bottom: 0;
+}
+.kt__device-info .lightGraph__box.green .lightGraph__box__title em {
+  color: #3ab505;
+}
+.kt__device-info .lightGraph__box.green .lightGraph__box__graph span:nth-of-type(3) {
+  background: #3ab505;
+}
+.kt__device-info .lightGraph__box.yellow .lightGraph__box__title em {
+  color: #fab200;
+}
+.kt__device-info .lightGraph__box.yellow .lightGraph__box__graph span:nth-of-type(2) {
+  background: #fab200;
+}
+.kt__device-info .lightGraph__box.red .lightGraph__box__title em {
+  color: #ff2600;
+}
+.kt__device-info .lightGraph__box.red .lightGraph__box__graph span:nth-of-type(1) {
+  background: #ff2600;
+}
+.kt__device-info .lightGraph__box__title {
+  position: relative;
+  color: #999;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+}
+.kt__device-info .lightGraph__box__control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 13px;
+  height: 100%;
+  background: url(../../src/images/gigasound/icon-kt-caution.png) no-repeat 0 center;
+  font-size: 0;
+}
+.kt__device-info .lightGraph__box__graph {
+  padding: 9px 25px;
+  margin-top: 6px;
+  background: #fcfcfc;
+  border-radius: 20px;
+}
+.kt__device-info .lightGraph__box__graph span {
+  display: inline-block;
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background: #ebebeb;
+  border-radius: 50%;
+  font-size: 0;
+}
+.kt__device-info .lightGraph__box__graph span:last-of-type {
+  margin-right: 0;
+}
+.kt__device-info .lineGraph {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 50%;
+  padding: 0 40px;
+  border-right: 1px solid #e8e8e8;
+}
+.kt__device-info .lineGraph:last-of-type {
+  border-right: 0;
+  padding-right: 0;
+}
+.kt__device-info .lineGraph__title {
+  color: #999;
+  font-size: 13px;
+  line-height: 30px;
+}
+.kt__device-info .lineGraph__sort--button {
+  position: absolute;
+  top: 3px;
+  right: 40px;
+}
+.kt__device-info .lineGraph__sort--button button {
+  width: 50px;
+  height: 24px;
+  margin-right: 4px;
+  background: #ddd;
+  border-radius: 20px;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  line-height: 22px;
+}
+.kt__device-info .lineGraph__sort--button button.on {
+  background: #666;
+  color: #fff;
+}
+.kt__device-info .lineGraph__sort--select {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #666;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  line-height: 22px;
+}
+.kt__device-info .lineGraph__sort--select select {
+  height: 100%;
+  padding: 6px 30px 6px 12px;
+  margin-right: 13px;
+  background-color: transparent;
+  border-radius: 20px;
+  color: #666;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.kt__device-info .lineGraph__sort--select span {
+  padding-right: 4px;
+  color: #999;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.kt__device-info .lineGraph__wrap {
+  overflow-x: auto;
+}
+.kt__device-info .lineGraph__wrap::-webkit-scrollbar {
+  height: 14px;
+  border-radius: 3px;
+}
+.kt__device-info .lineGraph__wrap::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #e2e2e2;
+}
+.kt__device-info .lineGraph__wrap::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.kt__device-info .lineGraph__graph {
+  width: 250%;
+  height: 230px;
+  background: #fff;
+}
+.kt__device-info .lineGraph__graph.day {
+  width: 100%;
+}
+.kt__device-info .lineGraph__graph.week {
+  width: 700%;
+}
+.kt__device-info .lineGraph__graph.month {
+  width: 800%;
+}
+.kt__device-info .lineGraph__graph.threeMonth {
+  width: 800%;
 }
 
 html {
@@ -2506,13 +3201,154 @@ html {
 .fb__fileReader__wrapper {
   padding: 1.5rem 1.25rem;
 }
-.fb__fileReader__form .form__title {
+.fb__fileReader__form .form__list {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.fb__fileReader__form .form__name {
   display: block;
   margin-bottom: 0.5rem;
   color: #1e1e1e;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.fb__fileReader__form .form__write input[type=text],
+.fb__fileReader__form .form__write select {
+  width: 100%;
+  height: 3.25rem;
+  padding: 1rem 2.875rem 1rem 1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.375rem;
+  color: #1e1e1e;
+  font-weight: 200;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.fb__fileReader__form .form__write__textarea {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.375rem;
+  color: #1e1e1e;
+  font-weight: 200;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.fb__fileReader__form .form__write__textarea::placeholder {
+  color: #a0a0a0;
+  font-weight: 200;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.fb__fileReader__form .form__file {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.fb__fileReader__form .form__file__box {
+  overflow: hidden;
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin-right: 0.25rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.375rem;
+}
+.fb__fileReader__form .form__file__label {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.fb__fileReader__form .form__file__label input {
+  display: none;
+}
+.fb__fileReader__form .form__file__label:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  height: 0.125rem;
+  background: #eaeaea;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+.fb__fileReader__form .form__file__label:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.125rem;
+  height: 2.5rem;
+  background: #eaeaea;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+.fb__fileReader__form .form__file__image {
+  display: none;
+  overflow: hidden;
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fb__fileReader__form .form__file__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+.fb__fileReader__form .form__file__image.show {
+  display: block;
+}
+.fb__fileReader__form .form__file__image img {
+  margin: 0;
+}
+.fb__fileReader__form .form__file__rotate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url(../../src/images/common/icon-rotate.png) no-repeat center center/100% auto;
+  font-size: 0;
+  transform: translate(-50%, -50%);
+}
+.fb__fileReader__form .form__file__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #1e1e1e url(../../src/images/svg/guide/ico-delete-white.svg) no-repeat center center/0.5rem;
+  font-size: 0;
+}
+.fb__fileReader__form .form__submit {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  background: #1e1e1e;
+  border-radius: 0.375rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 3.5rem;
+  text-align: center;
+}
+.fb__fileReader__desc {
+  display: block;
+  margin-top: 0.5rem;
+  color: #a0a0a0;
+  font-weight: 200;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
 }
 
 /*# sourceMappingURL=main.css.map*/

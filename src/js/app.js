@@ -17,6 +17,8 @@ import olenzFreegift from "./divide/olenzFreegift";
 import brandIndexer from "./divide/brandIndexer";
 import filter from "./divide/filter";
 import fileReader from "./divide/fileReader";
+import ktGigaSoundChart from "./divide/ktGigaSoundChart";
+import contact from "./divide/contact";
 
  /* resize */
  const htmlDoc = document.documentElement;
@@ -39,6 +41,9 @@ import fileReader from "./divide/fileReader";
  
  window.dispatchEvent(new Event('resize'));
 
+import emailjs from "emailjs-com";
+window.emailjs = emailjs;
+
 const appMethods = {
     common,
     layout,
@@ -48,7 +53,9 @@ const appMethods = {
     olenzFreegift,
     brandIndexer,
     filter,
-    fileReader
+    fileReader,
+    ktGigaSoundChart,
+    contact
 }
 
 //페이지별 공통
@@ -60,7 +67,7 @@ const appInit = () => {
     const appName = $("body").attr("id");
 
     if (appName) {
-        [common, appMethods[appName]].forEach(method => {
+        [common, layout, appMethods[appName]].forEach(method => {
             if (method) method();
         });
 
