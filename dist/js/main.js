@@ -52730,7 +52730,8 @@ const main = () => {
             if ( $(window).width() > 750 
                  && $this.find(".js__pen__name").text().indexOf("모바일") != -1
             ) {
-                alert("개발자 도구(F12)를 누르고 'Ctrl + Shift + M'을 눌러 모바일 모드로 확인해주세요.");
+                // alert("개발자 도구(F12)를 누르고 'Ctrl + Shift + M'을 눌러 모바일 모드로 확인해주세요.");
+                alert("모바일 모드로 확인해주세요.\n Please check it on mobile mode.");
             }
         })
     }
