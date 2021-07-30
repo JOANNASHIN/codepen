@@ -1,0 +1,74 @@
+.fb {
+    &__contact {
+        width: 100%;
+        height: 100%;
+        // background: $black;
+        background: $bright;
+
+        .fb__main__menu {
+            &:before,
+            &:after {
+                background-color: $medium;
+            }
+        }
+
+        &__tip {
+            display: block;
+            padding: 20px 0;
+            @include fontcss($dark, 600, 20px, 1.4);
+        }
+
+        &__form {
+            display: block;
+            width: 600px;
+            margin: 0 auto;
+            padding: 60px 0;
+
+            label {
+                display: block;
+                margin-bottom: 40px;
+                text-align: left;
+            }
+
+            input {
+                height: 50px;
+                padding-left: 20px;
+                font-family: $font_noto;
+                @include fontcss($black, 400, 16px);
+
+                &::placeholder {
+                    color: $medium;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                height: 400px;
+                padding: 20px;
+                font-family: $font_noto;
+                border: 1px solid #e8e8e8;
+                @include fontcss($black, 400, 16px);
+
+                &::placeholder {
+                    @include fontcss($medium, 400, 16px);
+                }
+            }
+        }
+
+        &__label {
+            display: block;
+            padding: 0 0 10px;
+            @include fontcss($dark, 600, 16px, 1.2);
+        }
+
+        &__send {
+            padding: 20px 30px;
+            background: $medium;
+            @include fontcss($white, 400, 18px, 1.2);
+
+            &:hover {
+                background: $dark;
+            }
+        }
+    }
+}

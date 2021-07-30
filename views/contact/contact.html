@@ -11,66 +11,71 @@
     </head>
 
     <body id="contact" class="fb">
-        <section class="fb__contact">
+        <section class="fb__contact fb__main">
+            <header class="fb__main__top">
+                <h2 class="fb__main__title">Contact</h2>
+                <button class="fb__main__menu js__layer__open" data-layer="js__navigation">메뉴</button>
+            </header>
+
             <form class="fb__contact__form js__contact__form">
                 <fieldset>
-                    <legend>연락하기</legend>
-                    <span class="fb__contact__tip">이메일로 문의 / 제안을 보내주세요 !</span>
+                    <legend class="fb__title--hidden">연락하기</legend>
+                    <!-- <span class="fb__contact__tip">Send Email to me : )</span> -->
     
                     <label>
-                        <span class="fb__contact__label">연락 받으실 이메일 <em>*</em></span>
-                        <input type="text" placeholder="연락을 받으실 이메일을 입력하세요." maxlength="30" name="reply_to">
+                        <span class="fb__contact__label">Your Email Address <em>*</em></span>
+                        <input type="text" placeholder="Please write your Email address." maxlength="30" name="reply_to">
                     </label> 
         
                     <label>
                         <span class="fb__contact__label">이름 <em>*</em></span>
-                        <input type="text" placeholder="이름을 입력하세요." maxlength="30" name="name">
+                        <input type="text" placeholder="Please write your name." maxlength="30" name="name">
                     </label> 
         
                     <label>
                         <span class="fb__contact__label">제목 <em>*</em></span>
-                        <input type="text" placeholder="제목을 입력하세요." maxlength="30" name="title">
+                        <input type="text" placeholder="Please write title." maxlength="30" name="title">
                     </label> 
         
                     <label>
                         <span class="fb__contact__label">내용 <em>*</em></span>
-                        <textarea type="text" placeholder="내용을 입력하세요." maxlength="100" name="message"></textarea>
+                        <textarea type="text" placeholder="Please write content." maxlength="100" name="message"></textarea>
                     </label> 
         
                     <div class="fb__contact__bottom">
-                        <button type="submit" class="fb__contact__send js__contact__send">이메일 보내기</button>
+                        <button type="submit" class="fb__contact__send js__contact__send">Send</button>
                     </div>
                 </fieldset>
             </form>
 
             <span class="fb__loading js__loading">로딩중 아이콘</span>
-    </section>
+        </section>
 
-    <!-- 네비게이션 -->
-    <aside id="js__navigation" class="fb__navigation js__layer">
-        <header class="fb__navigation__top">
-            <h3 class="fb__navigation__title">Menus</h3>
-            <button class="fb__navigation__close js__layer__close">close</button>
-        </header>
-        <ul class="fb__navigation__cont">
-            <li class="fb__navigation__menu">
-                <a href="/" class="fb__navigation__link">
-                    <span class="fb__navigation__name">Projects</span>
-                </a>
-            </li>
+        <!-- 네비게이션 -->
+        <aside id="js__navigation" class="fb__navigation js__layer">
+            <header class="fb__navigation__top">
+                <h3 class="fb__navigation__title">Menus</h3>
+                <button class="fb__navigation__close js__layer__close">close</button>
+            </header>
+            <ul class="fb__navigation__cont">
+                <li class="fb__navigation__menu">
+                    <a href="/" class="fb__navigation__link">
+                        <span class="fb__navigation__name">Projects</span>
+                    </a>
+                </li>
 
-            <li class="fb__navigation__menu">
-                <a href="/views/works/works.html" class="fb__navigation__link">
-                    <span class="fb__navigation__name">Codepen</span>
-                </a>
-            </li>
+                <li class="fb__navigation__menu">
+                    <a href="/views/works/works.html" class="fb__navigation__link">
+                        <span class="fb__navigation__name">Codepen</span>
+                    </a>
+                </li>
 
-            <li class="fb__navigation__menu">
-                <a href="/views/contact/contact.html" class="fb__navigation__link">
-                    <span class="fb__navigation__name">Contact</span>
-                </a>
-            </li>
-        </ul>
-    </aside>
+                <li class="fb__navigation__menu">
+                    <a href="/views/contact/contact.html" class="fb__navigation__link">
+                        <span class="fb__navigation__name">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
     </body>
 </html>

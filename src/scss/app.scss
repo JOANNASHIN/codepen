@@ -3,6 +3,7 @@ $black: #1e1e1e;
 $dark: #646464;
 $medium: #a0a0a0;
 $silver: #c8c8c8;
+$white: #fff;
 
 //LINE, BG, BORDER
 $charcole: #323232; //차콜
@@ -210,6 +211,7 @@ $font_n: $font_noto;
 @import "./divide/weather.scss";
 @import "./divide/main.scss";
 @import "./divide/pc/ktGigaSoundChart.scss";
+@import "./divide/pc/contact.scss";
 
 
 

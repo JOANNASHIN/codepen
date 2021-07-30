@@ -55,14 +55,14 @@ const contact = () => {
             .then (
                 function(response) {
                     showLoading(false);
-                    alert("이메일을 보냈습니다! \n 곧 연락드리겠습니다. 감사합니다!");
+                    alert("You have succeeded in sending an email. I'll reply to you soon.");
                     window.location.reload();
                 },
 
                 function (error) {
                     console.error("Error", error)
                     showLoading(false);
-                    alert("오류가 발생하였습니다.\n 잠시 후 다시 시도 부탁드립니다.");
+                    alert("An error has occurred.\n Please try again later.");
                 }
             )
     }
