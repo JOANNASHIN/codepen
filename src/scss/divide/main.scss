@@ -161,6 +161,10 @@
                         content: "";
                     }
 
+                    &.noAnimation {
+                        @include imageResize("width");
+                    }
+
                     &:not(.noAnimation):hover {
                         img {
                             transform: translate(0, -30%);

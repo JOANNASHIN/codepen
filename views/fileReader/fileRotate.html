@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>파일 돌리기</title>
+        <meta name="viewport" content="width=device-width, viewport-fit=cover, user-scalable=no">
+        <title>이미지 회전시키기</title>
         <!-- css -->
         <link rel="stylesheet" href="/dist/css/main.css">
 
@@ -10,9 +11,69 @@
         <script src="/dist/js/main.js"></script>
     </head>
 
-    <body id="fileReader" class="fb">
+    <body id="fileReader" class="fb fb__fileReader">
         <section class="fb__filter js__searchFilter">
-            <h2 class="fb__title--hidden">파일 돌리기</h2>
+            <header class="fb__fileReader__top">
+                <h2 class="fb__fileReader__title">이미지 회전시키기</h2>
+            </header>
+
+            <div class="fb__fileReader__wrapper">
+                <form class="fb__fileReader__form js__fileReader__form">
+                    <dl class="form__list">
+                        <dt class="form__name">사진첨부</dt>
+                        <dd class="form__write">
+                            <ul class="form__file">
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+
+                                <li class="form__file__box js__file__area">
+                                    <label class="form__file__label">
+                                        <input type="file" class="js__file__input">
+                                    </label>
+                                    <figure class="form__file__image js__file__preview">
+                                        <img src="" alt="" class="js__file__image">
+                                        <button type="button" class="form__file__rotate">회전</button>
+                                        <button type="button" class="form__file__remove js__file__remove">삭제하기</button>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </dd>
+
+                        <dd class="fb__fileReader__desc">
+                            <p>
+                                - 사진 확장자는 JPG, PNG, GIF, HEIC만 등록 가능합니다.
+                            </p>
+                            <p>
+                                - 첨부파일 용량은 파일당 최대 5Mbyte까지만 가능합니다.
+                            </p>
+                            <p>
+                                - 첨부파일은 최대 3개까지 등록 가능합니다.
+                            </p>
+                        </dd>
+                    </dl>
+
+                    <button class="form__submit" type="submit" class="">다운로드</button>
+                </form>
+            </div>
         </section>
     </body>
 </html>
