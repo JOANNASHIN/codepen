@@ -1,391 +1,731 @@
-.fb {
-    &#main {
-        width: 100%;
-        height: 100%;
-        background: $black;
-    }
-
-    &__main {
-        display: block;
-        width: 100%;
-        padding: 60px 0;
-        text-align: center;
-        
-        &__top {
-            position: relative;
-            padding: 60px 0 0;
+@media (min-width:320px) and (max-width:768px) {
+    .fb {
+        &#main {
+            width: 100%;
+            height: 100%;
+            background: $black;
         }
-
-        &__title {
-            @include fontcss($medium, 600, 30px);
-        }
-
-        &__menu {
-            position: absolute;
-            top: 30px;
-            left: 50px;
-            width: 45px;
-            font-size: 0;
-
-            &:before {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                margin-bottom: 10px;
-                background: #fff;
-            }
-
-            &:after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                margin-bottom: 10px;
-                background: #fff;
-            }
-        }
-
-        &__search {
+    
+        &__main {
             display: block;
-            width: 500px;
-            margin: 30px auto 0;
-
-            .search {
-                &__wrapper {
-                    overflow: hidden;
-                    position: relative;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            
+            &__top {
+                position: relative;
+                padding: 5rem 0 0;
+            }
+    
+            &__title {
+                @include fontcss($medium, 600, 1.5rem);
+            }
+    
+            &__menu {
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+                width: 1.6rem;
+                font-size: 0;
+    
+                &:before {
+                    content: "";
+                    display: block;
                     width: 100%;
-                    height: 60px;
-                    background: $bright;
-                    border-radius: 20px;
-                    font-size: 0;
+                    height: 0.2rem;
+                    margin-bottom: 0.4rem;
+                    background: #fff;
                 }
-
-                &__input {
-                    display: inline-block;
-                    width: 80%;
-                    height: 100%;
-                    padding: 0 0 0 20px;
-                    border: none;
-                    background: none;
-                    vertical-align: middle;
-                    box-sizing: border-box;
-                    @include fontcss($black, 200, 18px, 60px);
-                }
-
-                &__button {
-                    display: inline-block;
-                    width: 20%;
-                    height: 100%;
-                    background: url(svgSrc("guide", "ico-input-search")) no-repeat center center / 30px 30px;
-                    vertical-align: middle;
+    
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 0.2rem;
+                    margin-bottom: 0.2rem;
+                    background: #fff;
                 }
             }
-        }
-
-        &__nav {
-            padding-top: 30px;
-            color: $dark;
-
-            span {
-                &:hover {
-                    color: $bright;
-                }
-            }
-        }
-
-        &__pens {
-            display: block;
-            width: 1200px;
-            margin: 80px auto 0;
-            font-size: 0;
-
-            &.listType {
-                text-align: left;
-                
-                .pens {
+    
+            &__search {
+                display: block;
+                width: 80%;
+                margin: 1.5rem auto;
+    
+                .search {
                     &__wrapper {
-                        margin: 0 -10px;
+                        overflow: hidden;
+                        position: relative;
+                        width: 100%;
+                        height: 2.5rem;
+                        background: $bright;
+                        border-radius: 1rem;
+                        font-size: 0;
                     }
     
-                    &__box {
-                        display: none;
-                        width: calc(25% - 20px);
-                        margin: 0 10px 40px;
-                        font-size: 14px;
-                        vertical-align: top;
-
-                        &.show {
-                            display: inline-block;
-                        }
+                    &__input {
+                        display: inline-block;
+                        width: 80%;
+                        height: 100%;
+                        padding: 0 0 0 0.8rem;
+                        border: none;
+                        background: none;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                        @include fontcss($black, 200, 0.8rem);
                     }
-
-                    &__name {
-                        font-size: 20px;
+    
+                    &__button {
+                        display: inline-block;
+                        width: 20%;
+                        height: 80%;
+                        background: url(svgSrc("guide", "ico-input-search")) no-repeat center center / 1.2rem 1.2rem;
+                        font-size: 0;
+                        vertical-align: middle;
                     }
                 }
             }
-
-            .pens {
-                &__box {
-                    display: none;
-                    width: 35%;
-                    margin: 0 auto 40px;
-                    font-size: 14px;
-
-                    &.show {
-                        display: block;
+    
+            &__nav {
+                padding-top: 30px;
+                color: $dark;
+    
+                span {
+                    &:hover {
+                        color: $bright;
                     }
                 }
-
-                &__thumb {
-                    overflow: hidden;
-                    position: relative;
-                    border-radius: 10px;
-
-                    img {
+            }
+    
+            &__pens {
+                display: block;
+                width: 100%;
+                margin: 2rem auto 0;
+                font-size: 0;
+    
+                .pens {
+                    &__box {
+                        display: none;
+                        width: 80%;
+                        margin: 0 auto 2.5rem;
+                        font-size: 1rem;
+    
+                        &.show {
+                            display: block;
+                        }
+                    }
+    
+                    &__thumb {
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: 10px;
+    
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+    
+                        &:after {
+                            display: block;
+                            padding-bottom: 80%;
+                            background: rgba(255, 255, 255, 0.05);
+                            content: "";
+                        }
+    
+                        &.noAnimation {
+                            @include imageResize("width");
+                        }
+                    }
+    
+                    &__layer {
                         position: absolute;
                         top: 0;
                         left: 0;
-                        bottom: 0;
-                        right: 0;
                         width: 100%;
-                        height: auto;
+                        height: 100%;
+                        padding: 0.5rem;
+                        text-align: left;
+    
+                        &__button {
+                            display: inline-block;
+                            padding: 0.4rem 0.6rem;
+                            @include fontcss($black, 500, 0.6rem, 1);
+                            background: $black;
+                            color: #fff;
+                            border-radius: 1rem;
+    
+                            &.point {
+                                background: $pcolor;
+                                color: #000;
+                                font-weight: bold;
+                            }
+                        }
+    
+                        &__date {
+                            position: absolute;
+                            bottom: 10px;
+                            right: 10px;
+                            padding: 0.2rem 0.4rem;
+                            background: rgba(0, 0, 0, 0.4);
+                            @include fontcss($bright, 600, 0.7rem, 1);
+                        }
                     }
-
-                    &:after {
+    
+                    &__name {
                         display: block;
-                        padding-bottom: 80%;
-                        background: rgba(255, 255, 255, 0.05);
-                        content: "";
-                    }
-
-                    &.noAnimation {
-                        @include imageResize("width");
-                    }
-
-                    &:not(.noAnimation):hover {
-                        img {
-                            transform: translate(0, -30%);
-                            transition: transform 1s ease-in-out;
-                        }
-                    }
-
-                    &:hover {
-                        .pens__layer {
-                            display: block;
-                        }
-
-                        & + .pens__name {
+                        padding-top: 1rem;
+                        @include fontcss($dark, 600, 1rem);
+                        text-align: center;
+    
+                        &:hover {
                             color: #fff;
                             transition: all 0.5s ease-in-out;
                         }
-
-                    }
-                }
-
-                &__layer {
-                    display: none;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    padding: 10px;
-
-                    &__button {
-                        display: inline-block;
-                        padding: 8px 14px;
-                        @include fontcss($black, 500, 14px, 1);
-                        background: $black;
-                        color: #fff;
-                        border-radius: 20px;
-
-                        &.point {
-                            background: $pcolor;
-                            color: #000;
-                            font-weight: bold;
-                        }
-                    }
-
-                    &__date {
-                        position: absolute;
-                        bottom: 10px;
-                        right: 10px;
-                        padding: 2px 4px 4px;
-                        background: rgba(0, 0, 0, 0.4);
-                        @include fontcss($bright, 600, 17px, 1);
-                    }
-                }
-
-                &__name {
-                    display: block;
-                    padding-top: 30px;
-                    @include fontcss($dark, 600, 25px);
-                    text-align: center;
-
-                    &:hover {
-                        color: #fff;
-                        transition: all 0.5s ease-in-out;
                     }
                 }
             }
-        }
-    }   
-
-    &__sourceLayer {
-        display: none;
-        overflow: hidden;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: 1000px;
-        height: 800px;
-        max-width: 70%;
-        max-height: 80%;
-        transform: translate(-50%, -50%); 
-        background: #000;
-
-        &.show {
-            display: block; 
-        }
-
-        &__inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 60px 30px 30px;
-        }
-
-        &__top {
-            position: absolute;
-            top: 20px;
+        }   
+    
+        &__sourceLayer {
+            display: none;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            padding: 0 30px;
-        }
-
-        &__title {
-            display: block;
-            @include fontcss(#fff, 600, 22px, 30px);
-            text-align: left;
-        }
-
-        &__close {
-            position: absolute;
-            top: 0;
-            right: 30px;
-            width: 30px;
-            height: 30px;
-            background: url(svgSrc("guide", "ico-header-close-white")) no-repeat 0 0 / 100% auto;
-            font-size: 0;
-        }
-
-        &__cont {
-            width: 100%;
             height: 100%;
-        }
-        
-        &__box {
-            display: none;
-            width: 100%;
-            height: 100%;
-            
+            background: #000;
+    
             &.show {
-                display: block;
+                display: block; 
             }
-
-            iframe {
+    
+            &__inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 3.4rem 0.5rem 1.5rem;
+            }
+    
+            &__top {
+                position: absolute;
+                top: 1rem;
+                left: 0;
+                width: 100%;
+                padding: 0 1.5rem;
+            }
+    
+            &__title {
+                display: block;
+                @include fontcss(#fff, 600, 1.1rem, 1.5);
+                text-align: left;
+            }
+    
+            &__close {
+                position: absolute;
+                top: 0;
+                right: 1.5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: url(svgSrc("guide", "ico-header-close-white")) no-repeat 0 0 / 100% auto;
+                font-size: 0;
+            }
+    
+            &__cont {
                 width: 100%;
                 height: 100%;
             }
+            
+            &__box {
+                display: none;
+                width: 100%;
+                height: 100%;
+                
+                &.show {
+                    display: block;
+                }
+    
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+    
+            &__tab {
+                .tab {
+                    &__wrapper {
+                        font-size: 0;
+                    }
+    
+                    &__menu {
+                        display: inline-block;
+                        margin: 0 20px;
+                        @include fontcss($black, 600, 20px);
+                    }
+    
+                }
+            }
         }
-
-
-        &__tab {
-            .tab {
-                &__wrapper {
-                    font-size: 0;
+    
+        &__navigation {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #f8f8f8;
+            text-align: center;
+            transition: left 0.3s linear;
+           
+            &.show {
+                left: 0;
+            }
+            
+            &__top {
+                position: relative;
+                padding: 3.5rem 0 0;
+            }
+            
+            &__title {
+                @include fontcss($dark, 600, 2rem);
+            }
+    
+            &__close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 2rem;
+                height: 2rem;
+                font-size: 0;
+    
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 0.2rem;
+                    background: $dark;
+                    transform: rotate(45deg);
                 }
-
-                &__menu {
-                    display: inline-block;
-                    margin: 0 20px;
-                    @include fontcss($black, 600, 20px);
+    
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 0.2rem;
+                    margin-top: -0.2rem;
+                    background: $dark;
+                    transform: rotate(-45deg);
                 }
-
+            }
+    
+            &__menu {
+                display: block;
+                margin: 2.5rem 0;
+            }
+    
+            &__name {
+                @include fontcss($medium, 600, 1.5rem);
             }
         }
     }
+}
 
-    &__navigation {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: #f8f8f8;
-        text-align: center;
-        transition: left 0.6s linear;
-       
-        &.show {
-            left: 0;
+@media (min-width:769px) {
+    .fb {
+        &#main {
+            width: 100%;
+            height: 100%;
+            background: $black;
         }
-        
-        &__top {
-            position: relative;
-            padding: 60px 0 0;
-        }
-        
-        &__title {
-            @include fontcss($dark, 600, 50px);
-        }
-
-        &__close {
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            width: 50px;
-            height: 50px;
-            font-size: 0;
-
-            &:hover {
-                transform: rotate(360deg);
-                transition: transform 0.4s linear;
-            }
-
-            &:before {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background: $dark;
-                transform: rotate(45deg);
-            }
-
-            &:after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                margin-top: -3.5px;
-                background: $dark;
-                transform: rotate(-45deg);
-            }
-        }
-
-        &__menu {
+    
+        &__main {
             display: block;
-            margin: 60px 0;
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+            
+            &__top {
+                position: relative;
+                padding: 60px 0 0;
+            }
+    
+            &__title {
+                @include fontcss($medium, 600, 30px);
+            }
+    
+            &__menu {
+                position: absolute;
+                top: 30px;
+                left: 50px;
+                width: 45px;
+                font-size: 0;
+    
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 5px;
+                    margin-bottom: 10px;
+                    background: #fff;
+                }
+    
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 5px;
+                    margin-bottom: 10px;
+                    background: #fff;
+                }
+            }
+    
+            &__search {
+                display: block;
+                width: 500px;
+                margin: 30px auto 0;
+    
+                .search {
+                    &__wrapper {
+                        overflow: hidden;
+                        position: relative;
+                        width: 100%;
+                        height: 60px;
+                        background: $bright;
+                        border-radius: 20px;
+                        font-size: 0;
+                    }
+    
+                    &__input {
+                        display: inline-block;
+                        width: 80%;
+                        height: 100%;
+                        padding: 0 0 0 20px;
+                        border: none;
+                        background: none;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                        @include fontcss($black, 200, 18px, 60px);
+                    }
+    
+                    &__button {
+                        display: inline-block;
+                        width: 20%;
+                        height: 100%;
+                        background: url(svgSrc("guide", "ico-input-search")) no-repeat center center / 30px 30px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+    
+            &__nav {
+                padding-top: 30px;
+                color: $dark;
+    
+                span {
+                    &:hover {
+                        color: $bright;
+                    }
+                }
+            }
+    
+            &__pens {
+                display: block;
+                width: 1200px;
+                margin: 80px auto 0;
+                font-size: 0;
+    
+                &.listType {
+                    text-align: left;
+                    
+                    .pens {
+                        &__wrapper {
+                            margin: 0 -10px;
+                        }
+        
+                        &__box {
+                            display: none;
+                            width: calc(25% - 20px);
+                            margin: 0 10px 40px;
+                            font-size: 14px;
+                            vertical-align: top;
+    
+                            &.show {
+                                display: inline-block;
+                            }
+                        }
+    
+                        &__name {
+                            font-size: 20px;
+                        }
+                    }
+                }
+    
+                .pens {
+                    &__box {
+                        display: none;
+                        width: 35%;
+                        margin: 0 auto 40px;
+                        font-size: 14px;
+    
+                        &.show {
+                            display: block;
+                        }
+                    }
+    
+                    &__thumb {
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: 10px;
+    
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+    
+                        &:after {
+                            display: block;
+                            padding-bottom: 80%;
+                            background: rgba(255, 255, 255, 0.05);
+                            content: "";
+                        }
+    
+                        &.noAnimation {
+                            @include imageResize("width");
+                        }
+    
+                        &:not(.noAnimation):hover {
+                            img {
+                                transform: translate(0, -30%);
+                                transition: transform 1s ease-in-out;
+                            }
+                        }
+    
+                        &:hover {
+                            .pens__layer {
+                                display: block;
+                            }
+    
+                            & + .pens__name {
+                                color: #fff;
+                                transition: all 0.5s ease-in-out;
+                            }
+    
+                        }
+                    }
+    
+                    &__layer {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 10px;
+    
+                        &__button {
+                            display: inline-block;
+                            padding: 8px 14px;
+                            @include fontcss($black, 500, 14px, 1);
+                            background: $black;
+                            color: #fff;
+                            border-radius: 20px;
+    
+                            &.point {
+                                background: $pcolor;
+                                color: #000;
+                                font-weight: bold;
+                            }
+                        }
+    
+                        &__date {
+                            position: absolute;
+                            bottom: 10px;
+                            right: 10px;
+                            padding: 2px 4px 4px;
+                            background: rgba(0, 0, 0, 0.4);
+                            @include fontcss($bright, 600, 17px, 1);
+                        }
+                    }
+    
+                    &__name {
+                        display: block;
+                        padding-top: 30px;
+                        @include fontcss($dark, 600, 25px);
+                        text-align: center;
+    
+                        &:hover {
+                            color: #fff;
+                            transition: all 0.5s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }   
+    
+        &__sourceLayer {
+            display: none;
+            overflow: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 1000px;
+            height: 800px;
+            max-width: 70%;
+            max-height: 80%;
+            transform: translate(-50%, -50%); 
+            background: #000;
+    
+            &.show {
+                display: block; 
+            }
+    
+            &__inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 60px 30px 30px;
+            }
+    
+            &__top {
+                position: absolute;
+                top: 20px;
+                left: 0;
+                width: 100%;
+                padding: 0 30px;
+            }
+    
+            &__title {
+                display: block;
+                @include fontcss(#fff, 600, 22px, 30px);
+                text-align: left;
+            }
+    
+            &__close {
+                position: absolute;
+                top: 0;
+                right: 30px;
+                width: 30px;
+                height: 30px;
+                background: url(svgSrc("guide", "ico-header-close-white")) no-repeat 0 0 / 100% auto;
+                font-size: 0;
+            }
+    
+            &__cont {
+                width: 100%;
+                height: 100%;
+            }
+            
+            &__box {
+                display: none;
+                width: 100%;
+                height: 100%;
+                
+                &.show {
+                    display: block;
+                }
+    
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+    
+            &__tab {
+                .tab {
+                    &__wrapper {
+                        font-size: 0;
+                    }
+    
+                    &__menu {
+                        display: inline-block;
+                        margin: 0 20px;
+                        @include fontcss($black, 600, 20px);
+                    }
+    
+                }
+            }
         }
-
-        &__link {
-
-        }
-
-        &__name {
-            @include fontcss($medium, 600, 30px);
+    
+        &__navigation {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #f8f8f8;
+            text-align: center;
+            transition: left 0.6s linear;
+           
+            &.show {
+                left: 0;
+            }
+            
+            &__top {
+                position: relative;
+                padding: 60px 0 0;
+            }
+            
+            &__title {
+                @include fontcss($dark, 600, 50px);
+            }
+    
+            &__close {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                width: 50px;
+                height: 50px;
+                font-size: 0;
+    
+                &:hover {
+                    transform: rotate(360deg);
+                    transition: transform 0.4s linear;
+                }
+    
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 5px;
+                    background: $dark;
+                    transform: rotate(45deg);
+                }
+    
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 5px;
+                    margin-top: -3.5px;
+                    background: $dark;
+                    transform: rotate(-45deg);
+                }
+            }
+    
+            &__menu {
+                display: block;
+                margin: 60px 0;
+            }
+    
+            &__link {
+    
+            }
+    
+            &__name {
+                @include fontcss($medium, 600, 30px);
+            }
         }
     }
 }
