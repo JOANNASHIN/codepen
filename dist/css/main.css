@@ -410,6 +410,21 @@ input[type=number]:disabled {
     height: 1px !important;
     clip: rect(1px, 1px, 1px, 1px);
   }
+  .fb__loading {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: 99;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../../src/images/common/loading.gif) no-repeat 0 0/100% auto;
+    font-size: 0;
+    transform: translate(-50%, -50%);
+  }
+  .fb__loading.show {
+    display: block;
+  }
 }
 @media screen and (min-width: 750px) {
   .fb.scroll--lock {
@@ -1202,7 +1217,7 @@ input[type=number]:disabled {
   height: auto;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 1080px) {
   .fb#main {
     width: 100%;
     height: 100%;
@@ -1517,7 +1532,7 @@ input[type=number]:disabled {
     line-height: 1.2;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1081px) {
   .fb#main {
     width: 100%;
     height: 100%;
@@ -2534,82 +2549,157 @@ input[type=number]:disabled {
   width: 800%;
 }
 
-.fb__contact {
-  width: 100%;
-  height: 100%;
-  background: #f6f6f6;
+@media (min-width: 320px) and (max-width: 1080px) {
+  .fb__contact {
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+  }
+  .fb__contact .fb__main__menu:before, .fb__contact .fb__main__menu:after {
+    background-color: #a0a0a0;
+  }
+  .fb__contact__tip {
+    display: block;
+    padding: 20px 0;
+    color: #646464;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .fb__contact__form {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+  .fb__contact__form label {
+    display: block;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .fb__contact__form input {
+    height: 2.5rem;
+    padding-left: 20px;
+    font-family: "SpoqaHanSansNeo", sans-serif;
+    color: #1e1e1e;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .fb__contact__form input::placeholder {
+    color: #ccc;
+  }
+  .fb__contact__form textarea {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    font-family: "SpoqaHanSansNeo", sans-serif;
+    border: 1px solid #e8e8e8;
+    color: #1e1e1e;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .fb__contact__form textarea::placeholder {
+    color: #ccc;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .fb__contact__label {
+    display: block;
+    padding: 0 0 1rem;
+    color: #646464;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .fb__contact__send {
+    padding: 1rem 2rem;
+    background: #a0a0a0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
 }
-.fb__contact .fb__main__menu:before, .fb__contact .fb__main__menu:after {
-  background-color: #a0a0a0;
+@media (min-width: 1081px) {
+  .fb__contact {
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+  }
+  .fb__contact .fb__main__menu:before, .fb__contact .fb__main__menu:after {
+    background-color: #a0a0a0;
+  }
+  .fb__contact__tip {
+    display: block;
+    padding: 20px 0;
+    color: #646464;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .fb__contact__form {
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+  .fb__contact__form label {
+    display: block;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .fb__contact__form input {
+    height: 50px;
+    padding-left: 20px;
+    font-family: "SpoqaHanSansNeo", sans-serif;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .fb__contact__form input::placeholder {
+    color: #a0a0a0;
+  }
+  .fb__contact__form textarea {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    font-family: "SpoqaHanSansNeo", sans-serif;
+    border: 1px solid #e8e8e8;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .fb__contact__form textarea::placeholder {
+    color: #a0a0a0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .fb__contact__label {
+    display: block;
+    padding: 0 0 10px;
+    color: #646464;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .fb__contact__send {
+    padding: 20px 30px;
+    background: #a0a0a0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .fb__contact__send:hover {
+    background: #646464;
+  }
 }
-.fb__contact__tip {
-  display: block;
-  padding: 20px 0;
-  color: #646464;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.4;
-}
-.fb__contact__form {
-  display: block;
-  width: 600px;
-  margin: 0 auto;
-  padding: 60px 0;
-}
-.fb__contact__form label {
-  display: block;
-  margin-bottom: 40px;
-  text-align: left;
-}
-.fb__contact__form input {
-  height: 50px;
-  padding-left: 20px;
-  font-family: "SpoqaHanSansNeo", sans-serif;
-  color: #1e1e1e;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.2;
-}
-.fb__contact__form input::placeholder {
-  color: #a0a0a0;
-}
-.fb__contact__form textarea {
-  width: 100%;
-  height: 400px;
-  padding: 20px;
-  font-family: "SpoqaHanSansNeo", sans-serif;
-  border: 1px solid #e8e8e8;
-  color: #1e1e1e;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.2;
-}
-.fb__contact__form textarea::placeholder {
-  color: #a0a0a0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.2;
-}
-.fb__contact__label {
-  display: block;
-  padding: 0 0 10px;
-  color: #646464;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.2;
-}
-.fb__contact__send {
-  padding: 20px 30px;
-  background: #a0a0a0;
-  color: #fff;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
-}
-.fb__contact__send:hover {
-  background: #646464;
-}
-
 html {
   font-size: 100%;
   -webkit-text-size-adjust: none;

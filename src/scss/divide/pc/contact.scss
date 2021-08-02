@@ -1,73 +1,147 @@
-.fb {
-    &__contact {
-        width: 100%;
-        height: 100%;
-        // background: $black;
-        background: $bright;
+@media (min-width:320px) and (max-width:1080px) {
+    .fb {
+        &__contact {
+            width: 100%;
+            height: 100%;
+            background: $bright;
 
-        .fb__main__menu {
-            &:before,
-            &:after {
-                background-color: $medium;
+            .fb__main__menu {
+                &:before,
+                &:after {
+                    background-color: $medium;
+                }
             }
-        }
 
-        &__tip {
-            display: block;
-            padding: 20px 0;
-            @include fontcss($dark, 600, 20px, 1.4);
-        }
-
-        &__form {
-            display: block;
-            width: 600px;
-            margin: 0 auto;
-            padding: 60px 0;
-
-            label {
+            &__tip {
                 display: block;
-                margin-bottom: 40px;
-                text-align: left;
+                padding: 20px 0;
+                @include fontcss($dark, 600, 20px, 1.4);
             }
 
-            input {
-                height: 50px;
-                padding-left: 20px;
-                font-family: $font_noto;
-                @include fontcss($black, 400, 16px);
-
-                &::placeholder {
-                    color: $medium;
-                }
-            }
-
-            textarea {
+            &__form {
+                display: block;
                 width: 100%;
-                height: 400px;
-                padding: 20px;
-                font-family: $font_noto;
-                border: 1px solid #e8e8e8;
-                @include fontcss($black, 400, 16px);
+                margin: 0 auto;
+                padding: 2.5rem 1.5rem;
 
-                &::placeholder {
-                    @include fontcss($medium, 400, 16px);
+                label {
+                    display: block;
+                    margin-bottom: 40px;
+                    text-align: left;
+                }
+
+                input {
+                    height: 2.5rem;
+                    padding-left: 20px;
+                    font-family: $font_noto;
+                    @include fontcss($black, 200, 0.9rem);
+
+                    &::placeholder {
+                        color: #ccc;
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                    height: 400px;
+                    padding: 20px;
+                    font-family: $font_noto;
+                    border: 1px solid #e8e8e8;
+                    @include fontcss($black, 200, 0.9rem);
+
+                    &::placeholder {
+                        @include fontcss(#ccc, 200, 0.9rem);
+                    }
                 }
             }
+
+            &__label {
+                display: block;
+                padding: 0 0 1rem;
+                @include fontcss($dark, 600, 0.9rem, 1.2);
+            }
+
+            &__send {
+                padding: 1rem 2rem;
+                background: $medium;
+                @include fontcss($white, 400, 1rem, 1.2);
+            }
         }
+    }
+}
 
-        &__label {
-            display: block;
-            padding: 0 0 10px;
-            @include fontcss($dark, 600, 16px, 1.2);
-        }
+@media (min-width:1081px) {
+    .fb {
+        &__contact {
+            width: 100%;
+            height: 100%;
+            // background: $black;
+            background: $bright;
 
-        &__send {
-            padding: 20px 30px;
-            background: $medium;
-            @include fontcss($white, 400, 18px, 1.2);
+            .fb__main__menu {
+                &:before,
+                &:after {
+                    background-color: $medium;
+                }
+            }
 
-            &:hover {
-                background: $dark;
+            &__tip {
+                display: block;
+                padding: 20px 0;
+                @include fontcss($dark, 600, 20px, 1.4);
+            }
+
+            &__form {
+                display: block;
+                width: 600px;
+                margin: 0 auto;
+                padding: 60px 0;
+
+                label {
+                    display: block;
+                    margin-bottom: 40px;
+                    text-align: left;
+                }
+
+                input {
+                    height: 50px;
+                    padding-left: 20px;
+                    font-family: $font_noto;
+                    @include fontcss($black, 400, 16px);
+
+                    &::placeholder {
+                        color: $medium;
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                    height: 400px;
+                    padding: 20px;
+                    font-family: $font_noto;
+                    border: 1px solid #e8e8e8;
+                    @include fontcss($black, 400, 16px);
+
+                    &::placeholder {
+                        @include fontcss($medium, 400, 16px);
+                    }
+                }
+            }
+
+            &__label {
+                display: block;
+                padding: 0 0 10px;
+                @include fontcss($dark, 600, 16px, 1.2);
+            }
+
+            &__send {
+                padding: 20px 30px;
+                background: $medium;
+                @include fontcss($white, 400, 18px, 1.2);
+
+                &:hover {
+                    background: $dark;
+                }
             }
         }
     }
