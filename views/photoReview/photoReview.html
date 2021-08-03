@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>오렌즈 추가개발 - 포토리뷰 </title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+        
+        <!-- 내부 js -->
+        <script src="/dist/js/main.js"></script>
+    </head>
+
+    <body id="photoReview" class="fb">
+        <section class="fb__reviewPage">
+            <div class="fb__reviewPage__box js__photoSlider__area">
+                <nav class="reviewPage__button js__slider__nav">
+                    <button class="reviewPage__button--prev">이전</button>
+                    <button class="reviewPage__button--next">다음</button>
+                </nav> 
+                
+                <div class="reviewPage__container swiper-container">
+                    <ul class="reviewPage__slider swiper-wrapper">
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="0">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>0</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="1">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>1</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="2">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>2</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="3">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>3</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="4">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>4</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="5">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>5</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="6">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>6</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="7">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>7</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="8">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>8</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen"  data-index="9">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>9</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen"  data-index="10">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>10</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen"  data-index="11">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>11</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="reviewPage__slide swiper-slide js__slide__layerOpen"  data-index="12">
+                            <a href="#" class="reviewPage__link">
+                                <figure class="reviewPage__image">
+                                    <span>12</span>
+                                    <img src="../../src/images/olenz/thumbnail.png">  
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="fb__reviewPop">
+            <div class="fb__reviewPop__layer">
+
+                <header class="fb__reviewPop__header">
+                    <h2 class="fb__reviewPop__title">Photo Review</h2>
+                    <button class="fb__reviewPop__close">닫기</button>
+                </header>
+
+                <main class="fb__reviewPop__main">
+                    <div class="fb__reviewPop__allReview js__photoPopupSlider__area">
+                        <nav class="allReview__button js__slider__nav">
+                            <button class="allReview__button--prev">이전</button>
+                            <button class="allReview__button--next">다음</button>
+                        </nav> 
+                        
+                        <div class="allReview__container swiper-container">
+                            <ul class="allReview__slider swiper-wrapper">
+                                <li class="allReview__slide swiper-slide" data-index="0">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>0</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="1">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>1</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="2">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>2</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="3">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>3</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="4">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>4</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="5">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>5</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="6">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>6</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="7">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>7</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="8">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>8</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="9">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>9</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="10">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>10</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="11">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>11</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="12">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>12</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="allReview__slide swiper-slide" data-index="13">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>13</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fb__reviewPop__selectReview js__photoDetail__area">
+                        
+                        <div class="selectReview__container swiper-container">
+                            <nav class="selectReview__nav js__slider__nav">
+                                <div class="selectReview__button">
+                                    <button class="selectReview__button--prev swiper-button-prev">이전</button>
+                                    <button class="selectReview__button--next swiper-button-next">다음</button>
+                                </div>
+
+                                <div class="selectReview__pagination">
+                                    <span class="selectReview__pagination--current">1</span>/<!--
+                                    --><span class="selectReview__pagination--total">3</span>
+                                </div>
+                            </nav>
+
+                            <ul class="selectReview__slider swiper-wrapper">
+                                <li class="selectReview__slide swiper-slide">
+                                    <figure class="selectReview__image">
+                                        <img src="../../src/images/olenz/review.png">
+                                    </figure>
+                                </li>
+                                <li class="selectReview__slide swiper-slide">
+                                    <figure class="selectReview__image">
+                                        <img src="../../src/images/olenz/review.png">
+                                    </figure>
+                                </li>
+                                <li class="selectReview__slide swiper-slide">
+                                    <figure class="selectReview__image">
+                                        <img src="../../src/images/olenz/review.png">
+                                    </figure>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <ul class="selectReview__cont">
+                            <li class="selectReview__cont__info">
+                                <span class="selectReview__cont__score">
+                                    <em class="selectReview__cont__score--full" style="width: 20%;"></em>
+                                </span>
+                                <span class="selectReview__cont__writer">nay***</span>
+                                <p class="selectReview__cont__name">SPANSISH BROWN</p>
+                                <div class="selectReview__cont__eye">
+                                    <span class="selectReview__cont__eye--color">Dark Brown Eyes</span>
+                                    <span class="selectReview__cont__eye--type">Natural</span>
+                                </div>
+                            </li>
+
+                            <li class="selectReview__cont__product">
+                                <a href="#" class="selectReview__cont__link">
+                                    <figure class="selectReview__cont__image">
+                                        <img src="" >
+                                    </figure>
+                                </a>
+                            </li>
+
+                            <li class="selectReview__cont__wrapper">
+                                <div class="selectReview__cont__scroll">
+                                    <p class="selectReview__cont__desc">
+                                        Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact. Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact. Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact.Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact. Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact. Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact.Color-Good Blue lenses are So hard to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact.to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact. come by pact.to come by bevause I feel like it rk eyer well and really shows that impact.Color-Good Blue lenses are So hard to come by pact.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </main>
+
+            </div>
+        </section>
+    </body>
+</html>
