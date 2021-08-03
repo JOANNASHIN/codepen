@@ -220,6 +220,7 @@ $font_n: $font_noto;
 
 //모바일
 @import "./divide/mobile/rem360/rem360.scss";
+@import "./divide/mobile/rem360/layout.scss";
 @import "./divide/mobile/rem360/brandIndexer.scss";
 @import "./divide/mobile/rem360/searchKeyword.scss";
 @import "./divide/mobile/rem360/filter.scss";
@@ -229,5 +230,4 @@ $font_n: $font_noto;
 
 
 //수정필요
-// @import "./divide/mobile/rem360/layout.scss";
 // @import "./divide/olenz.scss";

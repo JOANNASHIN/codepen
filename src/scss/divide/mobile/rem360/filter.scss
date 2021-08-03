@@ -77,7 +77,12 @@
 
             .category {
                 &__depth {
+                    display: none;
 
+                    &.show {
+                        display: block;
+                    }
+                    
                     &[open] {
                         .category__depth {
                             &__fold {

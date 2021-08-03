@@ -466,7 +466,7 @@ html, body {
 
                 &[type=text] {
                     & + span {
-                        background: url("../src/images/svg/guide/ico-password-view-active.svg") no-repeat center center / 100% auto;
+                        background: url(svgSrc("guide","ico-password-view-active")) no-repeat center center / 100% auto;
                     }
                 }
             }
@@ -492,7 +492,7 @@ html, body {
                     border: none;
                     height: rem(20px);
                     padding: rem(0 14px 0 0);
-                    background: url("../src/images/guide/ico-dropdown-10-x-6.svg") no-repeat right center / rem(10px 6px);
+                    background: url(svgSrc("guide","ico-dropdown-10-x-6")) no-repeat right center / rem(10px 6px);
                 }
             }
         }
@@ -583,7 +583,7 @@ html, body {
                 width: rem(48px);
                 height: rem(48px);
                 margin: rem(0 auto 12px);
-                background: url("../src/images/common/icon-empty.svg") no-repeat 0 0 / 100% auto;
+                background: url(svgSrc("common", "icon-empty")) no-repeat 0 0 / 100% auto;
             }
         }
 
