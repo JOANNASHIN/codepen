@@ -92,5 +92,4 @@ const main = () => {
     init();
 }
 
-
 export default main;
