@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <meta charset="utf-8">
+        
+        <style>
+            * {
+                font-family: 'Dosis', sans-serif;
+            }
+
+           
+            body {
+                width:100%;
+                height:100%;
+                background-color: rgb(52, 32, 212);
+            }
+
+            .button_wrapper {
+                display: block;
+                width: 1100px;
+                margin: 0 auto;
+            }
+
+            /*제목 전체*/
+            .title_entire{
+                width:100%;
+                text-align: center;
+            }
+            
+            h1 { 
+                display:inline-block;
+                padding-top: 100px;
+                color: white;
+                font-size: 100px;
+                line-height: 200px;
+            }
+
+            /*CREATIVE 텍스트*/
+            h1 span {
+                font-size:30px;
+            }
+
+            .hoverit_text{ 
+                display:inline-block;
+                width:100px;
+                height:15px;
+                background-color: rgba(114, 194, 51, 0.8);
+                font-size: 30px;
+                line-height: 10px;
+            }
+
+        /*************버튼박스전체*************************/
+            .btn_entireBox {
+                display: block;
+                width: 100%;
+                padding: 100px 0 60px;
+                border: 5px solid white;
+                border-left:none;
+                border-right:none;
+                text-align: center;
+            }
+            /*기본버튼css*/
+            .rBtn{
+                display:inline-block;
+                vertical-align: middle;
+                width:150px;
+                height:50px;
+                margin: 0 40px 100px;
+                text-align: center;
+                line-height: 50px;
+                cursor:pointer;
+            }
+            /*********************************
+            **********첫번째버튼**************
+            **********************************/
+            .btn1{
+                /*   background-color:rgba(241, 227, 36, 0.94);*/
+                background-color: rgb(228, 14, 46);
+                box-shadow: 10px 10px 2px  rgb(28, 31, 32) ;
+                border-radius: 10px;
+                font-size:30px;
+                font-weight:bold;
+                color: white;
+            }
+            .btn1:hover{
+                box-shadow: 1px 2px 2px  black;
+                border:2px solid white;
+                transform:scale(0.8);
+                transition:all 0.5s ease-in-out;
+            }
+            .btn1 .xicon{font-size: 28px;}
+
+            /*********************************
+            ***********두번째버튼*************
+            **********************************/
+
+            .btn2{
+                    width:147px;
+                    height:47px;
+                    background-color:yellow;
+                    border:1.5px solid yellow;
+                    color:rgb(52, 32, 212);
+                    border-radius: 13px;
+                    line-height: 47px;
+                    font-size: 25px;
+                    font-weight:bold;
+                    position: relative;
+            }
+            /*겉에 테두리*/
+            .btn2_border{
+                width:160px;
+                height:60px;
+                background-color: yellow;
+                border:1px solid yellow;
+                color:yellow;
+                border-radius: 17px;
+                position:absolute;
+                top:-8px;
+                left:-8px;
+                margin: 0;
+                background-color:rgba(0,0,0,0);
+                visibility: 0;
+                opacity:0;
+            }
+
+            .btn2:hover .btn2_border{
+                visibility:visible;
+                opacity:1;
+                transition: all 0.25s ease-in-out;
+            }
+            .btn2:hover{
+                background-color: rgba(0,0,0,0);
+                border:1.5px solid yellow;
+                color:yellow;
+                transition: all 0.2s ease-in-out;
+            }
+            /*********************************
+            ***********세번째버튼*************
+            **********************************/
+            .btn3{
+                        animation : bgColor 4s infinite;
+                        font-size: 20px;
+                        color:black;
+                        font-weight:bold;
+                    }
+            @keyframes bgColor {
+                        0%{background-color:red;}
+                        10%{background-color:tomato;}
+                        20%{background-color:orange; }
+                        40%{background-color:yellow;}
+                        60%{background-color: rgb(94, 87, 235);}
+                        80%{background-color:rgb(45, 214, 97);}
+                        100%{   background-color: rgb(30, 179, 146); }
+            }
+            /*********************************
+            ***********4번째버튼*************
+            **********************************/
+            .btn4{border:2px solid rgb(50, 237, 176);
+                        background-color: rgba(0,0,0,0);
+                        color:rgb(50, 237, 176);
+                        border-radius:30px;
+                        font-weight:bold;
+            }
+            .btn4:hover{border:2px solid rgb(50, 237, 176);
+                        background-color: rgb(50, 237, 176);
+                        color:white;
+                        border-radius:30px;
+                        transition:all 0.3s ease-in-out;
+            }
+            /*********************************
+            ***********다섯번째버튼*************
+            **********************************/
+            .btn5{
+                    border:2px solid white;
+
+            }
+            .btn5 .xicon{width:30px;
+                        height:50px;
+                        background-color:rgb(101, 80, 244);
+                        display:inline-block;
+                        float:left;
+                        font-size: 25px;
+                        line-height: 50px;
+                        text-align: right;
+                        color: rgb(255, 255, 255);
+            }
+            .btn5:hover .xicon{
+                width:150px;
+                height:50px;
+                background-color: rgb(101, 80, 244);
+                transition:all 1s ease-in-out;
+            }
+            /*********************************
+            ***********여섯번째버튼*************
+            **********************************/
+            .btn6{width:151px;
+                    height:50px;
+                    font-size: 30px;
+                    transform:rotateY(00deg);
+                    border:2px solid rgba(126, 13, 204, 1);
+                    color:rgba(126, 13, 204, 1);
+                    font-weight:bold;
+                    text-shadow: 3px 2px black;
+            }
+
+            .btn6:hover{
+                box-shadow: 0px 25px 0px 0 rgba(156, 35, 240, 0.8) inset,
+                0px -25px 0px 0 rgba(126, 13, 204, 1) inset;
+                color:white;
+                transition:all 0.4s ease-in-out;
+            }
+            /*********************************
+            ***********여섯번째버튼*************
+            **********************************/
+            .btn7{
+                border:1.3px solid red;
+                position:relative;
+            }
+            .btn7 .btn7_border{
+                position:absolute;
+                top:4px;
+                left:4px;
+                width:0;
+                height:0;
+                border:0px solid red;
+
+                color:red;
+                font-size:10px;
+                line-height: 40px;
+            }
+            .btn7:hover .btn7_border{
+                width:150px;
+                height:50px;
+                margin: 0;
+                border:2px solid red;
+                font-size:30px;
+                transition:all 1s linear;
+            }
+        </style>
+   </head>
+
+   <body>
+       <section class="button_wrapper">
+           <!--타이틀전체  -->
+           <div class="title_entire">
+               <h1><span>CREATIVE</span> BUTTON DESIGNS</h1>
+               <p class="hoverit_text">hover it!</p>
+           </div>
+           <!--버튼 박스------------------------>
+           <div class="btn_entireBox">
+               <!--첫번째 버튼-->
+               <p class="rBtn btn1">SIZE<i class="xicon xi-zoom-out"></i></p>
+               <!--두번째 버튼-->
+               <div class="rBtn btn2">
+                       BORDER
+                       <p class="btn2_border"></p>
+               </div>
+               <!--세번째 버튼-->
+               <p class="rBtn btn3">COLOR CHANGE</p>
+               <!-- 네번째버튼-->
+               <p class="rBtn btn4">
+                   ROUND
+               </p>
+               <!--5번째 버튼-->
+               <div class="rBtn btn5">
+                   <i class="xicon xi-long-arrow-right"></i>
+               </div>
+               <div class="rBtn btn6">
+                   CLOSE
+               </div>
+               <div class="rBtn btn7">
+                       <p class="btn7_border">HOVER</p>
+               </div>
+   
+           </div>
+       </section>
+   </body>
+</html>
