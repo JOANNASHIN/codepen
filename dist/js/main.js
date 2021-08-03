@@ -58634,10 +58634,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/brandIndexer */ "./src/js/divide/brandIndexer.js");
 /* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
 /* harmony import */ var _divide_fileReader__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./divide/fileReader */ "./src/js/divide/fileReader.js");
-/* harmony import */ var _divide_ktGigaSoundChart__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./divide/ktGigaSoundChart */ "./src/js/divide/ktGigaSoundChart.js");
-/* harmony import */ var _divide_contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./divide/contact */ "./src/js/divide/contact.js");
-/* harmony import */ var _divide_searchKeyword__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./divide/searchKeyword */ "./src/js/divide/searchKeyword.js");
-/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/es/index.js");
+/* harmony import */ var _divide_fileRotate__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./divide/fileRotate */ "./src/js/divide/fileRotate.js");
+/* harmony import */ var _divide_ktGigaSoundChart__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./divide/ktGigaSoundChart */ "./src/js/divide/ktGigaSoundChart.js");
+/* harmony import */ var _divide_contact__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./divide/contact */ "./src/js/divide/contact.js");
+/* harmony import */ var _divide_searchKeyword__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./divide/searchKeyword */ "./src/js/divide/searchKeyword.js");
+/* harmony import */ var _divide_photoReview__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./divide/photoReview */ "./src/js/divide/photoReview.js");
+/* harmony import */ var _divide_youtubePlayer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./divide/youtubePlayer */ "./src/js/divide/youtubePlayer.js");
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/es/index.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -58654,6 +58657,9 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 //페이지별
+
+
+
 
 
 
@@ -58689,7 +58695,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
  window.dispatchEvent(new Event('resize'));
 
 
-window.emailjs = emailjs_com__WEBPACK_IMPORTED_MODULE_16__.default;
+window.emailjs = emailjs_com__WEBPACK_IMPORTED_MODULE_19__.default;
 
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_4__.default,
@@ -58701,9 +58707,12 @@ const appMethods = {
     brandIndexer: _divide_brandIndexer__WEBPACK_IMPORTED_MODULE_10__.default,
     filter: _divide_filter__WEBPACK_IMPORTED_MODULE_11__.default,
     fileReader: _divide_fileReader__WEBPACK_IMPORTED_MODULE_12__.default,
-    ktGigaSoundChart: _divide_ktGigaSoundChart__WEBPACK_IMPORTED_MODULE_13__.default,
-    contact: _divide_contact__WEBPACK_IMPORTED_MODULE_14__.default,
-    searchKeyword: _divide_searchKeyword__WEBPACK_IMPORTED_MODULE_15__.default
+    fileRotate: _divide_fileRotate__WEBPACK_IMPORTED_MODULE_13__.default,
+    ktGigaSoundChart: _divide_ktGigaSoundChart__WEBPACK_IMPORTED_MODULE_14__.default,
+    contact: _divide_contact__WEBPACK_IMPORTED_MODULE_15__.default,
+    searchKeyword: _divide_searchKeyword__WEBPACK_IMPORTED_MODULE_16__.default,
+    photoReview: _divide_photoReview__WEBPACK_IMPORTED_MODULE_17__.default,
+    youtubePlayer: _divide_youtubePlayer__WEBPACK_IMPORTED_MODULE_18__.default
 }
 
 //페이지별 공통
@@ -59742,6 +59751,108 @@ const fileReader = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fileReader);
+
+/***/ }),
+
+/***/ "./src/js/divide/fileRotate.js":
+/*!*************************************!*\
+  !*** ./src/js/divide/fileRotate.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const fileRotate = () => {
+    const $document = $(document);
+
+    const rotateBase64Image = (base64ImageSrc) => {
+        let canvas = document.createElement("canvas");
+        let img = new Image();
+        img.src = base64ImageSrc;
+        canvas.width = img.width;
+        canvas.height = img.width; //img.height;
+        var context = canvas.getContext("2d");
+        context.translate(img.width * 0.5, img.height * 0.5);
+        context.rotate(0.5 * Math.PI);
+        context.translate(-img.height * 0.5, -img.width * 0.5);
+        context.drawImage(img, 0, 0); 
+
+        // canvas.toDataURL();
+
+        return canvas.toDataURL();
+    }
+
+    const imaegRotate = () => {
+        $document.on("click", ".form__file__rotate", function () {
+            const $this = $(this);
+            const $image = $this.closest(".js__file__area").find(".js__file__image");
+            const _src = $image.attr("src");
+
+            const rotateSrc = rotateBase64Image(_src);
+            $image.attr("src", rotateSrc);
+
+            return false;
+        })
+    }
+
+    const fileRead = (input) => {
+		if (input.files && input.files[0]) {
+			const reader = new FileReader();
+            const $image = $(input).closest(".js__file__area").find(".js__file__image");
+		
+			reader.onload = function(e) {
+				$image.attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+    const fileUpload = () => {
+        $document.on("change", ".js__file__input", function () {
+            const $this = $(this);
+			const $image = $this.closest(".js__file__area").find(".js__file__preview");
+			const _fileType = this.files[0].type.toLowerCase().match("jpg|jpeg|gif|png");
+			
+			// 파일형식 맞지 않을 때
+			if ( _fileType == null ) {
+				alert("This is not image file format(only gif, png, jpg, jpeg available to upload)");
+				$image.removeClass("show");
+				$this.val("");
+			} 
+			// 성공
+			else {
+				$image.addClass("show");
+				fileRead(this);
+			}
+        })
+    }
+
+    const fileRemove = () => {
+        $document.on("click", ".js__file__remove", function () {
+            const $this = $(this);
+            const $fileBox = $this.closest(".js__file__area");
+
+            $fileBox.find("input[type=file]").val();
+            $fileBox.find(".js__file__preview").removeClass("show");
+
+            return false;
+        })
+    }
+  
+    const init = () => {
+        fileUpload();
+        fileRemove();
+        imaegRotate();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fileRotate);
 
 /***/ }),
 
@@ -61966,6 +62077,181 @@ const olenzFreegift = () => {
 
 /***/ }),
 
+/***/ "./src/js/divide/photoReview.js":
+/*!**************************************!*\
+  !*** ./src/js/divide/photoReview.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const photoReview = () => {
+    const $document = $(document);
+    
+    //레이어 관련 이벤트
+    const layerEvents = function () {
+        const $layer = $(".fb__reviewPop");
+
+        $document
+            //팝업열기
+            .on("click", ".js__slide__layerOpen", function () {
+                const _index = $(this).data("index");
+
+                isLayerShow($layer, true);
+                fnPopupPhoto.photoPopupSlider(_index);                
+            })
+            //팝업닫기
+            .on("click", ".fb__reviewPop__close", function () {
+                isLayerShow($layer, false);
+            })
+    }
+
+    //layer show/hide
+    const isLayerShow = function ($layer, isShow) {
+        if (isShow) $layer.addClass("show");
+        else $layer.removeClass("show");
+    }
+
+    //슬라이드 실행여부 확인
+    const canMakeSlider = function ($slides, minLength) {
+        let isPass = true;
+
+        if ($slides.length < minLength) {
+            isPass = false;
+        }
+
+        return isPass; //슬라이드 만들거면 true / 아니면 false
+    }
+
+    //첫번째 슬라이드 만들기 (페이지슬라이드)
+    const photoSlider = function () {
+        const $area = $(".js__photoSlider__area");
+        const $slides = $area.find(".swiper-slide");
+        const minLength = 6;
+
+        if (!canMakeSlider($slides, minLength)) return ;
+
+        $area.find(".js__slider__nav").addClass("show");
+
+        new Swiper(".js__photoSlider__area .swiper-container", {
+            loop: true,
+            slidesPerView: "auto",
+            navigation: {
+                prevEl: '.reviewPage__button--prev',
+                nextEl: '.reviewPage__button--next',
+            },
+        })
+    }
+
+    // 팝업 안 함수 모음 (팝업 슬라이드 포함)
+    const fnPopupPhoto = {
+        //팝업 슬라이드 객체
+        photoPopupSlideObj: null,
+
+        //상단 포토 팝업 슬라이드
+        photoPopupSlider(_index) {
+            const self = this;
+            const $area = $(".js__photoPopupSlider__area");
+            const $slides = $area.find(".swiper-slide");
+            const minLength = 6;
+
+            //선택한 슬라이드에 active
+            self.addActiveClass(_index);
+            
+            //리뷰상세 api요청
+            self.requestphotoPopupDetail(_index);
+            
+            if (!canMakeSlider($slides, minLength)) return ;
+
+            $area.find(".js__slider__nav").addClass("show");
+    
+            self.photoPopupSlideObj = new Swiper(".js__photoPopupSlider__area .swiper-container", {
+                slidesPerView: "auto",
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                navigation: {
+                    prevEl: '.allReview__button--prev',
+                    nextEl: '.allReview__button--next',
+                },
+
+                on: {
+                    init() {
+                        //해당 슬라이드로 이동
+                        this.slideToLoop(Number(_index));
+                    }
+                }
+            })
+        },
+
+        changeReview() {
+            const self = this;
+
+            $document.on("click", ".allReview__slide", function() {
+                const slideObj = self.photoPopupSlideObj;
+                let _clickedIndex = $(this).data("index");
+    
+                //갈수있는 슬라이드가 남아있는지 체크
+                if (slideObj) {
+                    slideObj.slideToLoop(Number(_clickedIndex), 1000, true)
+                }
+    
+                //선택한 슬라이드에 active
+                self.addActiveClass(_clickedIndex);
+                self.requestphotoPopupDetail(_clickedIndex);
+            });
+        },
+
+        //클릭한애 active 클래스 주기
+        addActiveClass(_index){
+            const $area = $(".js__photoPopupSlider__area");
+            if (!$area) return ;
+    
+            $area.find(".swiper-slide").removeClass("active");
+            $area.find(".swiper-slide").eq(_index).addClass("active");
+        },
+
+        //리뷰상세 포토 슬라이드
+        requestphotoPopupDetail(_index) {
+            //api연동 필요 
+    
+            const $area = $(".js__photoDetail__area");
+            const $slides = $area.find(".swiper-slide");
+            const minLength = 1;
+    
+            if (!canMakeSlider($slides, minLength)) return ;
+    
+            $area.find(".js__slider__nav").addClass("show");
+            
+            new Swiper('.js__photoDetail__area .swiper-container', {
+                pagination: {
+                    el: '.selectReview__pagination',
+                    type: 'fraction',
+                },
+                navigation: {
+                    prevEl: '.selectReview__button--prev',
+                    nextEl: '.selectReview__button--next',
+                },
+            });
+        }
+    }
+
+    const init = () => {
+        photoSlider();
+        layerEvents(); //팝업 오픈
+        fnPopupPhoto.changeReview();
+    }
+    
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (photoReview);
+
+/***/ }),
+
 /***/ "./src/js/divide/searchKeyword.js":
 /*!****************************************!*\
   !*** ./src/js/divide/searchKeyword.js ***!
@@ -62643,6 +62929,175 @@ const weather = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (weather);
+
+/***/ }),
+
+/***/ "./src/js/divide/youtubePlayer.js":
+/*!****************************************!*\
+  !*** ./src/js/divide/youtubePlayer.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const youtubePlayer = () => {
+    let player;
+            
+    function youtubeVideo() {
+        var youtube = [];
+        if ((typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') && !$("script[src='https://www.youtube.com/player_api']").length) {
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/player_api";
+            
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            //firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            
+            $("body").prepend(tag)
+
+            window.onYouTubePlayerAPIReady = function() {
+                onLoadYouTubePlayer();
+            };
+
+            onYouTubePlayerAPIReady();
+        } else {
+            window.onYouTubePlayerAPIReady = function() {
+                onLoadYouTubePlayer();
+            };
+        }
+
+        function onLoadYouTubePlayer(){
+            console.log("onLoadYouTubePlayer")
+           
+            var $frame = $(".player");
+            
+            $frame.each(function (idx, obj) {
+                var videoId = $(obj).data("video-id");
+                if (videoId == null) return;
+                
+                $(obj).html('<iframe src="https://www.youtube.com/embed/' + videoId + '?enablejsapi=1&showinfo=0&rel=0&autoplay=1&mute=1" id="video' + idx + '" allowfullscreen></iframe>')
+                
+                try { 
+                    player = new YT.Player("video" + idx, {
+                        videoId: videoId,
+                        events: {
+                            'onReady': onPlayerReady,
+                        }
+                    });
+
+                    youtube.push(player);
+
+                    function onPlayerReady() {
+                        player.seekTo(0, true) 
+                        player.playVideo();
+                        youtubeSlider();
+                    }
+                    
+                } catch (err) {
+                    console.error(err);
+                }
+            })
+
+        }
+    }
+
+    function youtubeSlider () {
+        new Swiper(".youtubeSlider", {
+            loop: false,
+            navigation: {
+                prevEl: '.youtubeSlider__nav--prev',
+                nextEl: '.youtubeSlider__nav--next',
+            },
+            on: {
+                slideChangeTransitionEnd() {
+                    if ($(".swiper-slide-active").data("video") == "yes") {
+                        player.playVideo();
+                    }
+                    else {
+                        player.pauseVideo();
+                    }
+
+                },
+            }
+        })
+    }
+
+    function init() {
+        console.log("player", player);
+        youtubeVideo();
+    }
+
+    init();
+
+    // 1. 자동재생되지만 음소거상태로!!
+    // // 2. This code loads the IFrame Player API code asynchronously.
+    // var tag = document.createElement('script');
+
+    // tag.src = "https://www.youtube.com/iframe_api";
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // // 3. This function creates an <iframe> (and YouTube player)
+    // //    after the API code downloads.
+    // var player;
+
+    // function onYouTubeIframeAPIReady() {
+    //     player = new YT.Player('player', {
+    //         videoId: 'M7lc1UVf-VE',
+    //         playerVars: { 'autoplay': 1, 'controls': 0 },
+    //         events: {
+    //             'onReady': onPlayerReady,
+    //             'onStateChange': onPlayerStateChange,
+    //         }
+    //     });
+    // }
+
+    // // 4. The API will call this function when the video player is ready.
+    // function onPlayerReady(event) {
+    //     setTimeout(function () {
+    //         player.playVideo();
+    //         console.log("ㅋㅋㅋ");
+    //     },1000)
+    // }
+
+    // // 5. The API calls this function when the player's state changes.
+    // //    The function indicates that when playing a video (state=1),
+    // //    the player should play for six seconds and then stop.
+    // var done = false;
+    // function onPlayerStateChange(event) {
+    //     if (event.data == YT.PlayerState.PLAYING && !done) {
+    //         setTimeout(stopVideo, 6000);
+    //         done = true;
+    //     }
+    // }
+    // function stopVideo() {
+    //     player.stopVideo();
+    // }
+
+    // $(".start").on("click", function () {
+    //     player.playVideo();
+    // })
+
+    // $(".stop").on("click", function () {
+    // player.stopVideo();
+    // })
+
+    // // function test () {
+
+    // //     setTimeout(function () {
+    // //         // $(document).ready(function () {
+    // //             player.playVideo();
+    // //         // })
+    // //         console.log("tt", player)
+
+    // //     }, 1000)
+    // // }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (youtubePlayer);
 
 /***/ })
 

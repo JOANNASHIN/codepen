@@ -19,9 +19,12 @@ import olenzFreegift from "./divide/olenzFreegift";
 import brandIndexer from "./divide/brandIndexer";
 import filter from "./divide/filter";
 import fileReader from "./divide/fileReader";
+import fileRotate from "./divide/fileRotate";
 import ktGigaSoundChart from "./divide/ktGigaSoundChart";
 import contact from "./divide/contact";
 import searchKeyword from "./divide/searchKeyword";
+import photoReview from "./divide/photoReview";
+import youtubePlayer from "./divide/youtubePlayer";
 
  /* resize */
  const htmlDoc = document.documentElement;
@@ -60,9 +63,12 @@ const appMethods = {
     brandIndexer,
     filter,
     fileReader,
+    fileRotate,
     ktGigaSoundChart,
     contact,
-    searchKeyword
+    searchKeyword,
+    photoReview,
+    youtubePlayer
 }
 
 //페이지별 공통

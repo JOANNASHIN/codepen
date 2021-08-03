@@ -3065,6 +3065,449 @@ input[type=number]:disabled {
     background: #646464;
   }
 }
+.fb__reviewPage {
+  width: 1040px;
+  margin: 0 auto;
+  background: #ccc;
+}
+.fb__reviewPage__box {
+  padding: 0 50px;
+}
+.fb .reviewPage__button {
+  display: none;
+  position: relative;
+}
+.fb .reviewPage__button--prev {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  left: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb .reviewPage__button--next {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  right: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb .reviewPage__button.show {
+  display: block;
+}
+.fb .reviewPage__container {
+  overflow: hidden;
+  width: 950px;
+  border: 1px solid red;
+}
+.fb .reviewPage__slider:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.fb .reviewPage__slide {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+.fb .reviewPage__slide:last-child {
+  margin-right: 0;
+}
+.fb .reviewPage__slide.swiper-slide {
+  flex-shrink: initial;
+}
+.fb .reviewPage__slide.swiper-slide-active .allReview__image:after {
+  display: none;
+}
+.fb .reviewPage__slide:hover .allReview__image:after {
+  display: none;
+}
+.fb .reviewPage__link {
+  display: block;
+  position: relative;
+}
+.fb .reviewPage__image {
+  width: 150px;
+  height: 150px;
+}
+.fb .reviewPage__image span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fb__reviewPop {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0px;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+.fb__reviewPop.show {
+  display: block;
+}
+.fb__reviewPop__layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1000px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.fb__reviewPop__header {
+  position: relative;
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.fb__reviewPop__title {
+  padding: 0 30px 0 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.fb__reviewPop__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: #ccc;
+  font-size: 0;
+}
+.fb__reviewPop__main {
+  width: 1200px;
+  height: 970px;
+  padding: 50px 80px;
+}
+.fb__reviewPop__allReview {
+  padding: 0 50px;
+}
+.fb__reviewPop__allReview .allReview__button {
+  display: none;
+  position: relative;
+}
+.fb__reviewPop__allReview .allReview__button--prev {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  left: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb__reviewPop__allReview .allReview__button--next {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  right: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb__reviewPop__allReview .allReview__button.show {
+  display: block;
+}
+.fb__reviewPop__allReview .allReview__container {
+  overflow: hidden;
+  width: 950px;
+  border: 1px solid #000;
+}
+.fb__reviewPop__allReview .allReview__slide {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+.fb__reviewPop__allReview .allReview__slide:last-child {
+  margin-right: 0;
+}
+.fb__reviewPop__allReview .allReview__slide.swiper-slide {
+  flex-shrink: initial;
+}
+.fb__reviewPop__allReview .allReview__slide:hover .allReview__image:after {
+  display: none;
+}
+.fb__reviewPop__allReview .allReview__slide.active .allReview__image:after {
+  display: none;
+}
+.fb__reviewPop__allReview .allReview__link {
+  display: block;
+  position: relative;
+}
+.fb__reviewPop__allReview .allReview__image {
+  width: 150px;
+  height: 150px;
+}
+.fb__reviewPop__allReview .allReview__image:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+}
+.fb__reviewPop__allReview .allReview__image span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fb__reviewPop__selectReview {
+  margin-top: 50px;
+}
+.fb__reviewPop__selectReview:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.fb__reviewPop__selectReview .selectReview__container {
+  float: left;
+  width: calc(50% - 25px);
+  height: 665px;
+  margin-right: 50px;
+}
+.fb__reviewPop__selectReview .selectReview__slider {
+  position: relative;
+}
+.fb__reviewPop__selectReview .selectReview__nav {
+  display: none;
+}
+.fb__reviewPop__selectReview .selectReview__nav.show {
+  display: block;
+}
+.fb__reviewPop__selectReview .selectReview__button {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.fb__reviewPop__selectReview .selectReview__button button {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 0;
+  transform: translate(0, -50%);
+}
+.fb__reviewPop__selectReview .selectReview__button--prev {
+  left: 0;
+}
+.fb__reviewPop__selectReview .selectReview__button--next {
+  right: 0;
+}
+.fb__reviewPop__selectReview .selectReview__image {
+  width: 100%;
+  height: 665px;
+  background: #ccc;
+}
+.fb__reviewPop__selectReview .selectReview__pagination {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  z-index: 10;
+  width: 100px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: top;
+}
+.fb__reviewPop__selectReview .selectReview__pagination--current {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 40px;
+  vertical-align: top;
+}
+.fb__reviewPop__selectReview .selectReview__pagination--total {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 40px;
+  vertical-align: top;
+}
+.fb__reviewPop__selectReview .selectReview__pagination .swiper-pagination-current {
+  display: inline-block;
+  vertical-align: top;
+}
+.fb__reviewPop__selectReview .selectReview__pagination .swiper-pagination-total {
+  display: inline-block;
+  vertical-align: top;
+}
+.fb__reviewPop__selectReview .selectReview__cont {
+  float: right;
+  position: relative;
+  width: calc(50% - 25px);
+}
+.fb__reviewPop__selectReview .selectReview__cont__info {
+  position: relative;
+  padding: 40px 150px 0 0;
+  margin-bottom: 30px;
+  min-height: 150px;
+  border-bottom: 2px solid #ddd;
+  font-size: 0;
+}
+.fb__reviewPop__selectReview .selectReview__cont__score {
+  display: inline-block;
+  position: relative;
+  width: 75px;
+  height: 14px;
+  margin-right: 15px;
+}
+.fb__reviewPop__selectReview .selectReview__cont__score--full {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fb__reviewPop__selectReview .selectReview__cont__score:after {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 40px;
+  height: 20px;
+  background: red;
+  border-radius: 5px;
+  content: "";
+}
+.fb__reviewPop__selectReview .selectReview__cont__writer {
+  font-size: 20px;
+  line-height: 20px;
+}
+.fb__reviewPop__selectReview .selectReview__cont__name {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.fb__reviewPop__selectReview .selectReview__cont__eye {
+  margin-top: 15px;
+}
+.fb__reviewPop__selectReview .selectReview__cont__eye--color {
+  position: relative;
+  margin-right: 16px;
+  font-size: 15px;
+  line-height: 1;
+}
+.fb__reviewPop__selectReview .selectReview__cont__eye--color:after {
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 1px;
+  height: 13px;
+  background: #000;
+  transform: translate(0, -50%);
+  content: "";
+}
+.fb__reviewPop__selectReview .selectReview__cont__eye--type {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1;
+}
+.fb__reviewPop__selectReview .selectReview__cont__eye--type:before {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: brown;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  content: "";
+}
+.fb__reviewPop__selectReview .selectReview__cont__product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.fb__reviewPop__selectReview .selectReview__cont__link {
+  display: block;
+}
+.fb__reviewPop__selectReview .selectReview__cont__image {
+  width: 130px;
+  height: 130px;
+  background: lightyellow;
+}
+.fb__reviewPop__selectReview .selectReview__cont__wrapper {
+  height: 485px;
+}
+.fb__reviewPop__selectReview .selectReview__cont__scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.fb__reviewPop__selectReview .selectReview__cont__desc {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.fb .swiper-button-disabled {
+  display: none;
+}
+
+.fb__youtubePlayer__wrapper {
+  padding: 80px 0 0;
+}
+.fb__youtubePlayer__title {
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+}
+.fb__youtubePlayer .youtubeSlider {
+  position: relative;
+  width: 800px;
+  height: 800px;
+}
+.fb__youtubePlayer .youtubeSlider iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+}
+.fb__youtubePlayer .youtubeSlider img {
+  width: 100%;
+}
+.fb__youtubePlayer .youtubeSlider__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+.fb__youtubePlayer .youtubeSlider__nav button {
+  position: absolute;
+  background: #ddd;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.fb__youtubePlayer .youtubeSlider__nav--next {
+  right: 0;
+}
+.fb__youtubePlayer .youtubeSlider__nav--prev {
+  left: 0;
+}
+
 html {
   font-size: 100%;
   -webkit-text-size-adjust: none;
