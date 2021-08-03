@@ -1,8 +1,7 @@
 .fb {
     &__searchLayer {
         &__header {
-            // display: flex;
-            display: none;
+            display: flex;
             flex-wrap: nowrap;
             align-items: center;
             justify-content: space-between;
@@ -108,7 +107,7 @@
                     @include fontcss($black, 600, rem(17px), rem(24px));
 
                     em {
-                        color: $pcolor;
+                        color: $dmilpcolor;
                     }
                 }
 
@@ -281,6 +280,14 @@
                         }
                     }
                 }
+
+                &__list {
+                    display: none;
+
+                    &.show {
+                        display: block;
+                    }
+                }
             }
         }
 
@@ -295,7 +302,7 @@
                     padding: rem(8px 12px);
                     border-radius: rem(18px);
                     background: $bright;
-                    @include fontcss($pcolor, 200, rem(12px),rem(18px));                                
+                    @include fontcss($dmilpcolor, 200, rem(12px),rem(18px));                                
                 }
 
                 &__link {
@@ -306,6 +313,28 @@
 
         // 최근검색어
         &__recent {
+            &.empty {
+                .fb__keyword__tag {
+                    display: none;
+                }
+
+                .fb__empty {
+                    display: block;
+                }
+
+                .recent__remove {
+                    display: none;
+                }
+            }
+
+            .fb__keyword__tag {
+                display: block;
+            }
+
+            .fb__empty {
+                display: none;
+            }
+
             .recent {
                 &__top {
                     display: flex;

@@ -1,6 +1,8 @@
 import _ from "lodash";
 import $ from 'jquery';
 import moment from "moment";
+import Swiper from 'swiper';
+window.Swiper = Swiper;
 
 window.$ = window.jquery = window.jQuery = $;
 window.moment = moment;
@@ -19,6 +21,7 @@ import filter from "./divide/filter";
 import fileReader from "./divide/fileReader";
 import ktGigaSoundChart from "./divide/ktGigaSoundChart";
 import contact from "./divide/contact";
+import searchKeyword from "./divide/searchKeyword";
 
  /* resize */
  const htmlDoc = document.documentElement;
@@ -58,7 +61,8 @@ const appMethods = {
     filter,
     fileReader,
     ktGigaSoundChart,
-    contact
+    contact,
+    searchKeyword
 }
 
 //페이지별 공통

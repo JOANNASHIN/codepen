@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+
         <title>search Keyword</title>
+
         <!-- css -->
         <link rel="stylesheet" href="/dist/css/main.css">
 
@@ -11,7 +14,7 @@
     </head>
 
     <body id="searchKeyword" class="fb">
-        <main class="fb__searchLayer fb__keyword">
+        <section class="fb__searchLayer fb__keyword">
             <h2 class="fb__title--hidden">키워드로 검색하기</h2>
         
             <!-- 상단 헤더 -->
@@ -20,7 +23,7 @@
                     <span class="blind">닫기버튼</span>
                 </button>
         
-                <a href="/popup/searchBrand" class="fb__searchLayer__link">
+                <a href="/views/brandIndexer/brandIndexer.html" class="fb__searchLayer__link">
                     <span>브랜드로 검색</span>
                 </a>        
             </header>
@@ -54,7 +57,7 @@
                                 <a href="#브랜드링크" class="autocomplete__link">
                                     <div class="autocomplete__info">
                                         <figure class="autocomplete__thumb">
-                                            <img src="{layoutCommon.templetSrc}/images/sample/sample.jpg" alt="">
+                                            <img src="/src/images/sample/sample.jpg" alt="">autocomplete__thumb
                                         </figure>
                     
                                         <span class="autocomplete__keyword"><em>스킨</em>푸드</span>
@@ -96,70 +99,155 @@
                             <strong class="hot__title fb__keyword__title">인기 검색어</strong>
         
                             <!-- 닫았을때 (롤링) -->
-                            {? headerTop.popularKeyword}
                             <div class="hot__rolling js__hotRolling swiper-container">
                                 <ul class="rolling__wrapper swiper-wrapper">
-                                    {@ headerTop.popularKeyword}
-                                        {? .index_ < 10}
-                                        <li class="rolling__item hot__list swiper-slide">
-                                            <em class="hot__count">{.key_+1}</em>
-                                            <span class="hot__name">{.keyword}</span>
-                                        </li>
-                                        {/}
-                                    {/}
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">1</em>
+                                        <span class="hot__name">뷰티</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">2</em>
+                                        <span class="hot__name">여름샌들</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">3</em>
+                                        <span class="hot__name">여름세일</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">4</em>
+                                        <span class="hot__name">원피스</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">5</em>
+                                        <span class="hot__name">건강식품</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">6</em>
+                                        <span class="hot__name">면역력</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">7</em>
+                                        <span class="hot__name">캠핑용품</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">8</em>
+                                        <span class="hot__name">차박</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">9</em>
+                                        <span class="hot__name">클렌징</span>
+                                    </li>
+
+                                    <li class="rolling__item hot__list swiper-slide">
+                                        <em class="hot__count">10</em>
+                                        <span class="hot__name">반팔</span>
+                                    </li>
                                 </ul>
                             </div>
-                            {/}
             
-                            <!-- @todo 개발: 업데이트 날짜 -->
                             <!-- 열었을때 (업데이트 날짜) -->
                             <span class="hot__update">05. 24 UPDATE</span>
                         </summary>
                         
                         <div class="hot__cont js__hotKeyword">
-                            {? headerTop.popularKeyword}
-                                <div class="hot__slider swiper-container">
-                                    <ul class="hot__slider__wrapper swiper-wrapper">
-                                        <li class="hot__slider__item swiper-slide">
-                                            <ol class="hot__slider__box">
-                                                {@ headerTop.popularKeyword}
-                                                    {? .index_ < 5}
-                                                    <li class="hot__slider__list hot__list">
-                                                        <a href="/shop/search/?searchText={=rawurlencode(.keyword)}" class="hot__slider__link">
-                                                            <em class="hot__count">{.key_+1}</em>
-                                                            <span class="hot__name">{.keyword}</span>
-                                                        </a>
-                                                    </li>
-                                                    {/}
-                                                {/}
-                                            </ol>
-                                        </li>
-                
-                                        <li class="hot__slider__item swiper-slide">
-                                            <ol class="hot__slider__box">
-                                                {@ headerTop.popularKeyword}
-                                                    {? .index_ >= 5 && .index_ < 10}
-                                                    <li class="hot__slider__list hot__list">
-                                                        <a href="/shop/search/?searchText={=rawurlencode(.keyword)}" class="hot__slider__link">
-                                                            <em class="hot__count">{.key_+1}</em>
-                                                            <span class="hot__name">{.keyword}</span>
-                                                        </a>
-                                                    </li>
-                                                    {/}
-                                                {/}
-                                            </ol>
-                                        </li>
-                                    </ul>
-                                </div>
-                
+                            <div class="hot__slider swiper-container">
+                                <ul class="hot__slider__wrapper swiper-wrapper">
+                                    <li class="hot__slider__item swiper-slide">
+                                        <ol class="hot__slider__box">
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">1</em>
+                                                    <span class="hot__name">뷰티</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">2</em>
+                                                    <span class="hot__name">여름샌들</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">3</em>
+                                                    <span class="hot__name">여름세일</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">4</em>
+                                                    <span class="hot__name">원피스</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">5</em>
+                                                    <span class="hot__name">건강식품</span>
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+            
+                                    <li class="hot__slider__item swiper-slide">
+                                        <ol class="hot__slider__box">
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">6</em>
+                                                    <span class="hot__name">면역력</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">7</em>
+                                                    <span class="hot__name">캠핑용품</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">8</em>
+                                                    <span class="hot__name">차박</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">9</em>
+                                                    <span class="hot__name">클렌징</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="hot__slider__list hot__list js__hot__item">
+                                                <a href="#" class="hot__slider__link">
+                                                    <em class="hot__count">10</em>
+                                                    <span class="hot__name">반팔</span>
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+            
+                            <div class="js__slider__nav">
                                 <nav class="hot__slider__page fb__swiper__bullets js__hotKeyword__page">페이지 네이션</nav>
-                            {/}
+                            </div>
                         </div>
                     </details>
                 </section>
         
                 <!-- 추천 검색어 -->
-                <!-- @todo 개발: 데이터 없을 경우 디폴트는 20대 여성 -->
                 <section class="fb__keyword__recommend fb__keyword__section">
                     <h3 class="recommend__top">
                         <strong class="fb__keyword__title">추천검색어</strong>
@@ -178,84 +266,189 @@
         
                     <nav class="recommend__age">
                         <label class="recommend__age__label">
-                            <input type="radio" name="test2" checked>
+                            <input type="radio" name="recommendAge" value="devListContents01" checked>
                             <span>10대</span>
                         </label>
                         
                         <label class="recommend__age__label">
-                            <input type="radio" name="test2">
+                            <input type="radio" name="recommendAge" value="devListContents02">
                             <span>20대</span>
                         </label>
         
                         <label class="recommend__age__label">
-                            <input type="radio" name="test2">
+                            <input type="radio" name="recommendAge" value="devListContents03">
                             <span>30대</span>
                         </label>
         
                         <label class="recommend__age__label">
-                            <input type="radio" name="test2">
+                            <input type="radio" name="recommendAge" value="devListContents04">
                             <span>40대~</span>
                         </label>
                     </nav>
         
-                    <!-- @todo 개발: 최대 9개까지 노출 -->
-                    <ul class="fb__keyword__tag">
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">아이크림</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
-                        </li>
-        
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search?searchText=클렌징">클렌징</a>
-                        </li>
-                    </ul>
+                    <div class="recommend__wrapper">
+                        <ul class="recommend__list fb__keyword__tag show" id="devListContents01">
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">아이크림</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">헤어왁스</a>
+                            </li>
+            
+                            <li class="tag__list">
+                                <a class="tag__link" href="/shop/search?searchText=클렌징">클렌징</a>
+                            </li>
+                        </ul>
+    
+                        <ul class="recommend__list fb__keyword__tag" id="devListContents02">
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="여행티슈" href="#">여행티슈</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="손소독용" href="#">손소독용</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="비데용" href="#">비데용</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="기타건강보조식품" href="#">기타건강보조식품</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="스피루리나" href="#">스피루리나</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="글루코사민" href="#">글루코사민</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="아연" href="#">아연</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="비타민B" href="#">비타민B</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="기타건강즙" href="#">기타건강즙</a>
+                            </li>
+                        </ul>
+    
+                        <ul class="recommend__list fb__keyword__tag" id="devListContents03">
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="렌즈세척기" href="#">렌즈세척기</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="쏘팔메토" href="#">쏘팔메토</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="헬스보충제" href="#">헬스보충제</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="차량용방향제" href="#">차량용방향제</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="남성향수" href="#">남성향수</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="남성청결제" href="#">남성청결제</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="쉐이빙폼" href="#">쉐이빙폼</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="면도날/망" href="#">면도날/망</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="면도기" href="#">면도기</a>
+                            </li>
+                        </ul>
+    
+                        <ul class="recommend__list fb__keyword__tag" id="devListContents04">
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="눈썹가위" href="#">눈썹가위</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="혼합세트" href="#">혼합세트</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="쏘팔메토" href="#">쏘팔메토</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="로얄제리" href="#">로얄제리</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="비타민A" href="#">비타민A</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="헬스보충제" href="#">헬스보충제</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="눈썹칼" href="#">눈썹칼</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="남성향수" href="#">남성향수</a>
+                            </li>
+                            
+                            <li class="tag__list">
+                                <a class="tag__link devGoSearchKeyword" data-keyword="남성청결제" href="#">남성청결제</a>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
         
                 <!-- 최근 검색어 -->
-                <section class="fb__keyword__recent fb__keyword__section">
+                <section class="fb__keyword__recent fb__keyword__section js__recentKeyword empty">
                     <h3 class="recent__top">
                         <strong class="fb__keyword__title">최근검색어</strong>
         
-                        <!-- @todo 개발: 기능 확인 필요 searchKeyword.js -->
-                        {? headerTop.recentKeyword}
-                        <button class="recent__remove" id="devRecentKeyWordDeleteAll">전체 삭제</button>
-                        {/}
+                        <button class="recent__remove js__recentKeyword__removeAll">전체 삭제</button>
                     </h3>
-        
-                    {? headerTop.recentKeyword}
-                    <ul id="devRecent" class="fb__keyword__tag">
-                        {@ headerTop.recentKeyword}
-                        <li class="tag__list">
-                            <a class="tag__link" href="/shop/search/?searchText={=rawurlencode(.value_)}">{.value_}</a>
-                        </li>
-                        {/}
-                    </ul>
-                    {:}
-                    <div class="fb__empty">
+
+                    <!-- 태그 들어오는 영역(js에서 처리) -->
+                    <ul class="fb__keyword__tag js__recentKeyword__tag"></ul>
+
+                    <div class="fb__empty js__recentKeyword__empty show">
                         <p class="fb__empty__text">최근 검색어가 없습니다.</p>
                     </div>
-                    {/}
                 </section>
             </div>
-        </main>
+        </section>
     </body>
 </html>

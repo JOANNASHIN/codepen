@@ -37,4 +37,47 @@
             display: block;
         }
     }
+
+    //결과 없는 경우
+    &__empty {
+        padding: rem(36px 0);
+        text-align: center;
+
+        &__text {
+            @include fontcss($black, 200, rem(14px), rem(20px));    
+
+            &:before {
+                content: "";
+                display: block;
+                width: rem(48px);
+                height: rem(48px);
+                margin: rem(0 auto 12px);
+                background: url("../images/svg/common/icon-empty.svg") no-repeat 0 0 / 100% auto;
+            }
+        }
+
+        //검색단어
+        &__word {
+            display: block;
+            @include fontcss($pcolor, 600, rem(14px), rem(20px));    
+        }
+    }
+
+    &__swiper {
+        &__bullets {
+            font-size: 0;
+            text-align: center;
+    
+            .swiper-pagination-bullet {
+                width: rem(6px);
+                height: rem(6px);
+                margin: rem(0 4px);
+                background: $silver;
+    
+                &-active {
+                    background: $black;
+                }
+            }
+        }
+    }
 }
