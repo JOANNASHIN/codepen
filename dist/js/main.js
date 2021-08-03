@@ -49808,11 +49808,14 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
  let enSizing = false;
  
  function setFontSize() {
-     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) return ;
-     htmlDoc.style.fontSize =  parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
+     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) {
+        htmlDoc.style.fontSize = "";
+        return ;
+     }
+     htmlDoc.style.fontSize = parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
  }
  
- window.onresize = function() {
+ jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("load resize", function () {
      if (!enSizing) {
          window.requestAnimationFrame(function() {
              setFontSize();
@@ -49820,7 +49823,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
          });
      }
      enSizing = true;
- }
+})
  
  window.dispatchEvent(new Event('resize'));
 

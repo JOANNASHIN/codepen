@@ -25,11 +25,14 @@ import contact from "./divide/contact";
  let enSizing = false;
  
  function setFontSize() {
-     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) return ;
-     htmlDoc.style.fontSize =  parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
+     if (window.innerWidth > window.innerHeight || window.innerWidth > 750) {
+        htmlDoc.style.fontSize = "";
+        return ;
+     }
+     htmlDoc.style.fontSize = parseInt(htmlDoc.offsetWidth / 360 * 100) + '%';
  }
  
- window.onresize = function() {
+ $(window).on("load resize", function () {
      if (!enSizing) {
          window.requestAnimationFrame(function() {
              setFontSize();
@@ -37,7 +40,7 @@ import contact from "./divide/contact";
          });
      }
      enSizing = true;
- }
+})
  
  window.dispatchEvent(new Event('resize'));
 
