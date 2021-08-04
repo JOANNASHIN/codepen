@@ -25,6 +25,7 @@ import contact from "./divide/contact";
 import searchKeyword from "./divide/searchKeyword";
 import photoReview from "./divide/photoReview";
 import youtubePlayer from "./divide/youtubePlayer";
+import cardValidation from "./divide/cardValidation";
 
  /* resize */
  const htmlDoc = document.documentElement;
@@ -68,7 +69,8 @@ const appMethods = {
     contact,
     searchKeyword,
     photoReview,
-    youtubePlayer
+    youtubePlayer,
+    cardValidation
 }
 
 //페이지별 공통

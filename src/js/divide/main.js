@@ -68,10 +68,11 @@ const main = () => {
         })
     }
 
-    const moveToLink = () => {
+    const checkIsMobilePen = () => {
         $document.on("click", ".pens__link", function () {
             const $this = $(this);
             console.log($(window).width(), $document.width())
+
             if ( $(window).width() > 750 
                  && $this.find(".js__pen__name").text().indexOf("모바일") != -1
             ) {
@@ -81,11 +82,23 @@ const main = () => {
         })
     }
     
+    const moveToLink = () => {
+        $document.on("click", ".js__link", function () {
+            const $this = $(this);
+            const _link = $this.data("link");
+
+            window.open(_link);
+
+            return false;
+        })
+    }
+
     const init = () => {
         hasBeforeData();
         pushStateSearch();
         autoFindPen();
         showSource();
+        checkIsMobilePen();
         moveToLink();
     }
 
