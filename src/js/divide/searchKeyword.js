@@ -219,8 +219,10 @@ const searchKeyword = () => {
 
         const bindEvents = function () {
             $document
-                .on("click", ".js__search__init", function () {
+                .on("submit", ".js__search__form", function () {
                     searchInit();
+
+                    return false;
                 })
     
                 .on("keyup", ".js__search__input", function (e) {

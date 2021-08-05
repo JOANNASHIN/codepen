@@ -4950,6 +4950,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   height: 1.625rem;
   background: url(../../src/images/svg/guide/ico-header-close.svg) no-repeat 0 0/100% auto;
 }
+.fb__searchLayer__link {
+  font-size: 0;
+}
 .fb__searchLayer__link span {
   display: inline-block;
   color: #1e1e1e;
@@ -5134,7 +5137,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: block;
 }
 .fb__keyword__hot .hot__slider__page {
-  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .fb__keyword__recommend .recommend__top {
   display: flex;

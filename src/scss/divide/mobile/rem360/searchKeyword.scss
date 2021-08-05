@@ -17,6 +17,8 @@
         }
 
         &__link {
+            font-size: 0;
+
             span {
                 display: inline-block;
                 @include fontcss($black, 200, rem(12px));
@@ -217,7 +219,7 @@
                     }
     
                     &__page {
-                        margin-bottom: rem(12px);
+                        padding-bottom: rem(12px);
                     }
                 }
             }

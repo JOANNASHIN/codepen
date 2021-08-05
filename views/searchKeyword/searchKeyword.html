@@ -35,23 +35,27 @@
                 <section class="fb__searchLayer__try fb__search__try">
                     <h3 class="fb__title--hidden">검색영역</h3>
                     
-                    <!-- @todo 프론트: js 로  focus 추가 -->
                     <!-- 검색 -->
-                    <label class="fb__comm__input js__input__wrapper">
-                        <input type="text" class="js__search__input js__input" placeholder="검색어를 입력하세요." autocomplete="off" autofocus>
-                        <button class="input__clear js__input__clear">지우기</button>
-                        
-                        <button type="button" class="input__search js__search__init">
-                            <span class="blind">검색하기</span>
-                        </button>
-                    </label>
+                    <form class="fb__comm__input js__search__form">
+                        <fieldset>
+                            <legend>검색영역</legend>
+
+                            <!-- 입력 -->
+                            <input type="text" class="js__search__input js__input" placeholder="검색어를 입력하세요." autocomplete="off" autofocus>
+                            
+                            <!-- 리셋 -->
+                            <button type="button" class="input__clear js__input__clear">지우기</button>
+                            
+                            <!-- 검색 -->
+                            <button type="submit" class="input__search">
+                                <span class="blind">검색하기</span>
+                            </button>
+                        </fieldset>
+                    </form>
         
                     <!-- 자동완성 레이어 -->
                     <div class="fb__keyword__autocomplete js__search__autocomplete">
                         <ul class="autocomplete__box js__autocomplete__list">
-        
-                            <!-- @todo 개발: active되는 애는 em으로 감싸주세요. 케이스별로 나눠놨으니 참고하세요~! searchKeyword.js 만들어놨습니다~~ -->
-        
                             <!--  01 브랜드 (최대 2개 노출) -->
                             <li class="autocomplete__list">
                                 <a href="#브랜드링크" class="autocomplete__link">
