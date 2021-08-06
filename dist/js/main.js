@@ -62608,7 +62608,7 @@ const searchKeyword = () => {
         const searchInit = function () {
             const _searchText = $input.val();
             const isPass = isPossibleSearch(_searchText);
-
+            
             if (!isPass) return ;
 
             // 스토리지에 저장한 키워드 가져오기
@@ -62641,9 +62641,9 @@ const searchKeyword = () => {
                     return false;
                 })
     
-                .on("keyup", ".js__search__input", function (e) {
-                    if (e.keyCode == 13) searchInit();
-                })
+                // .on("keyup", ".js__search__input", function (e) {
+                //     if (e.keyCode == 13) searchInit();
+                // })
         }
 
         bindEvents();
