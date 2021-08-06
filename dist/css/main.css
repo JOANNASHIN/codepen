@@ -5092,6 +5092,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   height: 1.1875rem;
   vertical-align: top;
 }
+.fb__keyword__hot .hot__rolling .rolling__item {
+  width: 100%;
+  height: 100% !important;
+}
 .fb__keyword__hot .hot__update {
   display: none;
   color: #a0a0a0;

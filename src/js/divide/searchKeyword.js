@@ -5,12 +5,10 @@ const searchKeyword = () => {
     
     //상단 검색 - input관련
     const inputSearch = () => {
-        var autoKeywordAjax = false;
-
         //자동완성 데이터 연결
         const requestAutocomplete = function (keyword) {
             const $autocompleteList = $(".js__autocomplete__list"); //자동완성 리스트
-            //@api연결
+            // @todo 개발: api연결
         }
 
         //자동완성 레이어 보이기
@@ -75,7 +73,7 @@ const searchKeyword = () => {
                 direction: "vertical",
                 autoplay: {
                     delay: 2000,
-                    // disableOnInteraction: true,
+                    disableOnInteraction: true,
                 }
             })
         }
@@ -114,6 +112,7 @@ const searchKeyword = () => {
                         keywordSlideObj.slideTo(0);
                     }
                 }
+                //닫았을때
                 else {
                     //롤링 슬라이드 리셋 후 재실행
                     if (rollingSlideObj) rollingSlideObj.destroy();
@@ -140,17 +139,18 @@ const searchKeyword = () => {
         })
     }
 
-    //최근검색어 리스트
-    const recentKeywordEvent = () => {
+    //최근검색어 리스트 (empty / 태그)
+    const drawRecentKeyword = () => {
         const $recentKeyword = $(".js__recentKeyword");
         const $tag = $(".js__recentKeyword__tag");
         const _storage = window.localStorage.getItem("recentWord");
 
+        // 최근검색어가 있는 경우
         if (_storage != null) {
             const recentWordList = String(_storage).split(",");
 
             $recentKeyword.removeClass("empty");
-            $tag.empty();
+            $tag.empty(); //태그 리셋
             
             recentWordList.forEach(tag => {
                 $tag.append(`
@@ -160,6 +160,7 @@ const searchKeyword = () => {
                 `)
             })
         }
+        // 최근검색어가 없는 경우
         else {
             $recentKeyword.addClass("empty");
         }
@@ -170,7 +171,7 @@ const searchKeyword = () => {
         $document.on('click', ".js__recentKeyword__removeAll", function () {
             window.localStorage.removeItem("recentWord");
 
-            recentKeywordEvent();
+            drawRecentKeyword();
         });
     }
 
@@ -179,11 +180,10 @@ const searchKeyword = () => {
         const $input = $(".js__search__input");
 
         //검색 유효성 검사
-        const isPossibleSearch = function() {
+        const isPossibleSearch = function(_searchText) {
             let isPass = true;
-            const searchText = $input.val();
         
-            if ( searchText == '' ) {
+            if ( _searchText == '' ) {
                 alert('검색어는 1글자 이상 입력해 주세요.');
                 $input.focus();
     
@@ -195,26 +195,31 @@ const searchKeyword = () => {
 
         //검색 시작
         const searchInit = function () {
-            const isPass = isPossibleSearch();
-            const searchText = $input.val();
+            const _searchText = $input.val();
+            const isPass = isPossibleSearch(_searchText);
 
-            if (isPass) {
-                const _storage = window.localStorage.getItem("recentWord");
+            if (!isPass) return ;
 
-                if (_storage != null) {
-                    const recentWordList = String(_storage).split(",");
-                    recentWordList.push(searchText);
+            // 스토리지에 저장한 키워드 가져오기
+            const _storage = window.localStorage.getItem("recentWord");
 
-                    window.localStorage.setItem("recentWord", recentWordList);
-                }
-                else {
-                    window.localStorage.setItem("recentWord", [searchText]);
-                }
+            // 기존에 저장한 값이 있으면 추가하여 저장
+            if (_storage != null) {
+                const recentWordList = String(_storage).split(",");
+                recentWordList.push(_searchText);
 
-                $input.val("");
-                $autocomplete.removeClass("show");
-                recentKeywordEvent();
+                window.localStorage.setItem("recentWord", recentWordList);
             }
+            // 처음 저장하는 경우
+            else {
+                window.localStorage.setItem("recentWord", [_searchText]);
+            }
+
+            $input.val("");
+            $autocomplete.removeClass("show");
+
+            //최근 검색어 그리기
+            drawRecentKeyword();
         }
 
         const bindEvents = function () {
@@ -237,7 +242,7 @@ const searchKeyword = () => {
         inputSearch();
         hotKeyword();
         recommendTab();
-        recentKeywordEvent();
+        drawRecentKeyword();
         removeRecentKeyword();
         trySearch();
     }
