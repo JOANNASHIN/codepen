@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "oriBuild": "webpack",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack serve",
+    "serve": "webpack serve",
     "watch": "cross-env NODE_ENV=production webpack --watch --mode development",
-    "start": "webpack serve --env mode"
+    "start": "webpack serve --env mode",
+    "deploy": "webpack --config webpack.config.js && firebase deploy"
   },
   "keywords": [],
   "author": "",
